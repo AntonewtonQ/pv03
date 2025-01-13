@@ -81,7 +81,7 @@ const AboutDesc = () => {
         </div>
 
         <div className="border border-muted-foreground rounded-xl p-4 lg:flex gap-2">
-          career
+          career for me
         </div>
       </div>
     </div>
