@@ -12,8 +12,8 @@ const NavBar = () => {
   const pathname = usePathname();
 
   return (
-    <div className="p-6 md:p-14">
-      <div className="mx-auto p-6 max-w-6xl border-2 border-red-200 flex items-center justify-between">
+    <div className="px-6 md:px-14 md:py-6">
+      <div className="mx-auto p-6 max-w-7xl flex items-center justify-between">
         <div>
           <Link className="w-full" href="/">
             <Button className="w-full text-muted-foreground flex text-start bg-black justify-between hover:text-white hover:bg-black">
@@ -23,10 +23,10 @@ const NavBar = () => {
           </Link>
         </div>
         <div className="">
-          <Button className="hidden">
+          <Button className="lg:hidden text-muted-foreground bg-black hover:text-white hover:bg-black">
             <PanelRight />
           </Button>
-          <nav className="flex">
+          <nav className="hidden overflow-hidden lg:flex">
             {navLinks.map((link) => (
               <Link className="w-full" href={link.href} key={link.label}>
                 <Button

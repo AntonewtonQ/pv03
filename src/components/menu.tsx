@@ -28,7 +28,9 @@ const Menu = () => {
         </p>
       </header>
       <div className="flex flex-col">
-        <h2 className="mb-6 font-medium text-muted-foreground uppercase">Menu</h2>
+        <h2 className="mb-6 font-medium text-muted-foreground uppercase">
+          Menu
+        </h2>
         <ul className="flex flex-col items-start gap-2">
           <Link className="w-full" href="/about">
             <Button className="w-full text-muted-foreground flex text-start bg-black justify-between ">

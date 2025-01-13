@@ -1,11 +1,14 @@
+import Layout from "@/components/layout";
 import NavBar from "@/components/navbar";
 import React from "react";
 
 const ShopPage = () => {
   return (
-    <div>
-      <NavBar />
-    </div>
+    <Layout>
+      <div>
+        <NavBar />
+      </div>
+    </Layout>
   );
 };
 
