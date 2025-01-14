@@ -18,7 +18,7 @@ const NavBar = () => {
           <Link className="w-full" href="/">
             <Button className="w-full text-muted-foreground flex text-start bg-black justify-between hover:text-white hover:bg-black">
               <ChevronLeft />
-              <span className="capitalize">voltar</span>
+              <span className="capitalize">Back</span>
             </Button>
           </Link>
         </div>

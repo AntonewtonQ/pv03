@@ -5,11 +5,9 @@ import {
   ArrowRight,
   Building2,
   Facebook,
-  FacebookIcon,
   Github,
   Instagram,
   Linkedin,
-  Slack,
 } from "lucide-react";
 
 const Menu = () => {
