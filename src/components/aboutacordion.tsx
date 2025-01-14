@@ -1,37 +1,35 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "./ui/accordion";
-import { Briefcase } from "lucide-react";
-import { Button } from "./ui/button";
 
 const AboutAcordion = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleAccordionChange = (open: boolean) => {
+    setIsOpen(open);
+  };
   return (
     <div>
-      <Accordion type="single" collapsible className="w-64 border-none">
+      <Accordion
+        type="single"
+        collapsible
+        className="w-64 border-none"
+        onValueChange={(value) => handleAccordionChange(value == "item-1")}
+      >
         <AccordionItem value="item-1" className="border-none">
-          <Button className="bg-black">
-            <AccordionTrigger className="no-underline">
-              Show previous roles
-            </AccordionTrigger>
-          </Button>
+          <AccordionTrigger className="no-underline bg-black">
+            {isOpen ? "Hide previoes roles" : "Show previous roles"}
+          </AccordionTrigger>
+
           <AccordionContent className="my-4 space-y-4">
-            <div className="s">
-              <p className="font-bold text-base flex gap-2">
-                <span>Front-end Developer</span>
-              </p>
-              <p className="text-muted-foreground ">Freelancer</p>
-              <p className="text-muted-foreground">January 2024 – Present</p>
-            </div>
             <div className="">
-              <p className="font-bold text-base flex gap-2">
-                <span>Front-end Developer</span>
-              </p>
-              <p className="text-muted-foreground ">Freelancer</p>
-              <p className="text-muted-foreground">January 2024 – Present</p>
+              <p className="text-muted-foreground">Nothing to present</p>
             </div>
           </AccordionContent>
         </AccordionItem>
