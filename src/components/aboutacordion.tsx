@@ -23,11 +23,11 @@ const AboutAcordion = () => {
         onValueChange={(value) => handleAccordionChange(value == "item-1")}
       >
         <AccordionItem value="item-1" className="border-none">
-          <AccordionTrigger className="no-underline bg-black">
+          <AccordionTrigger className="no-underline bg-black hover:bg-zinc-900">
             {isOpen ? "Hide previoes roles" : "Show previous roles"}
           </AccordionTrigger>
 
-          <AccordionContent className="my-4 space-y-4">
+          <AccordionContent className="my-4 space-y-4 transition-all duration-300 ease-in-ou">
             <div className="">
               <p className="text-muted-foreground">Nothing to present</p>
             </div>

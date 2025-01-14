@@ -13,7 +13,7 @@ const NavBar = () => {
 
   return (
     <div className="px-6 md:px-14 md:py-6">
-      <div className="mx-auto p-6 max-w-7xl flex items-center justify-between">
+      <div className="mx-auto p-6 max-w-6xl flex items-center justify-between">
         <div>
           <Link className="w-full" href="/">
             <Button className="w-full text-muted-foreground flex text-start bg-black justify-between hover:text-white hover:bg-black">

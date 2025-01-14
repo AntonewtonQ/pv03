@@ -1,11 +1,14 @@
+import ChangeLogPort from "@/components/changelogport";
+import Footer from "@/components/footer";
 import Layout from "@/components/layout";
+import NavBar from "@/components/navbar";
 
 const VersionPage = () => {
   return (
     <Layout>
-      <div>
-        <h1 className="text-white">Version Page</h1>
-      </div>
+      <NavBar />
+      <ChangeLogPort />
+      <Footer />
     </Layout>
   );
 };

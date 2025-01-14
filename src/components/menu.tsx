@@ -108,7 +108,9 @@ const Menu = () => {
       </div>
       <div className="border-t-2 border-muted-foreground w-full flex py-4 justify-end items-end">
         <Link href="/versions" className="">
-          <Button className="text-muted-foreground  bg-black">v3.0</Button>
+          <Button className="text-muted-foreground  bg-black">
+            <span className="h-2 w-2 rounded-full bg-green-500"></span>v3.0
+          </Button>
         </Link>
       </div>
     </div>
