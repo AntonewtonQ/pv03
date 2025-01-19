@@ -17,7 +17,7 @@ const AboutDesc = () => {
       <div className="mx-auto px-10 max-w-6xl flex flex-col gap-6">
         <div className="space-y-4 mb-2">
           <h1 className="font-bold text-4xl">About</h1>
-          <p className="text-muted-foreground lg:text-xl">
+          <p className="text-muted-foreground">
             Meet Antonewton, a skilled Front-end Developer.
           </p>
         </div>
@@ -70,9 +70,7 @@ const AboutDesc = () => {
                   <FlameKindling className="" />
                   <span>Ministry</span>
                 </p>
-                <p className="text-muted-foreground">
-                  Pathfinder(Desbravadores)
-                </p>
+                <p className="text-muted-foreground">Pathfinder</p>
               </div>
               <div className="space-y-2">
                 <p className="flex flex-1 gap-2">
@@ -87,7 +85,7 @@ const AboutDesc = () => {
                   <Laptop className="" />
                   <span>System</span>
                 </p>
-                <p className="text-muted-foreground">Linux</p>
+                <p className="text-muted-foreground">Linux-Ubuntu</p>
               </div>
             </div>
           </div>

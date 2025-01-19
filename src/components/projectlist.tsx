@@ -6,7 +6,7 @@ const ProjectList = () => {
       <div className="mx-auto px-10 max-w-6xl flex flex-col gap-6">
         <div className="space-y-4 mb-2">
           <h1 className="font-bold text-4xl">Projects</h1>
-          <p className="text-muted-foreground max-w-2xl lg:text-xl">
+          <p className="text-muted-foreground max-w-2xl">
             Explore my portfolio of projects spanning from 2021 to 2024.
           </p>
         </div>
