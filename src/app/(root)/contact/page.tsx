@@ -1,3 +1,4 @@
+import ContactList from "@/components/ContactList";
 import Footer from "@/components/footer";
 import ContactForm from "@/components/forms/ContactForm";
 import Layout from "@/components/layout";
@@ -9,6 +10,7 @@ const ContactPage = () => {
     <Layout>
       <div>
         <NavBar />
+        <ContactList />
         <ContactForm />
         <Footer />
       </div>
