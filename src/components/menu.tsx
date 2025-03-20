@@ -12,16 +12,16 @@ import {
 
 const Menu = () => {
   return (
-    <div className="mx-auto px-6 py-8 flex flex-col gap-8 ">
+    <div className="mx-auto px-6 py-8 flex flex-col gap-4">
       <div className="flex items-center justify-between rounded-lg">
-        <p className="text-muted-foreground flex gap-2">
-          <Building2 />
+        <p className="text-muted-foreground flex gap-2 text-sm">
+          <Building2 size={16} />
           <span> Luanda, Angola</span>
         </p>
       </div>
       <header className="flex flex-col gap-2">
-        <h1 className="text-white text-2xl font-bold">antonewtonquima</h1>
-        <p className="text-muted-foreground text-md capitalize">
+        <h1 className="text-white text-xl font-bold">antonewtonquima</h1>
+        <p className="text-muted-foreground text-sm capitalize">
           Front-end Developer / student
         </p>
       </header>
