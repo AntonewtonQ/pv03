@@ -30,7 +30,6 @@ export default function ProjectsPage() {
 
   return (
     <main className="min-h-screen bg-zinc-950 text-white p-6">
-      <h1 className="text-2xl font-bold mb-6">Projects</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {projects.map((project, idx) => (
           <ProjectCard key={idx} {...project} />
