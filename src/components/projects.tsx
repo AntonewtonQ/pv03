@@ -11,6 +11,7 @@ interface Project {
   description: string;
   year: string;
   cover: string;
+  link: string;
 }
 
 export default function ProjectsPage() {
@@ -29,8 +30,8 @@ export default function ProjectsPage() {
   }, []);
 
   return (
-    <main className="min-h-screen bg-zinc-950 text-white p-6">
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+    <main className="min-h-screen bg-black text-white px-6 md:px-16 py-6 mx-auto justify-center">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mx-auto">
         {projects.map((project, idx) => (
           <ProjectCard key={idx} {...project} />
         ))}

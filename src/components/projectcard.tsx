@@ -1,5 +1,6 @@
 // components/ProjectCard.tsx
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 interface ProjectCardProps {
@@ -7,6 +8,7 @@ interface ProjectCardProps {
   description: string;
   year: string;
   cover: string;
+  link: string;
 }
 
 export default function ProjectCard({
@@ -14,6 +16,7 @@ export default function ProjectCard({
   description,
   year,
   cover,
+  link,
 }: ProjectCardProps) {
   const [hover, setHover] = useState(false);
 
@@ -24,12 +27,13 @@ export default function ProjectCard({
       onMouseLeave={() => setHover(false)}
     >
       <div className="relative w-full h-[180px]">
-        <Image src={cover} alt={name} fill className="object-cover" />
-        <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-          <h3 className="text-white text-center text-lg font-bold">
-            CUSTOM K MOTOS
-          </h3>
-        </div>
+        <Image
+          src={cover || "/images/cover.png"}
+          alt={name}
+          fill
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center"></div>
       </div>
       <div className="p-4">
         <h4 className="text-lg font-semibold mb-1">{name}</h4>
@@ -39,9 +43,11 @@ export default function ProjectCard({
             {year}
           </span>
           {hover && (
-            <span className="text-sm text-blue-400 font-medium hover:underline cursor-pointer">
-              View project
-            </span>
+            <Link className="flex items-center" href={link} target="_blank">
+              <span className="text-sm text-white font-bold hover:underline cursor-pointer">
+                View project
+              </span>
+            </Link>
           )}
         </div>
       </div>
