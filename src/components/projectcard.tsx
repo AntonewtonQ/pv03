@@ -38,7 +38,7 @@ export default function ProjectCard({
       <div className="p-4">
         <h4 className="text-lg font-semibold mb-1">{name}</h4>
         <p className="text-sm text-zinc-400">{description}</p>
-        <div className="flex justify-between self-end items-center mt-4">
+        <div className="flex justify-between items-center mt-4">
           <span className="text-sm bg-zinc-800 px-3 py-1 rounded-ful ">
             {year}
           </span>
