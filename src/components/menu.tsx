@@ -42,12 +42,6 @@ const Menu = () => {
               <ArrowRight className="text-white" />
             </Button>
           </Link>
-          <Link className="w-full" href="/setup">
-            <Button className="w-full text-muted-foreground flex text-start bg-black justify-between">
-              Setup
-              <ArrowRight className="text-white" />
-            </Button>
-          </Link>
           <Link className="w-full" href="/shop">
             <Button className="w-full text-muted-foreground flex text-start bg-black justify-between">
               Shop
