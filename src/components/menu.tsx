@@ -69,14 +69,17 @@ const Menu = () => {
         <div className="grid grid-cols-1 gap-2 px-4 lg:grid-cols-2 ">
           <Link
             className="text-white font-bold flex justify-start items-start gap-2"
-            href="/contact"
+            href="https://www.facebook.com/newton.quima.9/"
           >
             <Button className="w-full flex items-start justify-start bg-black border-[0.5px] border-muted-foreground rounded-sm">
               <Facebook /> <span>Facebook</span>
             </Button>
           </Link>
 
-          <Link className="text-white font-bold flex  gap-2" href="/contact">
+          <Link
+            className="text-white font-bold flex  gap-2"
+            href="https://instagram.com/antonewton_"
+          >
             <Button className="w-full flex items-start justify-start bg-black  border-[0.5px] border-muted-foreground rounded-sm">
               <Instagram />
               <span>Instagram</span>
@@ -84,7 +87,7 @@ const Menu = () => {
           </Link>
           <Link
             className="text-white font-bold flex items-center justify-center gap-4"
-            href="/contact"
+            href="https://github.com/AntonewtonQ"
           >
             <Button className="w-full flex items-start justify-start bg-black  border-[0.5px] border-muted-foreground rounded-sm">
               <Github /> <span>GitHub</span>
@@ -92,7 +95,7 @@ const Menu = () => {
           </Link>
           <Link
             className="text-white font-bold flex items-center justify-center gap-4"
-            href="/contact"
+            href="https://www.linkedin.com/in/antonewton-quima-95aaa3238/"
           >
             <Button className="w-full flex items-start justify-start bg-black border-[0.5px] border-muted-foreground rounded-sm">
               <Linkedin /> <span>LinkedIn</span>
