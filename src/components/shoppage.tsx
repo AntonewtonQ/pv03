@@ -57,7 +57,7 @@ const Loja = () => {
             {/* Caixa de Pesquisa */}
             <input
               type="text"
-              placeholder="Pesquisar produto..."
+              placeholder="Search shirts..."
               value={searchTerm}
               onChange={handleSearchChange}
               className="py-1 px-2 border placeholder:text-sm border-muted-foreground rounded-md text-white bg-black w-full md:w-1/2 shadow-md focus:outline-none focus:ring-2 focus:ring-muted-foreground focus:ring-opacity-20"
