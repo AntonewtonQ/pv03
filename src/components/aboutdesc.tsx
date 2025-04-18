@@ -28,13 +28,13 @@ const AboutDesc = () => {
             <Image src="/my-avatar.png" width={500} height={500} alt="Avatar" />
           </div>
           <div className="lg:w-full p-4 ">
-            <div className="space-y-6 py-6">
+            <div className="space-y-3 py-6">
               <p className="text-muted-foreground uppercase">Introduction</p>
-              <h2 className="text-white font-bold lg:text-3xl text-2xl">
-                Front-end Developer passionate about tech, innovation, and
-                personal projects
+              <h2 className="text-white font-bold lg:text-2xl text-xl">
+                Software Developer passionate about tech, startups, and personal
+                projects
               </h2>
-              <p className="text-white lg:text-xl text-md">
+              <p className="text-white lg:text-lg text-md">
                 Antonewton Quima is a passionate software developer and computer
                 engineering student at ISPTEC, as well as a student at 42
                 School, dedicated to building innovative solutions that make an
@@ -42,7 +42,7 @@ const AboutDesc = () => {
                 in Next.js, Tailwind CSS, TypeScript, and Shadcn, crafting
                 modern and user-friendly web applications.
               </p>
-              <p className="text-white lg:text-xl text-md">
+              <p className="text-white lg:text-lg text-md">
                 Antonewton is committed to continuous learning, collaboration,
                 and delivering high-quality digital experiences.
               </p>
@@ -50,48 +50,52 @@ const AboutDesc = () => {
             <Separator className="my-4 text-muted-foreground" />
             <div className="py-4 grid lg:grid-cols-3 grid-cols-2 gap-4">
               <div className="space-y-2">
-                <p className="flex flex-1 gap-2">
-                  <Music className="" />
+                <p className="flex flex-1 gap-2 text-sm">
+                  <Music className="" size={20} />
                   <span>Music</span>
                 </p>
-                <p className="text-muted-foreground">Lofi</p>
+                <p className="text-muted-foreground text-sm">Lofi</p>
               </div>
 
               <div className="space-y-2">
-                <p className="flex flex-1 gap-2">
-                  <MapPin className="" />
+                <p className="flex flex-1 gap-2 text-sm">
+                  <MapPin className="" size={20} />
                   <span>City</span>
                 </p>
-                <p className="text-muted-foreground">Talatona, Luanda</p>
+                <p className="text-muted-foreground text-sm">
+                  Talatona, Luanda
+                </p>
               </div>
               <div className="space-y-2">
-                <p className="flex flex-1 gap-2">
-                  <Film className="" />
+                <p className="flex flex-1 gap-2 text-sm">
+                  <Film className="" size={20} />
                   <span>Interests</span>
                 </p>
-                <p className="text-muted-foreground">Entrepreneurship</p>
+                <p className="text-muted-foreground text-sm">
+                  Entrepreneurship
+                </p>
               </div>
               <div className="space-y-2">
-                <p className="flex flex-1 gap-2">
-                  <FlameKindling className="" />
+                <p className="flex flex-1 gap-2 text-sm">
+                  <FlameKindling className="" size={20} />
                   <span>Ministry</span>
                 </p>
-                <p className="text-muted-foreground">Pathfinder</p>
+                <p className="text-muted-foreground text-sm">Pathfinder</p>
               </div>
               <div className="space-y-2">
-                <p className="flex flex-1 gap-2">
-                  <Pizza className="" />
+                <p className="flex flex-1 gap-2 text-sm">
+                  <Pizza className="" size={20} />
                   <span>Food</span>
                 </p>
-                <p className="text-muted-foreground">Arroz Doce</p>
+                <p className="text-muted-foreground text-sm">Arroz Doce</p>
               </div>
 
               <div className="space-y-2">
-                <p className="flex flex-1 gap-2">
-                  <Laptop className="" />
+                <p className="flex flex-1 gap-2 text-sm">
+                  <Laptop className="" size={20} />
                   <span>System</span>
                 </p>
-                <p className="text-muted-foreground">Linux-Ubuntu</p>
+                <p className="text-muted-foreground text-sm">Linux-Ubuntu</p>
               </div>
             </div>
           </div>

@@ -7,7 +7,7 @@ const ProjectList = () => {
         <div className="space-y-4 mb-2">
           <h1 className="font-bold text-4xl">Projects</h1>
           <p className="text-muted-foreground max-w-2xl">
-            Explore my portfolio of projects spanning from 2021 to 2024.
+            Explore my portfolio of projects spanning from 2023 to 2025.
           </p>
         </div>
       </div>
