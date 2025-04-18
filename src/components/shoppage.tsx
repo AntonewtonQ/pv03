@@ -75,9 +75,15 @@ const Loja = () => {
 
           <div className="space-y-4 mb-2">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
-              {sortedItems.map((item) => (
-                <ProductCard key={item.id} item={item} />
-              ))}
+              {sortedItems.length > 0 ? (
+                sortedItems.map((item) => (
+                  <ProductCard key={item.id} item={item} />
+                ))
+              ) : (
+                <div className="col-span-full text-center text-gray-400">
+                  No items found.
+                </div>
+              )}
             </div>
           </div>
         </div>
