@@ -16,15 +16,19 @@ export default function ContactForm() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("Form submitted:", form);
-    // Aqui você pode adicionar a lógica para enviar o formulário
-  };
-
   return (
     <div className="max-w-6xl mx-auto p-6 px-10 bg-black text-white rounded-lg shadow-lg">
-      <form onSubmit={handleSubmit} className="space-y-4">
+      {/* Agora o form tem action e method */}
+      <form
+        action="https://formsubmit.co/antonewtonquima@gmail.com" // <-- Troca aqui pelo teu e-mail real
+        method="POST"
+        className="space-y-4"
+      >
+        {/* Para não receber spam */}
+        <input type="hidden" name="_captcha" value="false" />
+        {/* Redireciona para uma página de obrigado (opcional) */}
+        {/* <input type="hidden" name="_next" value="https://teusite.com/obrigado" /> */}
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="space-y-2">
             <label className="block text-sm">Name</label>
@@ -79,7 +83,7 @@ export default function ContactForm() {
 
         <button
           type="submit"
-          className=" p-2 border border-muted-foreground text-sm items-center  rounded-md text-white flex justify-evenly gap-2 transition"
+          className="p-2 border border-muted-foreground text-sm items-center rounded-md text-white flex justify-evenly gap-2 transition"
         >
           <Send size={20} />
           <span>Send Message</span>
