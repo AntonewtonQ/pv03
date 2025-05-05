@@ -60,13 +60,13 @@ const AboutDesc = () => {
                   <span>{t("curiosity.city.title")}</span>
                 </p>
                 <p className="text-muted-foreground text-sm">
-                  {t("curiosity.city.title")}
+                  {t("curiosity.city.description")}
                 </p>
               </div>
               <div className="space-y-2">
                 <p className="flex flex-1 gap-2 text-sm">
                   <Film className="" size={20} />
-                  <span>{t("curiosity.interests.description")}</span>
+                  <span>{t("curiosity.interests.title")}</span>
                 </p>
                 <p className="text-muted-foreground text-sm">
                   {t("curiosity.interests.description")}
