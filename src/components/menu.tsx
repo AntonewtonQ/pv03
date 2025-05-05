@@ -1,29 +1,50 @@
+"use client";
 import React from "react";
 import { Button } from "./ui/button";
-import Link from "next/link";
+
 import {
   ArrowRight,
   Building2,
   Facebook,
   Github,
   Instagram,
+  Languages,
   Linkedin,
+  Moon,
 } from "lucide-react";
+import { useTranslations, useLocale } from "next-intl";
+import { Link, usePathname, useRouter } from "@/i18n/navigation";
 
 const Menu = () => {
+  const t = useTranslations("Menu");
+
+  const locale = useLocale();
+  const pathname = usePathname();
+  const router = useRouter();
+
+  const nextLocale = locale === "en" ? "pt" : "en";
   return (
     <div className="mx-auto px-6 py-8 flex flex-col gap-4">
       <div className="flex items-center justify-between rounded-lg">
         <p className="text-muted-foreground flex gap-2 text-sm">
           <Building2 size={16} />
-          <span> Luanda, Angola</span>
+          <span>{t("address")}</span>
+        </p>
+        <p className="text-muted-foreground flex gap-2 text-sm">
+          <Button
+            onClick={() => router.push(pathname, { locale: nextLocale })}
+            className="group bg-transparent flex items-center gap-1"
+          >
+            <span className="text-muted-foreground text-sm uppercase">
+              {nextLocale}
+            </span>
+            <Languages size={16} />
+          </Button>
         </p>
       </div>
       <header className="flex flex-col gap-2">
         <h1 className="text-white text-xl font-bold">antonewtonquima</h1>
-        <p className="text-muted-foreground text-sm capitalize">
-          Front-end Developer / student
-        </p>
+        <p className="text-muted-foreground text-sm capitalize">{t("role")}</p>
       </header>
       <div className="flex flex-col">
         <h2 className="mb-6 font-medium text-muted-foreground uppercase">
@@ -32,25 +53,25 @@ const Menu = () => {
         <ul className="flex flex-col items-start gap-2">
           <Link className="w-full" href="/about">
             <Button className="w-full text-muted-foreground flex text-start bg-black justify-between ">
-              About
+              {t("aboutlink")}
               <ArrowRight className="text-white" />
             </Button>
           </Link>
           <Link className="w-full" href="/projects">
             <Button className="w-full text-muted-foreground flex text-start bg-black justify-between">
-              Projects
+              {t("projectslink")}
               <ArrowRight className="text-white" />
             </Button>
           </Link>
           <Link className="w-full" href="/shop">
             <Button className="w-full text-muted-foreground flex text-start bg-black justify-between">
-              Shop
+              {t("shoplink")}
               <ArrowRight className="text-white" />
             </Button>
           </Link>
           <Link className="w-full" href="/contact">
             <Button className="w-full text-muted-foreground flex text-start bg-black justify-between">
-              Contact
+              {t("contactlink")}
               <ArrowRight className="text-white" />
             </Button>
           </Link>
@@ -58,7 +79,7 @@ const Menu = () => {
       </div>
       <div className="flex flex-col gap-2">
         <h2 className="mb-6 font-medium text-muted-foreground uppercase">
-          Anothers Links
+          {t("social")}
         </h2>
         <div className="grid grid-cols-1 gap-2 px-4 lg:grid-cols-2 ">
           <Link

@@ -1,0 +1,48 @@
+{
+    "Menu":{
+        "address":"Luanda, Angola",
+        "role":"Desenvolvedor / Estudante",
+        "aboutlink":"Sobre",
+        "projectslink":"Projectos",
+        "contactlink":"Contacto",
+        "shoplink":"Loja",
+        "social":"Outros links",
+        "back":"Voltar"
+    },
+    "About":{
+        "title":"Sobre mim",
+        "subtitle":"Conheça Antonewton, um desenvolvedor habilidoso.",
+        "introduction":{
+            "title":"Introdução",
+            "subtitle":"Desenvolvedor de Software apaixonado por tecnologia, startups e projectos pessoais",
+            "description":"Antonewton Quima é um apaixonado desenvolvedor de software e estudante de engenharia informática no ISPTEC, bem como estudante na Escola 42 Luanda, dedicado a construir soluções inovadoras que fazem a diferença. Com experiência em desenvolvimento frontend, ele se especializa em Next.js, Tailwind CSS, TypeScript e Shadcn, criando aplicações web modernas e amigáveis.",
+            "description2":"Antonewton está comprometido com o aprendizado contínuo, colaboração e entrega de experiências digitais de alta qualidade."
+        },
+        "curiosity":{
+            "music":{
+                "title":"Música",
+                "description":"lofi"
+            },
+            "city":{
+                "title":"Cidade",
+                "description":"Luanda"
+            },
+            "interests":{
+                "title":"Interesses",
+                "description":"Startups"
+            },
+            "ministry":{
+                "title":"Ministério",
+                "description":"Desbravadores"
+            },
+            "food":{
+                "title":"Comida",
+                "description":"Arroz Doce"
+            },
+            "System":{
+                "title":"Sistema",
+                "description":"Linux-Ubuntu"
+            }
+        }
+    }
+}

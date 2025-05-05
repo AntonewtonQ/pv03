@@ -1,0 +1,48 @@
+{
+    "Menu":{
+        "address":"Luanda, Angola",
+        "role":"Software Developer / Student",
+        "aboutlink":"About",
+        "projectslink":"Projects",
+        "contactlink":"Contact",
+        "shoplink":"Shop",
+        "social":"Another links",
+        "back":"Back"
+    },
+    "About":{
+        "title":"About me",
+        "subtitle":"Meet Antonewton, a skilled Front-end Developer.",
+        "introduction":{
+            "title":"Introduction",
+            "subtitle":"Software Developer passionate about tech, startups, and personal projects",
+            "description":"Antonewton Quima is a passionate software developer and computer engineering student at ISPTEC, as well as a student at 42 Luanda School, dedicated to building innovative solutions that make an impact. With expertise in frontend development, he specializes in Next.js, Tailwind CSS, TypeScript, and Shadcn, crafting modern and user-friendly web applications.",
+            "description2":"Antonewton is committed to continuous learning, collaboration, and delivering high-quality digital experiences."
+        },
+        "curiosity":{
+            "music":{
+                "title":"Music",
+                "description":"lofi"
+            },
+            "city":{
+                "title":"City",
+                "description":"Luanda"
+            },
+            "interests":{
+                "title":"Interests",
+                "description":"Startups"
+            },
+            "ministry":{
+                "title":"Ministry",
+                "description":"Pathfinder"
+            },
+            "food":{
+                "title":"Food",
+                "description":"Arroz Doce"
+            },
+            "system":{
+                "title":"System",
+                "description":"Linux-Ubuntu"
+            }
+        }
+    }
+}

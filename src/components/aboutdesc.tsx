@@ -12,16 +12,16 @@ import AboutAcordion from "./aboutacordion";
 import { Separator } from "./ui/separator";
 import Carrier from "./career";
 import Career from "./career";
+import { useTranslations } from "next-intl";
 
 const AboutDesc = () => {
+  const t = useTranslations("About");
   return (
     <div className="text-white px-6 md:px-14 py-6">
       <div className="mx-auto px-10 max-w-6xl flex flex-col gap-6">
         <div className="space-y-4 mb-2">
-          <h1 className="font-bold text-4xl">About</h1>
-          <p className="text-muted-foreground">
-            Meet Antonewton, a skilled Front-end Developer.
-          </p>
+          <h1 className="font-bold text-4xl">{t("title")}</h1>
+          <p className="text-muted-foreground">{t("subtitle")}</p>
         </div>
         <div className="border border-muted-foreground rounded-xl p-4 lg:flex gap-2">
           <div className="lg:w-1/2">
@@ -29,22 +29,17 @@ const AboutDesc = () => {
           </div>
           <div className="lg:w-full p-4 ">
             <div className="space-y-3 py-6">
-              <p className="text-muted-foreground uppercase">Introduction</p>
+              <p className="text-muted-foreground uppercase">
+                {t("introduction.title")}
+              </p>
               <h2 className="text-white font-bold lg:text-2xl text-xl">
-                Software Developer passionate about tech, startups, and personal
-                projects
+                {t("introduction.subtitle")}
               </h2>
               <p className="text-white lg:text-lg text-md">
-                Antonewton Quima is a passionate software developer and computer
-                engineering student at ISPTEC, as well as a student at 42
-                School, dedicated to building innovative solutions that make an
-                impact. With expertise in frontend development, he specializes
-                in Next.js, Tailwind CSS, TypeScript, and Shadcn, crafting
-                modern and user-friendly web applications.
+                {t("introduction.description")}
               </p>
               <p className="text-white lg:text-lg text-md">
-                Antonewton is committed to continuous learning, collaboration,
-                and delivering high-quality digital experiences.
+                {t("introduction.description2")}
               </p>
             </div>
             <Separator className="my-4 text-muted-foreground" />
@@ -52,50 +47,58 @@ const AboutDesc = () => {
               <div className="space-y-2">
                 <p className="flex flex-1 gap-2 text-sm">
                   <Music className="" size={20} />
-                  <span>Music</span>
+                  <span>{t("curiosity.music.title")}</span>
                 </p>
-                <p className="text-muted-foreground text-sm">Lofi</p>
+                <p className="text-muted-foreground text-sm">
+                  {t("curiosity.music.description")}
+                </p>
               </div>
 
               <div className="space-y-2">
                 <p className="flex flex-1 gap-2 text-sm">
                   <MapPin className="" size={20} />
-                  <span>City</span>
+                  <span>{t("curiosity.city.title")}</span>
                 </p>
                 <p className="text-muted-foreground text-sm">
-                  Talatona, Luanda
+                  {t("curiosity.city.title")}
                 </p>
               </div>
               <div className="space-y-2">
                 <p className="flex flex-1 gap-2 text-sm">
                   <Film className="" size={20} />
-                  <span>Interests</span>
+                  <span>{t("curiosity.interests.title")}</span>
                 </p>
                 <p className="text-muted-foreground text-sm">
-                  Entrepreneurship
+                  {t("curiosity.interests.description")}
                 </p>
               </div>
               <div className="space-y-2">
                 <p className="flex flex-1 gap-2 text-sm">
                   <FlameKindling className="" size={20} />
-                  <span>Ministry</span>
+                  <span>{t("curiosity.ministry.title")}</span>
                 </p>
-                <p className="text-muted-foreground text-sm">Pathfinder</p>
+                <p className="text-muted-foreground text-sm">
+                  {t("curiosity.ministry.description")}
+                </p>
               </div>
               <div className="space-y-2">
                 <p className="flex flex-1 gap-2 text-sm">
                   <Pizza className="" size={20} />
-                  <span>Food</span>
+                  <span>{t("curiosity.food.title")}</span>
                 </p>
-                <p className="text-muted-foreground text-sm">Arroz Doce</p>
+                <p className="text-muted-foreground text-sm">
+                  {t("curiosity.food.description")}
+                </p>
               </div>
 
               <div className="space-y-2">
                 <p className="flex flex-1 gap-2 text-sm">
                   <Laptop className="" size={20} />
-                  <span>System</span>
+                  <span>{t("curiosity.system.title")}</span>
                 </p>
-                <p className="text-muted-foreground text-sm">Linux-Ubuntu</p>
+                <p className="text-muted-foreground text-sm">
+                  {t("curiosity.system.description")}
+                </p>
               </div>
             </div>
           </div>
