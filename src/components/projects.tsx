@@ -5,6 +5,7 @@ import { getDocs, collection } from "firebase/firestore";
 import { db } from "@/lib/firebase";
 import ProjectCard from "./projectcard";
 import { Button } from "./ui/button";
+import { useTranslations } from "next-intl";
 
 interface Project {
   name: string;
@@ -40,6 +41,8 @@ export default function ProjectsPage() {
     ? projects.filter((project) => project.year === selectedYear)
     : projects;
 
+  const t = useTranslations("Projects");
+
   return (
     <main className="min-h-screen bg-black text-white px-6 md:px-16 py-6 mx-auto justify-center">
       <div className="mx-auto px-10 max-w-6xl flex flex-col gap-6 mb-6">
@@ -61,7 +64,7 @@ export default function ProjectsPage() {
               onClick={() => setSelectedYear(null)}
               className="bg-white text-black rounded font-bold"
             >
-              All
+              {t("all")}
             </Button>
           )}
         </div>
@@ -75,7 +78,7 @@ export default function ProjectsPage() {
           ))
         ) : (
           <div className="col-span-full text-center text-gray-400">
-            No project found.
+            {t("noprojects")}
           </div>
         )}
       </div>

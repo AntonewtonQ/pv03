@@ -44,5 +44,31 @@
                 "description":"Linux-Ubuntu"
             }
         }
+    },
+    "Projects":{
+        "title":"Projectos",
+        "subtitle":"Explore o meu portfólio de projectos de 2023 a 2025.",
+        "all":"Todos",
+        "noprojects":"Projectos Não Encontrados"
+    },
+    "Shop":{
+        "title":"Colecção de t-shirts Tech",
+        "subtitle":"Explore a nossa colecção de t-shirts com temas de programação e tecnologia. Encontre a camiseta perfeita para expressar sua paixão por codificação e tecnologia."
+    },
+    "Contact":{
+        "title":"Entre em contacto comigo",
+        "subtitle":"Tem uma pergunta ou quer trabalhar juntos? Sinta-se à vontade para entrar em contacto."
+    },
+    "Version":{
+        "title":"Registo de Alterações",
+        "description":"Acompanhe a evolução do meu portfólio com atualizações e melhorias detalhadas.",
+        "version":{
+            "three":{
+                "title":"Version 3.0",
+                "date":"14 de Jan de 2025",
+                "description":"Uma atualização com novo design e desempenho aprimorado. O portfólio agora apresenta uma aparência mais moderna, tempos de carregamento mais rápidos e uma experiência do usuário aprimorada. Novos projetos e conquistas foram adicionados para exibir meus trabalhos mais recentes."
+            }            
+        }
+
     }
 }

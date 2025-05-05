@@ -2,8 +2,10 @@ import React from "react";
 import { Accordion, AccordionItem, AccordionTrigger } from "./ui/accordion";
 import { AccordionContent } from "@radix-ui/react-accordion";
 import { Separator } from "./ui/separator";
+import { useTranslations } from "next-intl";
 
 const ChangeLogAccordion = () => {
+  const t = useTranslations("Version");
   return (
     <div>
       <Accordion
@@ -15,10 +17,10 @@ const ChangeLogAccordion = () => {
           <AccordionTrigger className="no-underline bg-black flex justify-between hover:bg-none ">
             <p className="flex flex-col">
               <span className="text-white text-xl lg:text-2xl font-bold">
-                Version 3.0
+                {t("version.three.title")}
               </span>
               <span className="text-base text-muted-foreground">
-                14 de Jan de 2025
+                {t("version.three.date")}
               </span>
             </p>
           </AccordionTrigger>
@@ -27,8 +29,7 @@ const ChangeLogAccordion = () => {
             <Separator className="my-4 " />
             <div className="">
               <p className="text-white text-sm lg:text-base">
-                Created a new portfolio inpired by birobiro, integrating the
-                latest technologies (Next.js, Tailwind CSS, shadcn/ui, etc.).
+                {t("version.three.description")}
               </p>
             </div>
           </AccordionContent>

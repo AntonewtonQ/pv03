@@ -44,5 +44,31 @@
                 "description":"Linux-Ubuntu"
             }
         }
+    },
+    "Projects":{
+        "title":"Projects",
+        "subtitle":"Explore my portfolio of projects spanning from 2023 to 2025.",
+        "all":"All",
+        "noprojects":"Projects Not Found"
+    },
+    "Shop":{
+        "title":"Tech Shirts Collection",
+        "subtitle":"Explore our collection of programming and tech-themed shirts. Find the perfect shirt to express your passion for coding and technology."
+    },
+    "Contact":{
+        "title":"Get in touch with me",
+        "subtitle":"Have a question or want to work together? Feel free to reach out."
+    },
+    "Version":{
+        "title":"Changelog",
+        "description":"Track the evolution of my portfolio with detailed updates and improvements.",
+        "version":{
+            "three":{
+                "title":"Version 3.0",
+                "date":"Jan 14th, 2025",
+                "description":"A major update with a new design and improved performance. The portfolio now features a more modern look, faster loading times, and enhanced user experience. New projects and achievements have been added to showcase my latest work."
+            }            
+        }
+
     }
 }
