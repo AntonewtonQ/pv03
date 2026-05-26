@@ -1,19 +1,19 @@
 import { useTranslations } from "next-intl";
-import React from "react";
+import SectionHeading from "./section-heading";
 
 const ShopList = () => {
   const t = useTranslations("Shop");
+
   return (
-    <div className="text-white px-6 md:px-14 py-6">
-      <div className="mx-auto px-10 max-w-6xl flex flex-col gap-6">
-        <div className="space-y-4 mb-2">
-          <h1 className="font-bold text-4xl">{t("title")}</h1>
-          <p className="text-muted-foreground max-w-4xl lg:text-md">
-            {t("subtitle")}
-          </p>
-        </div>
+    <section className="px-6 pt-10 md:px-10 md:pt-14">
+      <div className="mx-auto max-w-6xl">
+        <SectionHeading
+          eyebrow={t("eyebrow")}
+          title={t("title")}
+          subtitle={t("subtitle")}
+        />
       </div>
-    </div>
+    </section>
   );
 };
 

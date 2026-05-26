@@ -1,8 +1,11 @@
 "use client";
+
 import { Send } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { useState } from "react";
 
 export default function ContactForm() {
+  const t = useTranslations("Contact.form");
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -11,84 +14,95 @@ export default function ContactForm() {
   });
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+    setForm({ ...form, [event.target.name]: event.target.value });
   };
 
   return (
-    <div className="max-w-6xl mx-auto p-6 px-10 bg-black text-white rounded-lg shadow-lg">
-      {/* Agora o form tem action e method */}
-      <form
-        action="https://formsubmit.co/antonewtonquima@gmail.com" // <-- Troca aqui pelo teu e-mail real
-        method="POST"
-        className="space-y-4"
-      >
-        {/* Para não receber spam */}
-        <input type="hidden" name="_captcha" value="false" />
-        {/* Redireciona para uma página de obrigado (opcional) */}
-        {/* <input type="hidden" name="_next" value="https://teusite.com/obrigado" /> */}
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="space-y-2">
-            <label className="block text-sm">Name</label>
-            <input
-              type="text"
-              name="name"
-              value={form.name}
-              onChange={handleChange}
-              placeholder="Your name"
-              className="w-full p-2 mt-1 bg-black border text-sm border-muted-foreground rounded-md focus:outline-none focus:ring-2 focus:ring-gray-600"
-              required
-            />
-          </div>
-          <div className="space-y-2">
-            <label className="block text-sm">Email</label>
-            <input
-              type="email"
-              name="email"
-              value={form.email}
-              onChange={handleChange}
-              placeholder="your@email.com"
-              className="w-full p-2 mt-1 bg-black border text-sm border-muted-foreground rounded-md  focus:outline-none focus:ring-2 focus:ring-gray-600"
-              required
-            />
-          </div>
-        </div>
-
-        <div className="space-y-2">
-          <label className="block text-sm">Subject</label>
-          <input
-            type="text"
-            name="subject"
-            value={form.subject}
-            onChange={handleChange}
-            placeholder="What's this about?"
-            className="w-full p-2 mt-1 bg-black border border-muted-foreground text-sm  rounded-md focus:outline-none focus:ring-2 focus:ring-gray-600"
-            required
-          />
-        </div>
-
-        <div className="space-y-2">
-          <label className="block text-sm">Message</label>
-          <textarea
-            name="message"
-            value={form.message}
-            onChange={handleChange}
-            placeholder="Your message..."
-            className="w-full p-2 mt-1 bg-black text-sm border border-muted-foreground rounded-md  h-32 focus:outline-none focus:ring-2 focus:ring-gray-600"
-            required
-          />
-        </div>
-
-        <button
-          type="submit"
-          className="p-2 border border-muted-foreground text-sm items-center rounded-md text-white flex justify-evenly gap-2 transition"
+    <section className="px-6 pb-12 pt-2 md:px-10 md:pb-16">
+      <div className="mx-auto max-w-6xl">
+        <form
+          action="https://formsubmit.co/antonewtonquima@gmail.com"
+          method="POST"
+          className="space-y-5 border-y border-white/10 py-8"
         >
-          <Send size={20} />
-          <span>Send Message</span>
-        </button>
-      </form>
-    </div>
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_subject" value="Portfolio contact" />
+
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+            <div className="space-y-2">
+              <label className="block text-sm text-zinc-300" htmlFor="name">
+                {t("name")}
+              </label>
+              <input
+                id="name"
+                type="text"
+                name="name"
+                value={form.name}
+                onChange={handleChange}
+                placeholder={t("namePlaceholder")}
+                className="h-11 w-full rounded-md border border-white/10 bg-white/[0.03] px-3 text-sm text-white outline-none transition placeholder:text-zinc-600 focus:border-emerald-300/40 focus:bg-white/[0.05]"
+                required
+              />
+            </div>
+            <div className="space-y-2">
+              <label className="block text-sm text-zinc-300" htmlFor="email">
+                {t("email")}
+              </label>
+              <input
+                id="email"
+                type="email"
+                name="email"
+                value={form.email}
+                onChange={handleChange}
+                placeholder={t("emailPlaceholder")}
+                className="h-11 w-full rounded-md border border-white/10 bg-white/[0.03] px-3 text-sm text-white outline-none transition placeholder:text-zinc-600 focus:border-emerald-300/40 focus:bg-white/[0.05]"
+                required
+              />
+            </div>
+          </div>
+
+          <div className="space-y-2">
+            <label className="block text-sm text-zinc-300" htmlFor="subject">
+              {t("subject")}
+            </label>
+            <input
+              id="subject"
+              type="text"
+              name="subject"
+              value={form.subject}
+              onChange={handleChange}
+              placeholder={t("subjectPlaceholder")}
+              className="h-11 w-full rounded-md border border-white/10 bg-white/[0.03] px-3 text-sm text-white outline-none transition placeholder:text-zinc-600 focus:border-emerald-300/40 focus:bg-white/[0.05]"
+              required
+            />
+          </div>
+
+          <div className="space-y-2">
+            <label className="block text-sm text-zinc-300" htmlFor="message">
+              {t("message")}
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              value={form.message}
+              onChange={handleChange}
+              placeholder={t("messagePlaceholder")}
+              className="min-h-40 w-full resize-y rounded-md border border-white/10 bg-white/[0.03] px-3 py-3 text-sm text-white outline-none transition placeholder:text-zinc-600 focus:border-emerald-300/40 focus:bg-white/[0.05]"
+              required
+            />
+          </div>
+
+          <button
+            type="submit"
+            className="inline-flex h-11 items-center justify-between gap-3 rounded-md bg-white px-4 text-sm font-bold text-black transition hover:bg-zinc-200"
+          >
+            <Send size={18} />
+            {t("submit")}
+          </button>
+        </form>
+      </div>
+    </section>
   );
 }

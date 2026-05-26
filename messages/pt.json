@@ -1,74 +1,178 @@
 {
-    "Menu":{
-        "address":"Luanda, Angola",
-        "role":"Desenvolvedor / Estudante",
-        "aboutlink":"Sobre",
-        "projectslink":"Projectos",
-        "contactlink":"Contacto",
-        "shoplink":"Loja",
-        "social":"Outros links",
-        "back":"Voltar"
+  "Menu": {
+    "address": "Luanda, Angola",
+    "role": "Odoo Developer / Estudante de Engenharia Informática",
+    "homelink": "Início",
+    "aboutlink": "Sobre",
+    "projectslink": "Projectos",
+    "contactlink": "Contacto",
+    "shoplink": "Loja",
+    "social": "Outros links",
+    "back": "Voltar"
+  },
+  "Home": {
+    "eyebrow": "Portfolio v4.0",
+    "availability": "Aberto a projectos e colaboração",
+    "description": "Desenvolvo soluções web e ERP com foco em produtos digitais reais, automação de processos e impacto social. Continuo a essência minimalista do portfolio, agora com uma estrutura mais madura, visual e directa.",
+    "primaryAction": "Ver projectos",
+    "secondaryAction": "Contacto",
+    "base": "Baseado em Luanda, em fase final de Engenharia Informática no ISPTEC e construindo produtos digitais com Python, Odoo e tecnologias web.",
+    "stats": {
+      "projects": "projectos e experiências em evolução",
+      "schools": "áreas de actuação: ERP, web e automação",
+      "version": "nova fase do portfolio"
     },
-    "About":{
-        "title":"Sobre mim",
-        "subtitle":"Conheça Antonewton, um desenvolvedor habilidoso.",
-        "introduction":{
-            "title":"Introdução",
-            "subtitle":"Desenvolvedor de Software apaixonado por tecnologia, startups e projectos pessoais",
-            "description":"Antonewton Quima é um apaixonado desenvolvedor de software e estudante de engenharia informática no ISPTEC, bem como estudante na Escola 42 Luanda, dedicado a construir soluções inovadoras que fazem a diferença. Com experiência em desenvolvimento frontend, ele se especializa em Next.js, Tailwind CSS, TypeScript e Shadcn, criando aplicações web modernas e amigáveis.",
-            "description2":"Antonewton está comprometido com o aprendizado contínuo, colaboração e entrega de experiências digitais de alta qualidade."
-        },
-        "curiosity":{
-            "music":{
-                "title":"Música",
-                "description":"lofi"
-            },
-            "city":{
-                "title":"Cidade",
-                "description":"Luanda"
-            },
-            "interests":{
-                "title":"Interesses",
-                "description":"Startups"
-            },
-            "ministry":{
-                "title":"Ministério",
-                "description":"Desbravadores"
-            },
-            "food":{
-                "title":"Comida",
-                "description":"Arroz Doce"
-            },
-            "system":{
-                "title":"Sistema",
-                "description":"Linux-Ubuntu"
-            }
-        }
-    },
-    "Projects":{
-        "title":"Projectos",
-        "subtitle":"Explore o meu portfólio de projectos de 2023 a 2025.",
-        "all":"Todos",
-        "noprojects":"Projectos Não Encontrados"
-    },
-    "Shop":{
-        "title":"Colecção de t-shirts Tech",
-        "subtitle":"Explore a nossa colecção de t-shirts com temas de programação e tecnologia. Encontre a camiseta perfeita para expressar sua paixão por codificação e tecnologia."
-    },
-    "Contact":{
-        "title":"Entre em contacto comigo",
-        "subtitle":"Tem uma pergunta ou quer trabalhar juntos? Sinta-se à vontade para entrar em contacto."
-    },
-    "Version":{
-        "title":"Registo de Alterações",
-        "description":"Acompanhe a evolução do meu portfólio com atualizações e melhorias detalhadas.",
-        "version":{
-            "three":{
-                "title":"Version 3.0",
-                "date":"14 de Jan de 2025",
-                "description":"Uma atualização com novo design e desempenho aprimorado. O portfólio agora apresenta uma aparência mais moderna, tempos de carregamento mais rápidos e uma experiência do usuário aprimorada. Novos projetos e conquistas foram adicionados para exibir meus trabalhos mais recentes."
-            }            
-        }
-
+    "focus": {
+      "frontend": "Front-end",
+      "products": "Produtos digitais",
+      "learning": "Aprendizado contínuo"
     }
+  },
+  "About": {
+    "eyebrow": "Perfil",
+    "title": "Sobre mim",
+    "subtitle": "Conheça Antonewton, estudante finalista de Engenharia Informática e desenvolvedor focado em software, ERP, automação e produtos digitais com impacto.",
+    "introduction": {
+      "title": "Introdução",
+      "subtitle": "Odoo Developer e estudante finalista de Engenharia Informática apaixonado por tecnologia, inovação e transformação social",
+      "description": "Antonewton Quima é estudante finalista de Engenharia Informática no ISPTEC, com experiência sólida em desenvolvimento de software e participação activa em projectos de impacto social nas áreas de educação, empregabilidade e mobilidade urbana.",
+      "description2": "Actualmente trabalha com desenvolvimento e customização de soluções Odoo usando Python, XML, QWeb, JavaScript, PostgreSQL e REST APIs. Também constrói produtos digitais com Next.js, TypeScript e Tailwind CSS, unindo tecnologia, estratégia e experiência do usuário."
+    },
+    "curiosity": {
+      "music": {
+        "title": "Música",
+        "description": "lofi"
+      },
+      "city": {
+        "title": "Cidade",
+        "description": "Luanda"
+      },
+      "interests": {
+        "title": "Interesses",
+        "description": "Startups"
+      },
+      "ministry": {
+        "title": "Ministério",
+        "description": "Desbravadores"
+      },
+      "food": {
+        "title": "Comida",
+        "description": "Arroz Doce"
+      },
+      "system": {
+        "title": "Sistema",
+        "description": "Linux-Ubuntu"
+      }
+    },
+    "toolkit": {
+      "title": "Stack de trabalho",
+      "description": "Uma base prática que junta ERP, automação, integrações e interfaces web: Odoo, Python, XML/QWeb, PostgreSQL, REST APIs, Next.js, React, TypeScript, Tailwind CSS, monitoramento e infraestrutura."
+    },
+    "career": {
+      "eyebrow": "Trajectória",
+      "title": "Carreira e formação",
+      "experience": {
+        "espaes": {
+          "title": "Odoo Developer (Python)",
+          "company": "ESPAES Group",
+          "date": "Abril de 2026 - Presente",
+          "description": "Desenvolve e customiza módulos Odoo com Python, XML, QWeb e JavaScript; presta suporte técnico e funcional a utilizadores; transforma requisitos de negócio em workflows Odoo; apoia Helpdesk, fluxos de aprovação, relatórios, automação de processos internos e integrações REST API."
+        },
+        "anda": {
+          "title": "Odoo Developer (Python)",
+          "company": "Anda Africa",
+          "date": "Setembro de 2025 - Abril de 2026",
+          "description": "Desenvolveu módulos Odoo personalizados com Python, XML, QWeb e JavaScript, prestou suporte funcional a utilizadores, implementou integrações REST API com plataformas externas e colaborou na migração de Odoo v15 para v18."
+        },
+        "compllexus": {
+          "title": "Odoo Developer (Python)",
+          "company": "Compllexus",
+          "date": "Julho de 2025 - Setembro de 2025",
+          "description": "Customizou módulos Odoo para necessidades específicas de clientes, criando funcionalidades, adaptando views, configurando permissões de acesso e apoiando automações com Python, XML e PostgreSQL nas versões v15, v16, v17 e v18."
+        },
+        "rising": {
+          "title": "Frontend Developer",
+          "company": "Rising Africa",
+          "date": "2024 - 2025",
+          "description": "Desenvolveu e manteve o frontend da plataforma com Next.js, TypeScript, Tailwind CSS e Shadcn UI, criando interfaces responsivas, acessíveis e optimizadas em colaboração com design, produto e backend."
+        },
+        "illustra": {
+          "title": "Founder",
+          "company": "Illustra - Development Studio",
+          "date": "2024 - Presente",
+          "description": "Fundou um estúdio de desenvolvimento para transformar ideias em produtos digitais reais, liderando ideação, design e desenvolvimento de soluções web com Next.js, TypeScript e Tailwind CSS."
+        }
+      },
+      "education": {
+        "title": "Licenciatura em Engenharia Informática",
+        "company": "Instituto Superior Politécnico de Tecnologias e Ciências (ISPTEC)",
+        "date": "2021 - Presente",
+        "description": "Estudante finalista com destaques em projecto final, redes de computadores, programação e aplicações web. Participa em eventos universitários, grupos de estudo e é bolseiro do INAGBE."
+      }
+    }
+  },
+  "Projects": {
+    "eyebrow": "Trabalho",
+    "title": "Projectos",
+    "subtitle": "Explore o meu portfólio de projectos de 2023 a 2026, incluindo experiências web, interfaces e produtos em evolução.",
+    "filterLabel": "Filtrar por ano",
+    "all": "Todos",
+    "loading": "A carregar projectos...",
+    "error": "Não foi possível carregar os projectos agora.",
+    "noprojects": "Projectos não encontrados.",
+    "viewProject": "Ver projecto"
+  },
+  "Shop": {
+    "eyebrow": "Loja",
+    "title": "Colecção de t-shirts Tech",
+    "subtitle": "Explore uma colecção de t-shirts com temas de programação e tecnologia, criada para expressar paixão por código, cultura tech e criatividade.",
+    "searchPlaceholder": "Pesquisar t-shirts...",
+    "sortAsc": "A-Z",
+    "sortDesc": "Z-A",
+    "loading": "A carregar itens...",
+    "error": "Não foi possível carregar a loja agora.",
+    "noitems": "Nenhum item encontrado.",
+    "buy": "Comprar",
+    "whatsappMessage": "Olá, gostaria de comprar o item {name} por {price}."
+  },
+  "Contact": {
+    "eyebrow": "Contacto",
+    "title": "Entre em contacto comigo",
+    "subtitle": "Tem uma pergunta, ideia ou quer trabalhar juntos? Envie uma mensagem pelo formulário ou escolha um dos canais directos.",
+    "channels": {
+      "email": "Email",
+      "whatsapp": "WhatsApp"
+    },
+    "form": {
+      "name": "Nome",
+      "namePlaceholder": "O seu nome",
+      "email": "Email",
+      "emailPlaceholder": "seu@email.com",
+      "subject": "Assunto",
+      "subjectPlaceholder": "Sobre o que quer falar?",
+      "message": "Mensagem",
+      "messagePlaceholder": "Escreva a sua mensagem...",
+      "submit": "Enviar mensagem"
+    }
+  },
+  "Footer": {
+    "copyright": "Copyright · 2026 - antonewton.dev"
+  },
+  "Version": {
+    "eyebrow": "Versões",
+    "title": "Registo de Alterações",
+    "description": "Acompanhe a evolução do meu portfólio com actualizações, decisões de design e melhorias estruturais.",
+    "version": {
+      "four": {
+        "title": "Version 4.0",
+        "date": "26 de Maio de 2026",
+        "description": "Reestruturação completa do portfolio: nova home, navegação responsiva, páginas internas com uma base visual comum, estados para Firebase, contacto mais claro, loja refinada e changelog actualizado mantendo a estética preta, mono e minimalista."
+      },
+      "three": {
+        "title": "Version 3.0",
+        "date": "14 de Jan de 2025",
+        "description": "Uma actualização com novo design e desempenho aprimorado. O portfólio passou a ter uma aparência mais moderna, tempos de carregamento mais rápidos e uma experiência de usuário aprimorada."
+      }
+    }
+  }
 }

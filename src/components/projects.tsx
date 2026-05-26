@@ -1,11 +1,12 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { getDocs, collection } from "firebase/firestore";
+import { useEffect, useMemo, useState } from "react";
+import { collection, getDocs } from "firebase/firestore";
+import { Filter } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { db } from "@/lib/firebase";
 import ProjectCard from "./projectcard";
 import { Button } from "./ui/button";
-import { useTranslations } from "next-intl";
 
 interface Project {
   name: string;
@@ -18,70 +19,109 @@ interface Project {
 export default function ProjectsPage() {
   const [projects, setProjects] = useState<Project[]>([]);
   const [selectedYear, setSelectedYear] = useState<string | null>(null);
+  const [status, setStatus] = useState<"loading" | "ready" | "error">(
+    "loading"
+  );
+  const t = useTranslations("Projects");
 
   useEffect(() => {
     const fetchProjects = async () => {
-      const querySnapshot = await getDocs(collection(db, "projects"));
-      const projectList = querySnapshot.docs.map(
-        (doc) => doc.data() as Project
-      );
-      setProjects(projectList);
+      try {
+        const querySnapshot = await getDocs(collection(db, "projects"));
+        const projectList = querySnapshot.docs.map(
+          (doc) => doc.data() as Project
+        );
+        setProjects(projectList);
+        setStatus("ready");
+      } catch {
+        setStatus("error");
+      }
     };
 
     fetchProjects();
   }, []);
 
-  // Pegando anos únicos
-  const years = Array.from(
-    new Set(projects.map((project) => project.year))
-  ).sort();
+  const years = useMemo(() => {
+    return Array.from(new Set(projects.map((project) => project.year))).sort(
+      (a, b) => b.localeCompare(a)
+    );
+  }, [projects]);
 
-  // Filtrar projetos baseado no ano selecionado
   const filteredProjects = selectedYear
     ? projects.filter((project) => project.year === selectedYear)
     : projects;
 
-  const t = useTranslations("Projects");
-
   return (
-    <main className="min-h-screen bg-black text-white px-6 md:px-16 py-6 mx-auto justify-center">
-      <div className="mx-auto px-10 max-w-6xl flex flex-col gap-6 mb-6">
-        {/* Área de controles: lista dos anos */}
-        <div className="flex flex-wrap gap-2">
-          {years.map((year) => (
+    <section className="px-6 py-8 md:px-10 md:py-10">
+      <div className="mx-auto max-w-6xl space-y-8">
+        <div className="flex flex-col gap-3 border-y border-white/10 py-5 md:flex-row md:items-center md:justify-between">
+          <p className="flex items-center gap-2 text-sm text-zinc-400">
+            <Filter size={16} className="text-emerald-300" />
+            {t("filterLabel")}
+          </p>
+          <div className="flex flex-wrap gap-2">
             <Button
-              key={year}
-              variant={selectedYear === year ? "default" : "outline"} // estiliza botão selecionado
-              onClick={() => setSelectedYear(year)}
-              className="bg-black border border-muted-foreground text-white rounded font-bold"
-            >
-              {year}
-            </Button>
-          ))}
-          {/* Botão para limpar filtro */}
-          {selectedYear && (
-            <Button
+              type="button"
+              variant="ghost"
+              size="sm"
               onClick={() => setSelectedYear(null)}
-              className="bg-white text-black rounded font-bold"
+              className={`h-9 border px-3 text-xs ${
+                selectedYear === null
+                  ? "border-emerald-300/40 bg-emerald-300/10 text-emerald-200"
+                  : "border-white/10 bg-white/[0.03] text-zinc-400 hover:bg-white/10 hover:text-white"
+              }`}
             >
               {t("all")}
             </Button>
-          )}
-        </div>
-      </div>
-
-      {/* Grid de projetos */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mx-auto px-10 max-w-6xl">
-        {filteredProjects.length > 0 ? (
-          filteredProjects.map((project, idx) => (
-            <ProjectCard key={idx} {...project} />
-          ))
-        ) : (
-          <div className="col-span-full text-center text-gray-400">
-            {t("noprojects")}
+            {years.map((year) => (
+              <Button
+                key={year}
+                type="button"
+                variant="ghost"
+                size="sm"
+                onClick={() => setSelectedYear(year)}
+                className={`h-9 border px-3 text-xs ${
+                  selectedYear === year
+                    ? "border-emerald-300/40 bg-emerald-300/10 text-emerald-200"
+                    : "border-white/10 bg-white/[0.03] text-zinc-400 hover:bg-white/10 hover:text-white"
+                }`}
+              >
+                {year}
+              </Button>
+            ))}
           </div>
-        )}
+        </div>
+
+        {status === "loading" ? (
+          <div className="rounded-md border border-white/10 bg-white/[0.03] p-8 text-center text-sm text-zinc-400">
+            {t("loading")}
+          </div>
+        ) : null}
+
+        {status === "error" ? (
+          <div className="rounded-md border border-amber-300/30 bg-amber-300/10 p-8 text-center text-sm text-amber-100">
+            {t("error")}
+          </div>
+        ) : null}
+
+        {status === "ready" ? (
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {filteredProjects.length > 0 ? (
+              filteredProjects.map((project) => (
+                <ProjectCard
+                  key={`${project.name}-${project.year}`}
+                  {...project}
+                  viewLabel={t("viewProject")}
+                />
+              ))
+            ) : (
+              <div className="col-span-full rounded-md border border-white/10 bg-white/[0.03] p-8 text-center text-sm text-zinc-400">
+                {t("noprojects")}
+              </div>
+            )}
+          </div>
+        ) : null}
       </div>
-    </main>
+    </section>
   );
 }

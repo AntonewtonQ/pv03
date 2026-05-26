@@ -1,57 +1,69 @@
 "use client";
-import React from "react";
-import { Button } from "./ui/button";
-import { ChevronLeft, PanelRight } from "lucide-react";
 
-import { usePathname } from "next/navigation";
+import { ChevronLeft } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { Link } from "@/i18n/navigation";
+import { Button } from "./ui/button";
+import LanguageSwitch from "./language-switch";
+import { Link, usePathname } from "@/i18n/navigation";
+import { navLinks } from "@/constants/navlinks";
 
 const NavBar = () => {
   const pathname = usePathname();
   const t = useTranslations("Menu");
 
-  const navLinks = [
-    { href: "/", label: "Home" },
-    { href: "/about", label: t("aboutlink") },
-    { href: "/projects", label: t("projectslink") },
-    { href: "/shop", label: t("shoplink") },
-    { href: "/contact", label: t("contactlink") },
-  ];
-
   return (
-    <div className="px-6 md:px-14 md:py-6">
-      <div className="mx-auto p-6 max-w-6xl flex items-center justify-between">
-        <div>
-          <Link className="w-full" href="/">
-            <Button className="w-full text-muted-foreground flex text-start bg-black justify-between hover:text-white hover:bg-black">
-              <ChevronLeft />
-              <span className="capitalize">{t("back")} </span>
-            </Button>
+    <header className="sticky top-0 z-30 border-b border-white/10 bg-black/85 backdrop-blur-xl">
+      <div className="mx-auto flex max-w-6xl flex-col gap-4 px-6 py-4 md:px-10">
+        <div className="flex items-center justify-between gap-4">
+          <Link
+            href="/"
+            className="flex min-h-10 items-center gap-3 text-sm font-bold text-white"
+          >
+            <span className="flex h-9 w-9 items-center justify-center rounded-md border border-white/10 bg-white/[0.04]">
+              aq
+            </span>
+            <span className="hidden sm:inline">antonewtonquima</span>
           </Link>
-        </div>
-        <div className="">
-          <Button className="lg:hidden text-muted-foreground bg-black hover:text-white hover:bg-black">
-            <PanelRight />
-          </Button>
-          <nav className="hidden overflow-hidden lg:flex">
-            {navLinks.map((link) => (
-              <Link className="w-full" href={link.href} key={link.label}>
-                <Button
-                  className={`w-full flex text-start bg-black justify-between hover:text-white hover:bg-black ${
-                    pathname == link.href
-                      ? "text-white"
-                      : "text-muted-foreground"
-                  }`}
-                >
-                  {link.label}
-                </Button>
+
+          <div className="flex items-center gap-2">
+            <Button
+              asChild
+              variant="ghost"
+              size="sm"
+              className="h-9 border border-white/10 bg-white/[0.03] px-3 text-xs text-zinc-300 hover:bg-white/10 hover:text-white"
+            >
+              <Link href="/">
+                <ChevronLeft />
+                {t("back")}
               </Link>
-            ))}
-          </nav>
+            </Button>
+            <LanguageSwitch />
+          </div>
         </div>
+
+        <nav className="flex gap-2 overflow-x-auto pb-1">
+          {navLinks.map((link) => {
+            const isActive = pathname === link.href;
+
+            return (
+              <Button
+                key={link.href}
+                asChild
+                variant="ghost"
+                size="sm"
+                className={`h-9 shrink-0 border px-3 text-xs ${
+                  isActive
+                    ? "border-emerald-300/40 bg-emerald-300/10 text-emerald-200"
+                    : "border-white/10 bg-white/[0.03] text-zinc-400 hover:bg-white/10 hover:text-white"
+                }`}
+              >
+                <Link href={link.href}>{t(link.labelKey)}</Link>
+              </Button>
+            );
+          })}
+        </nav>
       </div>
-    </div>
+    </header>
   );
 };
 

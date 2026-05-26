@@ -1,21 +1,21 @@
-import React from "react";
-import ChangeLogAccordion from "./ChangeLogAccordion";
 import { useTranslations } from "next-intl";
+import ChangeLogAccordion from "./ChangeLogAccordion";
+import SectionHeading from "./section-heading";
 
 const ChangeLogPort = () => {
   const t = useTranslations("Version");
+
   return (
-    <div className="text-white px-6 md:px-14 py-6">
-      <div className="mx-auto px-10 max-w-6xl flex flex-col gap-6">
-        <div className="space-y-4 mb-2">
-          <h1 className="font-bold text-3xl lg:text-4xl">{t("title")}</h1>
-          <p className="text-muted-foreground max-w-2xl">{t("description")}</p>
-        </div>
-        <div className="">
-          <ChangeLogAccordion />
-        </div>
+    <section className="px-6 py-10 md:px-10 md:py-14">
+      <div className="mx-auto max-w-6xl space-y-8">
+        <SectionHeading
+          eyebrow={t("eyebrow")}
+          title={t("title")}
+          subtitle={t("description")}
+        />
+        <ChangeLogAccordion />
       </div>
-    </div>
+    </section>
   );
 };
 

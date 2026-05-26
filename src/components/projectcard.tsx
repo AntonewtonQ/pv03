@@ -1,7 +1,5 @@
-// components/ProjectCard.tsx
+import { ExternalLink } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
-import { useState } from "react";
 
 interface ProjectCardProps {
   name: string;
@@ -9,6 +7,7 @@ interface ProjectCardProps {
   year: string;
   cover: string;
   link: string;
+  viewLabel: string;
 }
 
 export default function ProjectCard({
@@ -17,40 +16,53 @@ export default function ProjectCard({
   year,
   cover,
   link,
+  viewLabel,
 }: ProjectCardProps) {
-  const [hover, setHover] = useState(false);
+  const hasCover = Boolean(cover?.trim());
 
   return (
-    <div
-      className="rounded-xl overflow-hidden border border-zinc-800 bg-zinc-900 text-white w-[300px] shadow-lg"
-      onMouseEnter={() => setHover(true)}
-      onMouseLeave={() => setHover(false)}
-    >
-      <div className="relative w-full h-[180px]">
-        <Image
-          src={cover || "/images/cover.png"}
-          alt={name}
-          fill
-          className="object-cover"
-        />
-        <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center"></div>
+    <article className="group flex min-h-[420px] flex-col overflow-hidden rounded-lg border border-white/10 bg-white/[0.03] text-white transition hover:border-white/25 hover:bg-white/[0.06]">
+      <div className="relative aspect-[4/3] overflow-hidden bg-zinc-950">
+        {hasCover ? (
+          <img
+            src={cover}
+            alt={name}
+            className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+          />
+        ) : (
+          <Image
+            src="/images/cover.png"
+            alt={name}
+            fill
+            sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+            className="object-cover transition duration-500 group-hover:scale-105"
+          />
+        )}
       </div>
-      <div className="p-4">
-        <h4 className="text-lg font-semibold mb-1">{name}</h4>
-        <p className="text-sm text-zinc-400">{description}</p>
-        <div className="flex justify-between items-center mt-4">
-          <span className="text-sm bg-zinc-800 px-3 py-1 rounded-full">
+
+      <div className="flex flex-1 flex-col gap-4 p-5">
+        <div className="flex items-center justify-between gap-3">
+          <span className="rounded-md border border-emerald-300/30 bg-emerald-300/10 px-3 py-1 text-xs text-emerald-200">
             {year}
           </span>
-          {hover && (
-            <Link className="flex items-center" href={link} target="_blank">
-              <span className="text-sm text-white font-bold hover:underline cursor-pointer">
-                View project
-              </span>
-            </Link>
-          )}
         </div>
+        <div className="space-y-2">
+          <h3 className="text-lg font-bold leading-snug text-white">{name}</h3>
+          <p className="text-sm leading-6 text-zinc-400">{description}</p>
+        </div>
+        <a
+          href={link || "#"}
+          target="_blank"
+          rel="noreferrer"
+          aria-disabled={!link}
+          className={`mt-auto inline-flex h-10 items-center justify-between rounded-md border border-white/10 bg-black px-3 text-sm font-medium text-white transition hover:bg-white hover:text-black ${
+            link ? "" : "pointer-events-none opacity-50"
+          }`}
+        >
+          {viewLabel}
+          <ExternalLink size={16} />
+        </a>
       </div>
-    </div>
+    </article>
   );
 }

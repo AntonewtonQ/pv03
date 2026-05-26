@@ -1,6 +1,5 @@
 "use client";
 
-import React, { useState } from "react";
 import {
   Accordion,
   AccordionContent,
@@ -9,32 +8,17 @@ import {
 } from "./ui/accordion";
 
 const AboutAcordion = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const handleAccordionChange = (open: boolean) => {
-    setIsOpen(open);
-  };
   return (
-    <div>
-      <Accordion
-        type="single"
-        collapsible
-        className="w-64 border-none"
-        onValueChange={(value) => handleAccordionChange(value == "item-1")}
-      >
-        <AccordionItem value="item-1" className="border-none">
-          <AccordionTrigger className="no-underline bg-black hover:bg-zinc-900">
-            {isOpen ? "Hide previoes roles" : "Show previous roles"}
-          </AccordionTrigger>
-
-          <AccordionContent className="my-4 space-y-4 transition-all duration-300 ease-in-ou">
-            <div className="">
-              <p className="text-muted-foreground">Nothing to present</p>
-            </div>
-          </AccordionContent>
-        </AccordionItem>
-      </Accordion>
-    </div>
+    <Accordion type="single" collapsible className="w-full">
+      <AccordionItem value="roles" className="border-white/10">
+        <AccordionTrigger className="rounded-md bg-white/[0.03] text-zinc-300 hover:bg-white/10 hover:text-white">
+          Previous roles
+        </AccordionTrigger>
+        <AccordionContent className="text-zinc-400">
+          Nothing to present yet.
+        </AccordionContent>
+      </AccordionItem>
+    </Accordion>
   );
 };
 

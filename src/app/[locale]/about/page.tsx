@@ -1,18 +1,11 @@
 import AboutDesc from "@/components/aboutdesc";
-import Footer from "@/components/footer";
-import Layout from "@/components/layout";
-import NavBar from "@/components/navbar";
-import React from "react";
+import PageFrame from "@/components/page-frame";
 
 const AboutPage = () => {
   return (
-    <Layout>
-      <div>
-        <NavBar />
-        <AboutDesc />
-        <Footer />
-      </div>
-    </Layout>
+    <PageFrame>
+      <AboutDesc />
+    </PageFrame>
   );
 };
 

@@ -1,59 +1,69 @@
-import { useState } from "react";
+"use client";
+
+import { ShoppingBag } from "lucide-react";
+import { useTranslations } from "next-intl";
+import { Button } from "./ui/button";
 
 interface Item {
   id: string;
   name: string;
   price: number;
-  imageUrl: string; // Added imageUrl to the Item interface
+  imageUrl: string;
 }
 
 interface ProductCardProps {
   item: Item;
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({ item }) => {
-  const [isDisabled] = useState(false);
+const ProductCard = ({ item }: ProductCardProps) => {
+  const t = useTranslations("Shop");
+  const formattedPrice = new Intl.NumberFormat("pt-AO", {
+    style: "currency",
+    currency: "AOA",
+    maximumFractionDigits: 0,
+  }).format(item.price);
 
   const handleBuyClick = () => {
-    const message = `Olá, gostaria de comprar o item "${item.name}" com o preço de ${item.price},00 AOA.`;
-    const phoneNumber = "+244943670112"; // Substitua pelo seu número de telefone
+    const message = t("whatsappMessage", {
+      name: item.name,
+      price: formattedPrice,
+    });
+    const phoneNumber = "+244943670112";
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
       message
     )}`;
-    window.open(whatsappUrl, "_blank");
+    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
   };
 
   return (
-    <div className="border cursor-pointer border-neutral-800 bg-dark text-white w-full max-w-sm rounded-lg overflow-hidden shadow-md">
-      <div>
+    <article className="flex min-h-[470px] flex-col overflow-hidden rounded-lg border border-white/10 bg-white/[0.03] text-white transition hover:border-white/25 hover:bg-white/[0.06]">
+      <div className="aspect-[4/5] overflow-hidden bg-zinc-950">
         <img
-          src={item.imageUrl}
+          src={item.imageUrl || "/images/cover.png"}
           alt={item.name}
-          className="w-full h-80 object-cover"
+          className="h-full w-full object-cover transition duration-500 hover:scale-105"
         />
       </div>
-      <div className="p-4 space-y-2">
-        <h3 className="text-lg font-semibold">{item.name}</h3>
-        <div className="flex items-center justify-between">
-          {!isDisabled && (
-            <span className="text-2xl font-bold">{item.price},00 AOA</span>
-          )}
-          <a>
-            <button
-              onClick={handleBuyClick}
-              className={`w-full font-bold rounded-md px-4 py-2 text-sm  transition-colors ${
-                isDisabled
-                  ? "bg-neutral-300 text-black cursor-not-allowed"
-                  : "bg-white text-black hover:bg-neutral-200"
-              }`}
-              disabled={isDisabled}
-            >
-              COMPRAR
-            </button>
-          </a>
+      <div className="flex flex-1 flex-col gap-4 p-5">
+        <div className="space-y-2">
+          <h3 className="text-lg font-bold leading-snug text-white">
+            {item.name}
+          </h3>
+          <p className="text-2xl font-bold text-emerald-200">
+            {formattedPrice}
+          </p>
         </div>
+
+        <Button
+          type="button"
+          onClick={handleBuyClick}
+          className="mt-auto h-11 justify-between rounded-md bg-white px-4 text-sm font-bold text-black hover:bg-zinc-200"
+        >
+          {t("buy")}
+          <ShoppingBag />
+        </Button>
       </div>
-    </div>
+    </article>
   );
 };
 

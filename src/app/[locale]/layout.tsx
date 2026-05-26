@@ -17,7 +17,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Antonewton Quima",
-  description: "A passionate software developer",
+  description:
+    "Portfolio v4.0 de Antonewton Quima, desenvolvedor de software em Luanda.",
   icons: {
     icon: "/favicon.ico",
   },
@@ -39,7 +40,7 @@ export default async function LocaleLayout({
   return (
     <html lang={locale}>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black`}
+        className={`${geistSans.variable} ${geistMono.variable} bg-black text-white antialiased`}
       >
         <NextIntlClientProvider>{children}</NextIntlClientProvider>
       </body>
