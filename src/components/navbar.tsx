@@ -1,6 +1,6 @@
 "use client";
 
-import { ChevronLeft } from "lucide-react";
+import { ChevronLeft, Shield } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Button } from "./ui/button";
 import LanguageSwitch from "./language-switch";
@@ -35,6 +35,18 @@ const NavBar = () => {
               <Link href="/">
                 <ChevronLeft />
                 {t("back")}
+              </Link>
+            </Button>
+            <Button
+              asChild
+              variant="ghost"
+              size="icon"
+              className="h-9 w-9 border border-white/10 bg-white/[0.03] text-zinc-300 hover:bg-white/10 hover:text-white"
+              title="Admin"
+              aria-label="Admin"
+            >
+              <Link href="/admin">
+                <Shield size={16} />
               </Link>
             </Button>
             <LanguageSwitch />
