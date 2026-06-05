@@ -16,6 +16,7 @@ import {
   type User,
 } from "firebase/auth";
 import {
+  Camera,
   FolderKanban,
   ImageIcon,
   Loader2,
@@ -69,6 +70,11 @@ interface ProjectForm {
   link: string;
 }
 
+interface CoverResponse {
+  coverUrl?: string;
+  error?: string;
+}
+
 const emptyItemForm: ItemForm = {
   name: "",
   price: "",
@@ -105,6 +111,7 @@ export default function AdminDashboard() {
   const [projectForm, setProjectForm] =
     useState<ProjectForm>(emptyProjectForm);
   const [status, setStatus] = useState<"idle" | "loading" | "saving">("idle");
+  const [coverStatus, setCoverStatus] = useState<"idle" | "capturing">("idle");
   const [notice, setNotice] = useState("");
   const [error, setError] = useState("");
 
@@ -114,6 +121,47 @@ export default function AdminDashboard() {
   const itemPreview = getProductImageUrl(itemForm.imageUrl);
   const projectPreview =
     normalizeRsvImageUrl(projectForm.cover) || "/images/cover.png";
+
+  const getCoverErrorMessage = (errorCode?: string) => {
+    switch (errorCode) {
+      case "blob-token-missing":
+        return t("blobTokenMissing");
+      case "unauthorized":
+        return t("adminUnauthorized");
+      case "invalid-url":
+      case "invalid-protocol":
+        return t("invalidProjectUrl");
+      case "private-host":
+      case "private-ip":
+        return t("privateProjectUrl");
+      case "url-required":
+        return t("linkRequired");
+      default:
+        return errorCode
+          ? t("coverErrorWithCode", { code: errorCode })
+          : t("coverError");
+    }
+  };
+
+  const getActionErrorMessage = (actionError: unknown, fallback: string) => {
+    const code =
+      typeof actionError === "object" &&
+      actionError !== null &&
+      "code" in actionError
+        ? String((actionError as { code?: unknown }).code)
+        : "";
+    const message =
+      actionError instanceof Error ? actionError.message : "";
+
+    if (
+      code === "permission-denied" ||
+      message.toLowerCase().includes("missing or insufficient permissions")
+    ) {
+      return t("firestorePermissionError");
+    }
+
+    return message || fallback;
+  };
 
   const totals = useMemo(
     () => [
@@ -177,8 +225,8 @@ export default function AdminDashboard() {
 
           setProjects(nextProjects);
         }
-      } catch {
-        setError(t("loadError"));
+      } catch (loadError) {
+        setError(getActionErrorMessage(loadError, t("loadError")));
       } finally {
         setStatus("idle");
       }
@@ -325,8 +373,8 @@ export default function AdminDashboard() {
       }
 
       setNotice(t("saveSuccess"));
-    } catch {
-      setError(t("saveError"));
+    } catch (saveError) {
+      setError(getActionErrorMessage(saveError, t("saveError")));
     } finally {
       setStatus("idle");
     }
@@ -353,10 +401,79 @@ export default function AdminDashboard() {
       resetForm(activeCollection);
       await loadCollection(activeCollection);
       setNotice(t("deleteSuccess"));
-    } catch {
-      setError(t("deleteError"));
+    } catch (deleteError) {
+      setError(getActionErrorMessage(deleteError, t("deleteError")));
     } finally {
       setStatus("idle");
+    }
+  };
+
+  const handleGenerateCover = async () => {
+    if (activeCollection !== "projects" || !user) {
+      return;
+    }
+
+    if (!projectForm.link.trim()) {
+      setError(t("linkRequired"));
+      return;
+    }
+
+    if (!projectForm.name.trim()) {
+      setError(t("nameRequired"));
+      return;
+    }
+
+    setCoverStatus("capturing");
+    setNotice("");
+    setError("");
+
+    try {
+      const projectPayload = {
+        name: projectForm.name.trim(),
+        description: projectForm.description.trim(),
+        year: projectForm.year.trim(),
+        cover: normalizeRsvImageUrl(projectForm.cover),
+        link: projectForm.link.trim(),
+      };
+      const token = await user.getIdToken();
+      const response = await fetch("/api/admin/project-cover", {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          projectId: selectedId,
+          name: projectPayload.name,
+          url: projectPayload.link,
+        }),
+      });
+      const data = (await response.json()) as CoverResponse;
+
+      if (!response.ok || !data.coverUrl) {
+        throw new Error(getCoverErrorMessage(data.error || "cover-failed"));
+      }
+
+      const nextProject = {
+        ...projectPayload,
+        cover: data.coverUrl,
+      };
+
+      setProjectForm(nextProject);
+
+      if (selectedId) {
+        await updateDoc(doc(db, "projects", selectedId), nextProject);
+      } else {
+        const createdDoc = await addDoc(collection(db, "projects"), nextProject);
+        setSelectedId(createdDoc.id);
+      }
+
+      await loadCollection("projects");
+      setNotice(t("coverSuccess"));
+    } catch (captureError) {
+      setError(getActionErrorMessage(captureError, t("coverError")));
+    } finally {
+      setCoverStatus("idle");
     }
   };
 
@@ -642,9 +759,27 @@ export default function AdminDashboard() {
                     {t("delete")}
                   </Button>
                 ) : null}
+                {activeCollection === "projects" ? (
+                  <Button
+                    type="button"
+                    variant="ghost"
+                    onClick={() => void handleGenerateCover()}
+                    disabled={status !== "idle" || coverStatus !== "idle"}
+                    className="h-10 border border-white/10 bg-black px-3 text-xs text-zinc-300 hover:bg-white/10 hover:text-white"
+                  >
+                    {coverStatus === "capturing" ? (
+                      <Loader2 className="animate-spin" size={15} />
+                    ) : (
+                      <Camera size={15} />
+                    )}
+                    {coverStatus === "capturing"
+                      ? t("generatingCover")
+                      : t("generateCover")}
+                  </Button>
+                ) : null}
                 <Button
                   type="submit"
-                  disabled={status !== "idle"}
+                  disabled={status !== "idle" || coverStatus !== "idle"}
                   className="h-10 justify-between rounded-md bg-white px-4 text-sm font-bold text-black hover:bg-zinc-200"
                 >
                   {status === "saving" ? t("saving") : t("save")}
