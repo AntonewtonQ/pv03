@@ -8,20 +8,23 @@
     "nowlink": "Now",
     "contactlink": "Contact",
     "shoplink": "Shop",
-    "social": "Another links",
-    "back": "Back"
+    "social": "Links",
+    "navigation": "Navigation",
+    "back": "Home",
+    "admin": "Admin",
+    "switchLanguage": "Switch language to {language}"
   },
   "Home": {
     "eyebrow": "Portfolio v4.0",
     "availability": "Open to projects and collaboration",
-    "description": "I develop web and ERP solutions focused on real digital products, process automation, and social impact. The portfolio keeps its minimal essence, now with a more mature, visual, and direct structure.",
+    "description": "I work with Odoo and web development. I build solutions that automate processes, organise operations, and turn ideas into digital products.",
     "primaryAction": "View projects",
-    "secondaryAction": "Contact",
-    "base": "Based in Luanda, in the final year of Computer Engineering at ISPTEC and building digital products with Python, Odoo, and web technologies.",
+    "secondaryAction": "Talk to me",
+    "base": "I am based in Luanda, completing my Computer Engineering degree at ISPTEC, and working with Python, Odoo, and web technologies.",
     "stats": {
-      "projects": "projects and experiments evolving",
-      "schools": "focus areas: ERP, web, and automation",
-      "version": "new portfolio phase"
+      "projects": "published projects",
+      "schools": "areas of work",
+      "version": "current portfolio version"
     },
     "focus": {
       "frontend": "Front-end",
@@ -32,12 +35,12 @@
   "About": {
     "eyebrow": "Profile",
     "title": "About me",
-    "subtitle": "Meet Antonewton, a final-year Computer Engineering student and developer focused on software, ERP, automation, and impactful digital products.",
+    "subtitle": "I am an Odoo Developer and final-year Computer Engineering student working with ERP, automation, and digital products.",
     "introduction": {
       "title": "Introduction",
-      "subtitle": "Odoo Developer and final-year Computer Engineering student passionate about technology, innovation, and social transformation",
-      "description": "Antonewton Quima is a final-year Computer Engineering student at ISPTEC with solid software development experience and active participation in social impact projects across education, employability, and urban mobility.",
-      "description2": "He currently works on Odoo development and customisation using Python, XML, QWeb, JavaScript, PostgreSQL, and REST APIs. He also builds digital products with Next.js, TypeScript, and Tailwind CSS, combining technology, strategy, and user experience."
+      "subtitle": "I build software to solve real problems and improve processes.",
+      "description": "I am completing my Computer Engineering degree at ISPTEC. Along the way, I have worked in software and contributed to projects related to education, employability, and urban mobility.",
+      "description2": "Today I develop and customise Odoo solutions with Python, XML, QWeb, JavaScript, PostgreSQL, and REST APIs. I also build web products with Next.js, TypeScript, and Tailwind CSS."
     },
     "curiosity": {
       "music": {
@@ -67,7 +70,7 @@
     },
     "toolkit": {
       "title": "Working stack",
-      "description": "A practical foundation combining ERP, automation, integrations, and web interfaces: Odoo, Python, XML/QWeb, PostgreSQL, REST APIs, Next.js, React, TypeScript, Tailwind CSS, monitoring, and infrastructure."
+      "description": "Tools I use to work with ERP, automation, integrations, and web interfaces."
     },
     "career": {
       "eyebrow": "Path",
@@ -77,60 +80,60 @@
           "title": "Odoo Developer (Python)",
           "company": "ESPAES Group",
           "date": "April 2026 - Present",
-          "description": "Develops and customises Odoo modules with Python, XML, QWeb, and JavaScript; provides technical and functional user support; converts business requirements into Odoo workflows; supports Helpdesk, approval flows, reporting, internal process automation, and REST API integrations."
+          "description": "I develop and customise Odoo modules, provide technical and functional support, turn requirements into workflows, and implement reports, automations, and REST integrations."
         },
         "anda": {
           "title": "Odoo Developer (Python)",
           "company": "Anda Africa",
           "date": "September 2025 - April 2026",
-          "description": "Developed custom Odoo modules with Python, XML, QWeb, and JavaScript, provided functional support to end users, implemented REST API integrations with external platforms, and collaborated on the migration from Odoo v15 to v18."
+          "description": "I developed Odoo modules, provided functional support, implemented REST integrations, and contributed to the migration from Odoo v15 to v18."
         },
         "compllexus": {
           "title": "Odoo Developer (Python)",
           "company": "Compllexus",
           "date": "July 2025 - September 2025",
-          "description": "Customised Odoo modules for client-specific needs, creating features, adapting views, configuring access permissions, and supporting process automation with Python, XML, and PostgreSQL across Odoo v15, v16, v17, and v18."
+          "description": "I customised Odoo modules, built features, adapted views, configured permissions, and supported automation with Python, XML, and PostgreSQL."
         },
         "rising": {
           "title": "Frontend Developer",
           "company": "Rising Africa",
           "date": "2024 - 2025",
-          "description": "Developed and maintained the platform frontend with Next.js, TypeScript, Tailwind CSS, and Shadcn UI, creating responsive, accessible, and optimised interfaces in collaboration with design, product, and backend teams."
+          "description": "I developed and maintained the platform frontend with Next.js, TypeScript, Tailwind CSS, and Shadcn UI, working with design, product, and backend teams."
         },
         "illustra": {
           "title": "Founder",
           "company": "Illustra - Development Studio",
           "date": "2024 - Present",
-          "description": "Founded a development studio to transform ideas into real digital products, leading ideation, design, and development of web solutions with Next.js, TypeScript, and Tailwind CSS."
+          "description": "I created a small development studio to turn ideas into digital products, from concept to implementation."
         }
       },
       "education": {
         "title": "Bachelor's Degree in Computer Engineering",
         "company": "Instituto Superior Politécnico de Tecnologias e Ciências (ISPTEC)",
         "date": "2021 - Present",
-        "description": "Final-year student with highlights in capstone project, computer networks, programming, and web applications. Participates in university outreach events and study groups, and is an INAGBE scholarship recipient."
+        "description": "I am completing the degree with a focus on my final project, computer networks, programming, and web applications. I am an INAGBE scholarship recipient."
       }
     }
   },
   "Projects": {
     "eyebrow": "Work",
     "title": "Projects",
-    "subtitle": "Explore my portfolio of projects from 2023 to 2026, including web experiences, interfaces, and evolving products.",
+    "subtitle": "A selection of projects, interfaces, and products I built or helped create.",
     "filterLabel": "Filter by year",
     "all": "All",
     "loading": "Loading projects...",
-    "error": "Could not load projects right now.",
-    "noprojects": "Projects not found.",
+    "error": "Could not load the projects.",
+    "noprojects": "No projects found.",
     "viewProject": "View details",
-    "visitProject": "Open published project"
+    "visitProject": "Open project"
   },
   "ProjectDetail": {
     "eyebrow": "Project",
     "back": "Back to projects",
-    "visit": "Open published project",
+    "visit": "Open project",
     "share": "Share project",
     "copied": "Link copied",
-    "shareHint": "When sharing this page on WhatsApp, LinkedIn, or another network, a dedicated card with this project's image and details will be used."
+    "shareHint": "This link includes the project image and details when shared."
   },
   "ProjectStatus": {
     "online": "Online",
@@ -143,8 +146,8 @@
   },
   "Shop": {
     "eyebrow": "Shop",
-    "title": "Tech Shirts Collection",
-    "subtitle": "Explore a collection of programming and tech-themed shirts designed to express passion for code, tech culture, and creativity.",
+    "title": "T-shirts for people who like technology",
+    "subtitle": "A small collection of t-shirts inspired by programming, tools, and tech culture.",
     "searchPlaceholder": "Search shirts...",
     "sortAsc": "A-Z",
     "sortDesc": "Z-A",
@@ -154,9 +157,9 @@
     "sortPriceAsc": "Price: low to high",
     "sortPriceDesc": "Price: high to low",
     "clearSearch": "Clear search",
-    "loading": "Loading items...",
-    "error": "Could not load the shop right now.",
-    "noitems": "No items found.",
+    "loading": "Loading products...",
+    "error": "Could not load the shop.",
+    "noitems": "No products found.",
     "noitemsHint": "Try another term or clear the search to view the full collection.",
     "results": "{count, plural, =0 {No products} =1 {1 product} other {# products}}",
     "searchingFor": "Results for “{term}”",
@@ -178,19 +181,19 @@
     "orderIntro": "Hello, I would like to place this order:",
     "orderTotal": "Total",
     "orderClosing": "Can you confirm availability and delivery details?",
-    "directOrder": "Direct order",
-    "directOrderText": "Choose your pieces and send everything through WhatsApp.",
-    "confirmation": "Personal confirmation",
-    "confirmationText": "Availability and payment confirmed before delivery.",
-    "delivery": "Arranged delivery",
-    "deliveryText": "Delivery details agreed directly with you.",
+    "directOrder": "Order on WhatsApp",
+    "directOrderText": "Choose your pieces and send the complete order.",
+    "confirmation": "Confirm before payment",
+    "confirmationText": "We confirm availability and price with you.",
+    "delivery": "Delivery to arrange",
+    "deliveryText": "We arrange delivery details with you.",
     "buy": "Buy",
     "whatsappMessage": "Hello, I would like to buy {name} for {price}."
   },
   "Now": {
     "eyebrow": "Now",
     "title": "What I am doing now",
-    "subtitle": "A current view of my focus, work in progress, and learning.",
+    "subtitle": "My current focus, what I am building, and what I am learning.",
     "availability": "Availability",
     "location": "Location",
     "updated": "Updated",
@@ -199,19 +202,19 @@
     "learning": "Learning",
     "currentProject": "Current project",
     "currentProjectFallback": "Project in development",
-    "accessProject": "Access project",
-    "loading": "Loading now...",
-    "error": "Could not load this page right now.",
-    "empty": "This page will be updated soon.",
-    "notInformed": "Not informed"
+    "accessProject": "Open project",
+    "loading": "Loading...",
+    "error": "Could not load this page.",
+    "empty": "I have not published an update yet.",
+    "notInformed": "To be updated"
   },
   "Admin": {
     "eyebrow": "Admin",
-    "title": "Shop and projects management",
-    "subtitle": "Manage shop products and published projects without depending on the Firebase console.",
-    "dashboardTitle": "Admin dashboard",
-    "loginTitle": "Administrator login",
-    "loginSubtitle": "Use the account created in Firebase Auth.",
+    "title": "Manage the portfolio",
+    "subtitle": "Update the shop, projects, and Now page in one place.",
+    "dashboardTitle": "Portfolio management",
+    "loginTitle": "Admin access",
+    "loginSubtitle": "Sign in with the account configured in Firebase Auth.",
     "email": "Email",
     "password": "Password",
     "enter": "Sign in",
@@ -223,13 +226,13 @@
     "projects": "Projects",
     "now": "Now",
     "edit": "Edit",
-    "documentsCount": "{count} documents",
+    "documentsCount": "{count, plural, =0 {No records} =1 {1 record} other {# records}}",
     "new": "New",
-    "newDocument": "New document",
-    "editDocument": "Edit document",
-    "notSaved": "not saved yet",
+    "newDocument": "New record",
+    "editDocument": "Edit record",
+    "notSaved": "Not saved yet",
     "loading": "Loading...",
-    "empty": "No documents found.",
+    "empty": "No records found.",
     "untitled": "Untitled",
     "save": "Save",
     "saving": "Saving...",
@@ -239,7 +242,7 @@
     "name": "Name",
     "price": "Price",
     "bulkPriceTitle": "Global shop price",
-    "bulkPriceHint": "Set the price once and apply it to all {count} t-shirts in the collection.",
+    "bulkPriceHint": "Set the price to apply to all {count} t-shirts in the collection.",
     "bulkPriceLabel": "New global price",
     "bulkPricePlaceholder": "New price in Kz",
     "bulkPriceAction": "Apply to all",
@@ -257,9 +260,9 @@
     "noImage": "No image",
     "loginSuccess": "Signed in.",
     "loginError": "Could not sign in.",
-    "loadError": "Could not load the documents.",
-    "saveSuccess": "Document saved.",
-    "saveError": "Could not save the document.",
+    "loadError": "Could not load the records.",
+    "saveSuccess": "Changes saved.",
+    "saveError": "Could not save the changes.",
     "coverSuccess": "Cover captured and saved to the project.",
     "coverError": "Could not capture the cover.",
     "coverErrorWithCode": "Could not capture the cover: {code}.",
@@ -267,10 +270,10 @@
     "adminUnauthorized": "Your admin session is not authorized to capture covers.",
     "invalidProjectUrl": "The project link is not a valid public URL.",
     "privateProjectUrl": "Use a public URL; local or private links cannot be captured.",
-    "firestorePermissionError": "Firestore blocked this action. Update the rules to allow your admin email to write to items, projects, and now. If you were capturing a cover, the image may have been uploaded to Blob, but it was not saved to the project.",
+    "firestorePermissionError": "Firestore blocked this action. Update the rules to allow the admin email to write to items, projects, and now. If you were capturing a cover, the image may have been uploaded to Blob, but it was not saved.",
     "nowEditor": "Edit Now page",
-    "nowEditorHint": "Update what appears on the public Now page.",
-    "viewNow": "View Now",
+    "nowEditorHint": "Update what appears on the public page.",
+    "viewNow": "View Now page",
     "nowHeadline": "Main headline",
     "nowSummary": "Summary",
     "nowAvailability": "Availability",
@@ -285,16 +288,16 @@
     "nowLearning": "Learning",
     "onePerLine": "One item per line",
     "nowSaveSuccess": "Now page updated.",
-    "deleteSuccess": "Document deleted.",
-    "deleteError": "Could not delete the document.",
+    "deleteSuccess": "Record deleted.",
+    "deleteError": "Could not delete the record.",
     "nameRequired": "Name is required.",
     "linkRequired": "Add the project link before capturing the cover.",
     "deleteConfirm": "Delete \"{name}\"?"
   },
   "Contact": {
     "eyebrow": "Contact",
-    "title": "Get in touch with me",
-    "subtitle": "Have a question, idea, or want to work together? Send a message through the form or choose one of the direct channels.",
+    "title": "Let's talk",
+    "subtitle": "For projects, opportunities, or a conversation about technology, send a message or use one of the contacts below.",
     "channels": {
       "email": "Email",
       "whatsapp": "WhatsApp"
@@ -305,9 +308,9 @@
       "email": "Email",
       "emailPlaceholder": "your@email.com",
       "subject": "Subject",
-      "subjectPlaceholder": "What is this about?",
+      "subjectPlaceholder": "Message subject",
       "message": "Message",
-      "messagePlaceholder": "Write your message...",
+      "messagePlaceholder": "Write your message",
       "submit": "Send message",
       "sending": "Sending...",
       "success": "Message sent. I will reply as soon as possible.",
@@ -328,19 +331,24 @@
   },
   "Version": {
     "eyebrow": "Versions",
-    "title": "Changelog",
-    "description": "Track the evolution of my portfolio with updates, design decisions, and structural improvements.",
+    "title": "Portfolio history",
+    "description": "The main changes made in each version.",
     "version": {
       "four": {
         "title": "Version 4.0",
         "date": "May 26, 2026",
-        "description": "A complete portfolio restructure: new home, responsive navigation, internal pages with a shared visual foundation, Firebase states, clearer contact, refined shop, and an updated changelog while preserving the black, mono, minimal aesthetic."
+        "description": "I restructured the portfolio with a new home page, responsive navigation, consistent pages, admin management, an improved shop, and new project features."
       },
       "three": {
         "title": "Version 3.0",
         "date": "Jan 14th, 2025",
-        "description": "A major update with a new design and improved performance. The portfolio gained a more modern look, faster loading times, and an enhanced user experience."
+        "description": "I updated the design, improved performance, and simplified navigation."
       }
     }
+  },
+  "Setup": {
+    "eyebrow": "Environment",
+    "title": "Work tools",
+    "description": "The tools, technologies, and configurations I use every day."
   }
 }

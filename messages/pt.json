@@ -8,36 +8,39 @@
     "nowlink": "Agora",
     "contactlink": "Contacto",
     "shoplink": "Loja",
-    "social": "Outros links",
-    "back": "Voltar"
+    "social": "Links",
+    "navigation": "Navegação",
+    "back": "Início",
+    "admin": "Administração",
+    "switchLanguage": "Mudar idioma para {language}"
   },
   "Home": {
-    "eyebrow": "Portfolio v4.0",
+    "eyebrow": "Portfólio v4.0",
     "availability": "Aberto a projectos e colaboração",
-    "description": "Desenvolvo soluções web e ERP com foco em produtos digitais reais, automação de processos e impacto social. Continuo a essência minimalista do portfolio, agora com uma estrutura mais madura, visual e directa.",
+    "description": "Trabalho com Odoo e desenvolvimento web. Construo soluções para automatizar processos, organizar operações e transformar ideias em produtos digitais.",
     "primaryAction": "Ver projectos",
-    "secondaryAction": "Contacto",
-    "base": "Baseado em Luanda, em fase final de Engenharia Informática no ISPTEC e construindo produtos digitais com Python, Odoo e tecnologias web.",
+    "secondaryAction": "Falar comigo",
+    "base": "Estou em Luanda, na fase final de Engenharia Informática no ISPTEC, e trabalho com Python, Odoo e tecnologias web.",
     "stats": {
-      "projects": "projectos e experiências em evolução",
-      "schools": "áreas de actuação: ERP, web e automação",
-      "version": "nova fase do portfolio"
+      "projects": "projectos publicados",
+      "schools": "frentes de trabalho",
+      "version": "versão actual do portfólio"
     },
     "focus": {
       "frontend": "Front-end",
       "products": "Produtos digitais",
-      "learning": "Aprendizado contínuo"
+      "learning": "Aprendizagem contínua"
     }
   },
   "About": {
     "eyebrow": "Perfil",
     "title": "Sobre mim",
-    "subtitle": "Conheça Antonewton, estudante finalista de Engenharia Informática e desenvolvedor focado em software, ERP, automação e produtos digitais com impacto.",
+    "subtitle": "Sou Odoo Developer e estudante finalista de Engenharia Informática. Trabalho com ERP, automação e produtos digitais.",
     "introduction": {
       "title": "Introdução",
-      "subtitle": "Odoo Developer e estudante finalista de Engenharia Informática apaixonado por tecnologia, inovação e transformação social",
-      "description": "Antonewton Quima é estudante finalista de Engenharia Informática no ISPTEC, com experiência sólida em desenvolvimento de software e participação activa em projectos de impacto social nas áreas de educação, empregabilidade e mobilidade urbana.",
-      "description2": "Actualmente trabalha com desenvolvimento e customização de soluções Odoo usando Python, XML, QWeb, JavaScript, PostgreSQL e REST APIs. Também constrói produtos digitais com Next.js, TypeScript e Tailwind CSS, unindo tecnologia, estratégia e experiência do usuário."
+      "subtitle": "Desenvolvo software para resolver problemas reais e melhorar processos.",
+      "description": "Estou na fase final de Engenharia Informática no ISPTEC. Ao longo do percurso, trabalhei em software e participei em projectos ligados à educação, empregabilidade e mobilidade urbana.",
+      "description2": "Hoje desenvolvo e personalizo soluções Odoo com Python, XML, QWeb, JavaScript, PostgreSQL e REST APIs. Também construo produtos web com Next.js, TypeScript e Tailwind CSS."
     },
     "curiosity": {
       "music": {
@@ -67,7 +70,7 @@
     },
     "toolkit": {
       "title": "Stack de trabalho",
-      "description": "Uma base prática que junta ERP, automação, integrações e interfaces web: Odoo, Python, XML/QWeb, PostgreSQL, REST APIs, Next.js, React, TypeScript, Tailwind CSS, monitoramento e infraestrutura."
+      "description": "Ferramentas que uso para trabalhar com ERP, automação, integrações e interfaces web."
     },
     "career": {
       "eyebrow": "Trajectória",
@@ -77,60 +80,60 @@
           "title": "Odoo Developer (Python)",
           "company": "ESPAES Group",
           "date": "Abril de 2026 - Presente",
-          "description": "Desenvolve e customiza módulos Odoo com Python, XML, QWeb e JavaScript; presta suporte técnico e funcional a utilizadores; transforma requisitos de negócio em workflows Odoo; apoia Helpdesk, fluxos de aprovação, relatórios, automação de processos internos e integrações REST API."
+          "description": "Desenvolvo e personalizo módulos Odoo, presto suporte técnico e funcional, transformo requisitos em fluxos de trabalho e implemento relatórios, automações e integrações REST."
         },
         "anda": {
           "title": "Odoo Developer (Python)",
           "company": "Anda Africa",
           "date": "Setembro de 2025 - Abril de 2026",
-          "description": "Desenvolveu módulos Odoo personalizados com Python, XML, QWeb e JavaScript, prestou suporte funcional a utilizadores, implementou integrações REST API com plataformas externas e colaborou na migração de Odoo v15 para v18."
+          "description": "Desenvolvi módulos Odoo, prestei suporte funcional, implementei integrações REST e participei na migração de Odoo v15 para v18."
         },
         "compllexus": {
           "title": "Odoo Developer (Python)",
           "company": "Compllexus",
           "date": "Julho de 2025 - Setembro de 2025",
-          "description": "Customizou módulos Odoo para necessidades específicas de clientes, criando funcionalidades, adaptando views, configurando permissões de acesso e apoiando automações com Python, XML e PostgreSQL nas versões v15, v16, v17 e v18."
+          "description": "Personalizei módulos Odoo, criei funcionalidades, adaptei vistas, configurei permissões e apoiei automações com Python, XML e PostgreSQL."
         },
         "rising": {
           "title": "Frontend Developer",
           "company": "Rising Africa",
           "date": "2024 - 2025",
-          "description": "Desenvolveu e manteve o frontend da plataforma com Next.js, TypeScript, Tailwind CSS e Shadcn UI, criando interfaces responsivas, acessíveis e optimizadas em colaboração com design, produto e backend."
+          "description": "Desenvolvi e mantive o frontend da plataforma com Next.js, TypeScript, Tailwind CSS e Shadcn UI, em colaboração com design, produto e backend."
         },
         "illustra": {
           "title": "Founder",
           "company": "Illustra - Development Studio",
           "date": "2024 - Presente",
-          "description": "Fundou um estúdio de desenvolvimento para transformar ideias em produtos digitais reais, liderando ideação, design e desenvolvimento de soluções web com Next.js, TypeScript e Tailwind CSS."
+          "description": "Criei um pequeno estúdio para transformar ideias em produtos digitais, do conceito ao desenvolvimento."
         }
       },
       "education": {
         "title": "Licenciatura em Engenharia Informática",
         "company": "Instituto Superior Politécnico de Tecnologias e Ciências (ISPTEC)",
         "date": "2021 - Presente",
-        "description": "Estudante finalista com destaques em projecto final, redes de computadores, programação e aplicações web. Participa em eventos universitários, grupos de estudo e é bolseiro do INAGBE."
+        "description": "Estou na fase final do curso, com foco em projecto final, redes de computadores, programação e aplicações web. Sou bolseiro do INAGBE."
       }
     }
   },
   "Projects": {
     "eyebrow": "Trabalho",
     "title": "Projectos",
-    "subtitle": "Explore o meu portfólio de projectos de 2023 a 2026, incluindo experiências web, interfaces e produtos em evolução.",
+    "subtitle": "Uma selecção de projectos, interfaces e produtos que desenvolvi ou ajudei a construir.",
     "filterLabel": "Filtrar por ano",
     "all": "Todos",
     "loading": "A carregar projectos...",
-    "error": "Não foi possível carregar os projectos agora.",
-    "noprojects": "Projectos não encontrados.",
+    "error": "Não foi possível carregar os projectos.",
+    "noprojects": "Nenhum projecto encontrado.",
     "viewProject": "Ver detalhes",
-    "visitProject": "Abrir projecto publicado"
+    "visitProject": "Abrir projecto"
   },
   "ProjectDetail": {
     "eyebrow": "Projecto",
     "back": "Voltar aos projectos",
-    "visit": "Abrir projecto publicado",
+    "visit": "Abrir projecto",
     "share": "Partilhar projecto",
     "copied": "Link copiado",
-    "shareHint": "Ao partilhar esta página no WhatsApp, LinkedIn ou noutra rede, será usado um card próprio com a imagem e os detalhes deste projecto."
+    "shareHint": "Este link inclui uma imagem e os detalhes do projecto quando é partilhado."
   },
   "ProjectStatus": {
     "online": "Online",
@@ -143,8 +146,8 @@
   },
   "Shop": {
     "eyebrow": "Loja",
-    "title": "Colecção de t-shirts Tech",
-    "subtitle": "Explore uma colecção de t-shirts com temas de programação e tecnologia, criada para expressar paixão por código, cultura tech e criatividade.",
+    "title": "T-shirts para quem gosta de tecnologia",
+    "subtitle": "Uma pequena colecção de t-shirts inspiradas em programação, ferramentas e cultura tech.",
     "searchPlaceholder": "Pesquisar t-shirts...",
     "sortAsc": "A-Z",
     "sortDesc": "Z-A",
@@ -154,9 +157,9 @@
     "sortPriceAsc": "Preço: menor primeiro",
     "sortPriceDesc": "Preço: maior primeiro",
     "clearSearch": "Limpar pesquisa",
-    "loading": "A carregar itens...",
-    "error": "Não foi possível carregar a loja agora.",
-    "noitems": "Nenhum item encontrado.",
+    "loading": "A carregar produtos...",
+    "error": "Não foi possível carregar a loja.",
+    "noitems": "Nenhum produto encontrado.",
     "noitemsHint": "Experimente outro termo ou limpe a pesquisa para ver toda a colecção.",
     "results": "{count, plural, =0 {Nenhum produto} =1 {1 produto} other {# produtos}}",
     "searchingFor": "Resultados para “{term}”",
@@ -178,19 +181,19 @@
     "orderIntro": "Olá, gostaria de fazer este pedido:",
     "orderTotal": "Total",
     "orderClosing": "Pode confirmar a disponibilidade e os detalhes da entrega?",
-    "directOrder": "Pedido directo",
-    "directOrderText": "Escolha as peças e envie tudo pelo WhatsApp.",
-    "confirmation": "Confirmação pessoal",
-    "confirmationText": "Disponibilidade e pagamento confirmados antes da entrega.",
-    "delivery": "Entrega combinada",
-    "deliveryText": "Detalhes de entrega acertados directamente consigo.",
+    "directOrder": "Pedido pelo WhatsApp",
+    "directOrderText": "Escolha as peças e envie o pedido completo.",
+    "confirmation": "Confirmação antes do pagamento",
+    "confirmationText": "Confirmamos a disponibilidade e o valor consigo.",
+    "delivery": "Entrega a combinar",
+    "deliveryText": "Combinamos consigo os detalhes da entrega.",
     "buy": "Comprar",
     "whatsappMessage": "Olá, gostaria de comprar o item {name} por {price}."
   },
   "Now": {
     "eyebrow": "Agora",
     "title": "O que estou a fazer agora",
-    "subtitle": "Uma visão actual do meu foco, trabalho em curso e aprendizagem.",
+    "subtitle": "O meu foco actual, o que estou a construir e o que estou a aprender.",
     "availability": "Disponibilidade",
     "location": "Localização",
     "updated": "Actualizado",
@@ -199,19 +202,19 @@
     "learning": "A aprender",
     "currentProject": "Projecto actual",
     "currentProjectFallback": "Projecto em desenvolvimento",
-    "accessProject": "Acessar projecto",
-    "loading": "A carregar agora...",
-    "error": "Não foi possível carregar esta página agora.",
-    "empty": "Esta página será actualizada em breve.",
-    "notInformed": "Não informado"
+    "accessProject": "Abrir projecto",
+    "loading": "A carregar...",
+    "error": "Não foi possível carregar esta página.",
+    "empty": "Ainda não publiquei nenhuma actualização.",
+    "notInformed": "Por actualizar"
   },
   "Admin": {
     "eyebrow": "Admin",
-    "title": "Gestão da loja e projectos",
-    "subtitle": "Controle os produtos da loja e os projectos publicados sem depender do console do Firebase.",
-    "dashboardTitle": "Painel administrativo",
-    "loginTitle": "Entrar como administrador",
-    "loginSubtitle": "Use a conta criada no Firebase Auth.",
+    "title": "Gerir o portfólio",
+    "subtitle": "Actualize a loja, os projectos e a página Agora num único lugar.",
+    "dashboardTitle": "Gestão do portfólio",
+    "loginTitle": "Acesso administrativo",
+    "loginSubtitle": "Entre com a conta configurada no Firebase Auth.",
     "email": "Email",
     "password": "Senha",
     "enter": "Entrar",
@@ -223,23 +226,23 @@
     "projects": "Projectos",
     "now": "Agora",
     "edit": "Editar",
-    "documentsCount": "{count} documentos",
+    "documentsCount": "{count, plural, =0 {Nenhum registo} =1 {1 registo} other {# registos}}",
     "new": "Novo",
-    "newDocument": "Novo documento",
-    "editDocument": "Editar documento",
-    "notSaved": "ainda não guardado",
+    "newDocument": "Novo registo",
+    "editDocument": "Editar registo",
+    "notSaved": "Ainda não guardado",
     "loading": "A carregar...",
-    "empty": "Nenhum documento encontrado.",
+    "empty": "Nenhum registo encontrado.",
     "untitled": "Sem título",
     "save": "Guardar",
     "saving": "A guardar...",
     "delete": "Apagar",
-    "generateCover": "Capturar cover",
+    "generateCover": "Capturar capa",
     "generatingCover": "A capturar...",
     "name": "Nome",
     "price": "Preço",
     "bulkPriceTitle": "Preço global da loja",
-    "bulkPriceHint": "Defina uma vez o preço que será aplicado às {count} t-shirts da colecção.",
+    "bulkPriceHint": "Defina o preço que será aplicado às {count} t-shirts da colecção.",
     "bulkPriceLabel": "Novo preço global",
     "bulkPricePlaceholder": "Novo preço em Kz",
     "bulkPriceAction": "Aplicar a todas",
@@ -257,44 +260,44 @@
     "noImage": "Sem imagem",
     "loginSuccess": "Sessão iniciada.",
     "loginError": "Não foi possível iniciar sessão.",
-    "loadError": "Não foi possível carregar os documentos.",
-    "saveSuccess": "Documento guardado.",
-    "saveError": "Não foi possível guardar o documento.",
-    "coverSuccess": "Cover capturada e guardada no projecto.",
-    "coverError": "Não foi possível capturar a cover.",
-    "coverErrorWithCode": "Não foi possível capturar a cover: {code}.",
-    "blobTokenMissing": "Configure BLOB_READ_WRITE_TOKEN na Vercel antes de capturar covers.",
-    "adminUnauthorized": "A sua sessão admin não foi autorizada para capturar covers.",
+    "loadError": "Não foi possível carregar os registos.",
+    "saveSuccess": "Alterações guardadas.",
+    "saveError": "Não foi possível guardar as alterações.",
+    "coverSuccess": "Capa capturada e guardada no projecto.",
+    "coverError": "Não foi possível capturar a capa.",
+    "coverErrorWithCode": "Não foi possível capturar a capa: {code}.",
+    "blobTokenMissing": "Configure BLOB_READ_WRITE_TOKEN na Vercel antes de capturar capas.",
+    "adminUnauthorized": "A sessão não tem autorização para capturar capas.",
     "invalidProjectUrl": "O link do projecto não é uma URL pública válida.",
     "privateProjectUrl": "Use uma URL pública; links locais ou privados não podem ser capturados.",
-    "firestorePermissionError": "O Firestore bloqueou esta acção. Actualize as regras para permitir que o seu email admin escreva em items, projects e now. Se estava a capturar uma cover, a imagem pode ter sido enviada para o Blob, mas não ficou guardada no projecto.",
-    "nowEditor": "Editar página Now",
-    "nowEditorHint": "Actualize o que aparece na página pública Agora.",
-    "viewNow": "Ver Now",
+    "firestorePermissionError": "O Firestore bloqueou esta acção. Actualize as regras para permitir que o email administrativo escreva em items, projects e now. Se estava a capturar uma capa, a imagem pode ter sido enviada para o Blob, mas não ficou guardada.",
+    "nowEditor": "Editar página Agora",
+    "nowEditorHint": "Actualize o que aparece na página pública.",
+    "viewNow": "Ver página Agora",
     "nowHeadline": "Título principal",
     "nowSummary": "Resumo",
     "nowAvailability": "Disponibilidade",
     "nowLocation": "Localização",
     "nowProjectName": "Nome do projecto actual",
     "nowProjectLink": "Link de acesso do projecto",
-    "nowProjectCover": "Captura do projecto actual",
-    "nowProjectCoverUrl": "URL da captura do projecto",
-    "nowCoverSuccess": "Captura guardada na página Now.",
+    "nowProjectCover": "Capa do projecto actual",
+    "nowProjectCoverUrl": "URL da capa do projecto",
+    "nowCoverSuccess": "Capa guardada na página Agora.",
     "nowFocus": "Foco actual",
     "nowBuilding": "A construir",
     "nowLearning": "A aprender",
     "onePerLine": "Um item por linha",
-    "nowSaveSuccess": "Página Now actualizada.",
-    "deleteSuccess": "Documento apagado.",
-    "deleteError": "Não foi possível apagar o documento.",
+    "nowSaveSuccess": "Página Agora actualizada.",
+    "deleteSuccess": "Registo apagado.",
+    "deleteError": "Não foi possível apagar o registo.",
     "nameRequired": "O nome é obrigatório.",
-    "linkRequired": "Adicione o link do projecto antes de capturar a cover.",
+    "linkRequired": "Adicione o link do projecto antes de capturar a capa.",
     "deleteConfirm": "Apagar \"{name}\"?"
   },
   "Contact": {
     "eyebrow": "Contacto",
-    "title": "Entre em contacto comigo",
-    "subtitle": "Tem uma pergunta, ideia ou quer trabalhar juntos? Envie uma mensagem pelo formulário ou escolha um dos canais directos.",
+    "title": "Vamos conversar",
+    "subtitle": "Para projectos, oportunidades ou uma conversa sobre tecnologia, envie uma mensagem ou use um dos contactos abaixo.",
     "channels": {
       "email": "Email",
       "whatsapp": "WhatsApp"
@@ -305,12 +308,12 @@
       "email": "Email",
       "emailPlaceholder": "seu@email.com",
       "subject": "Assunto",
-      "subjectPlaceholder": "Sobre o que quer falar?",
+      "subjectPlaceholder": "Assunto da mensagem",
       "message": "Mensagem",
-      "messagePlaceholder": "Escreva a sua mensagem...",
+      "messagePlaceholder": "Escreva a sua mensagem",
       "submit": "Enviar mensagem",
       "sending": "A enviar...",
-      "success": "Mensagem enviada. Vou responder assim que possível.",
+      "success": "Mensagem enviada. Responderei assim que possível.",
       "error": "Não foi possível enviar a mensagem. Tente novamente.",
       "rateLimited": "Muitas mensagens enviadas. Aguarde alguns minutos e tente novamente.",
       "notConfigured": "O formulário de contacto ainda não está configurado no servidor."
@@ -328,19 +331,24 @@
   },
   "Version": {
     "eyebrow": "Versões",
-    "title": "Registo de Alterações",
-    "description": "Acompanhe a evolução do meu portfólio com actualizações, decisões de design e melhorias estruturais.",
+    "title": "Histórico do portfólio",
+    "description": "As principais mudanças feitas em cada versão.",
     "version": {
       "four": {
-        "title": "Version 4.0",
+        "title": "Versão 4.0",
         "date": "26 de Maio de 2026",
-        "description": "Reestruturação completa do portfolio: nova home, navegação responsiva, páginas internas com uma base visual comum, estados para Firebase, contacto mais claro, loja refinada e changelog actualizado mantendo a estética preta, mono e minimalista."
+        "description": "Reestruturei o portfólio com uma nova página inicial, navegação responsiva, páginas consistentes, gestão administrativa, loja melhorada e novas funcionalidades para os projectos."
       },
       "three": {
-        "title": "Version 3.0",
+        "title": "Versão 3.0",
         "date": "14 de Jan de 2025",
-        "description": "Uma actualização com novo design e desempenho aprimorado. O portfólio passou a ter uma aparência mais moderna, tempos de carregamento mais rápidos e uma experiência de usuário aprimorada."
+        "description": "Actualizei o design, melhorei o desempenho e simplifiquei a navegação."
       }
     }
+  },
+  "Setup": {
+    "eyebrow": "Ambiente",
+    "title": "Ferramentas de trabalho",
+    "description": "As ferramentas, tecnologias e configurações que uso no dia-a-dia."
   }
 }

@@ -18,46 +18,55 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  metadataBase: new URL(SITE_URL),
-  title: {
-    default: "Antonewton Quima | Odoo Developer",
-    template: "%s | Antonewton Quima",
-  },
-  description:
-    "Portfolio v4.0 de Antonewton Quima, desenvolvedor de software em Luanda.",
-  authors: [{ name: "Antonewton Quima", url: SITE_URL }],
-  creator: "Antonewton Quima",
-  keywords: [
-    "Antonewton Quima",
-    "Odoo Developer",
-    "Software Developer",
-    "Next.js",
-    "Python",
-    "Luanda",
-    "Angola",
-  ],
-  openGraph: {
-    type: "website",
-    title: "Antonewton Quima | Odoo Developer",
-    description:
-      "Portfolio de Antonewton Quima: software, ERP, automação e produtos digitais.",
-    siteName: "Antonewton Quima",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Antonewton Quima | Odoo Developer",
-    description:
-      "Software, ERP, automação e produtos digitais por Antonewton Quima.",
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
-  icons: {
-    icon: "/favicon.ico",
-  },
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const description =
+    locale === "pt"
+      ? "Portfólio de Antonewton Quima: Odoo, desenvolvimento web, automação e produtos digitais."
+      : "Antonewton Quima's portfolio: Odoo, web development, automation, and digital products.";
+
+  return {
+    metadataBase: new URL(SITE_URL),
+    title: {
+      default: "Antonewton Quima | Odoo Developer",
+      template: "%s | Antonewton Quima",
+    },
+    description,
+    authors: [{ name: "Antonewton Quima", url: SITE_URL }],
+    creator: "Antonewton Quima",
+    keywords: [
+      "Antonewton Quima",
+      "Odoo Developer",
+      "Software Developer",
+      "Next.js",
+      "Python",
+      "Luanda",
+      "Angola",
+    ],
+    openGraph: {
+      type: "website",
+      title: "Antonewton Quima | Odoo Developer",
+      description,
+      siteName: "Antonewton Quima",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "Antonewton Quima | Odoo Developer",
+      description,
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
+    icons: {
+      icon: "/favicon.ico",
+    },
+  };
+}
 
 export default async function LocaleLayout({
   children,

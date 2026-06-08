@@ -31,7 +31,7 @@ export default function OpenGraphImage() {
           }}
         >
           <div style={{ color: "#6ee7b7", display: "flex", fontSize: 22 }}>
-            Portfolio v4.0
+            antonewton.xyz / v4.0
           </div>
           <div style={{ color: "#a1a1aa", display: "flex", fontSize: 20 }}>
             Luanda, Angola
@@ -72,7 +72,7 @@ export default function OpenGraphImage() {
             paddingTop: 28,
           }}
         >
-          <span>ERP · Web · Automation</span>
+          <span>Odoo · Web · Automation</span>
           <span style={{ color: "#6ee7b7" }}>antonewton.xyz</span>
         </div>
       </div>

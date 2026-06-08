@@ -25,7 +25,7 @@ const Menu = () => {
 
   const stats = [
     { value: "03+", label: home("stats.projects") },
-    { value: "02", label: home("stats.schools") },
+    { value: "03", label: home("stats.schools") },
     { value: "v4.0", label: home("stats.version") },
   ];
 
@@ -166,7 +166,7 @@ const Menu = () => {
         <div className="grid gap-8 border-t border-white/10 py-6 lg:grid-cols-[1fr_1fr]">
           <div>
             <h2 className="mb-4 text-xs font-semibold uppercase text-zinc-500">
-              Menu
+              {t("navigation")}
             </h2>
             <div className="grid gap-2 sm:grid-cols-2">
               {navLinks

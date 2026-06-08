@@ -38,11 +38,17 @@ const getSocialCover = async (coverUrl?: string) => {
 export default async function OpenGraphImage({
   params,
 }: {
-  params: Promise<{ id: string }>;
+  params: Promise<{ id: string; locale: string }>;
 }) {
-  const { id } = await params;
+  const { id, locale } = await params;
   const project = await getProject(id);
   const cover = await getSocialCover(project?.cover);
+  const label = locale === "pt" ? "Projecto" : "Project";
+  const fallbackName = locale === "pt" ? "Projecto do portfólio" : "Portfolio project";
+  const fallbackDescription =
+    locale === "pt"
+      ? "Produto digital e experiência web."
+      : "Digital product and web experience.";
 
   return new ImageResponse(
     (
@@ -74,7 +80,7 @@ export default async function OpenGraphImage({
               textTransform: "uppercase",
             }}
           >
-            Antonewton Quima / Project
+            Antonewton Quima / {label}
           </div>
 
           <div style={{ display: "flex", flexDirection: "column" }}>
@@ -86,7 +92,7 @@ export default async function OpenGraphImage({
                 marginBottom: 24,
               }}
             >
-              {project?.name || "Portfolio Project"}
+              {project?.name || fallbackName}
             </div>
             <div
               style={{
@@ -95,7 +101,7 @@ export default async function OpenGraphImage({
                 lineHeight: 1.4,
               }}
             >
-              {project?.description || "Digital product and web experience."}
+              {project?.description || fallbackDescription}
             </div>
           </div>
 
@@ -107,7 +113,7 @@ export default async function OpenGraphImage({
               justifyContent: "space-between",
             }}
           >
-            <span>{project?.year || "Portfolio"}</span>
+            <span>{project?.year || "antonewton.xyz"}</span>
             <span style={{ color: "#6ee7b7" }}>antonewton.xyz</span>
           </div>
         </div>
