@@ -72,7 +72,9 @@ export default function NowPage() {
       content.summary ||
       content.focus ||
       content.building ||
-      content.learning
+      content.learning ||
+      content.projectLink ||
+      content.projectCover
   );
 
   return (
@@ -183,27 +185,58 @@ export default function NowPage() {
                 })}
               </div>
 
-              {content.projectLink ? (
-                <div className="flex flex-col gap-4 border-y border-white/10 py-5 sm:flex-row sm:items-center sm:justify-between">
-                  <div>
-                    <p className="text-xs text-zinc-500">{t("currentProject")}</p>
-                    <p className="mt-1 text-base font-bold text-white">
-                      {content.projectName || t("currentProjectFallback")}
-                    </p>
+              {content.projectLink || content.projectCover ? (
+                <div className="space-y-5 border-y border-white/10 py-5">
+                  {content.projectCover ? (
+                    content.projectLink ? (
+                      <a
+                        href={content.projectLink}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="group block aspect-[4/3] overflow-hidden rounded-lg border border-white/10 bg-zinc-950"
+                      >
+                        <img
+                          src={content.projectCover}
+                          alt={content.projectName || t("currentProjectFallback")}
+                          className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.02]"
+                        />
+                      </a>
+                    ) : (
+                      <div className="aspect-[4/3] overflow-hidden rounded-lg border border-white/10 bg-zinc-950">
+                        <img
+                          src={content.projectCover}
+                          alt={content.projectName || t("currentProjectFallback")}
+                          className="h-full w-full object-cover"
+                        />
+                      </div>
+                    )
+                  ) : null}
+
+                  <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                    <div>
+                      <p className="text-xs text-zinc-500">
+                        {t("currentProject")}
+                      </p>
+                      <p className="mt-1 text-base font-bold text-white">
+                        {content.projectName || t("currentProjectFallback")}
+                      </p>
+                    </div>
+                    {content.projectLink ? (
+                      <Button
+                        asChild
+                        className="h-10 justify-between rounded-md bg-white px-4 text-sm font-bold text-black hover:bg-zinc-200"
+                      >
+                        <a
+                          href={content.projectLink}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          {t("accessProject")}
+                          <ExternalLink size={16} />
+                        </a>
+                      </Button>
+                    ) : null}
                   </div>
-                  <Button
-                    asChild
-                    className="h-10 justify-between rounded-md bg-white px-4 text-sm font-bold text-black hover:bg-zinc-200"
-                  >
-                    <a
-                      href={content.projectLink}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      {t("accessProject")}
-                      <ExternalLink size={16} />
-                    </a>
-                  </Button>
                 </div>
               ) : null}
             </>

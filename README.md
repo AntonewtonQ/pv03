@@ -101,6 +101,7 @@ Usada pela pagina Now.
   location: string;
   projectName: string;
   projectLink: string;
+  projectCover: string;
   updatedAt: string;
 }
 ```
@@ -188,6 +189,7 @@ O admin permite:
 - criar, editar e apagar projectos;
 - capturar cover da pagina inicial de um projecto em producao;
 - editar a pagina Now;
+- capturar e guardar a tela do projecto actual da pagina Now;
 - abrir a pagina Now publica para conferencia.
 
 Para o login funcionar, activa o metodo Email/Password no Firebase Auth e cria

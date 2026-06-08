@@ -8,6 +8,7 @@ export interface NowContent {
   location: string;
   projectName: string;
   projectLink: string;
+  projectCover: string;
   updatedAt: string;
 }
 
@@ -21,6 +22,7 @@ export const emptyNowContent: NowContent = {
   location: "",
   projectName: "",
   projectLink: "",
+  projectCover: "",
   updatedAt: "",
 };
 

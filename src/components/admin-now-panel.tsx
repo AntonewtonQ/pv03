@@ -2,12 +2,17 @@
 
 import { useEffect, useState } from "react";
 import { doc, getDoc, setDoc } from "firebase/firestore";
-import { ExternalLink, Loader2, Radio, Save } from "lucide-react";
+import { Camera, ExternalLink, Loader2, Radio, Save } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { db } from "@/lib/firebase";
+import { auth, db } from "@/lib/firebase";
 import { emptyNowContent, toNowContent, type NowContent } from "@/lib/now";
 import { Link } from "@/i18n/navigation";
 import { Button } from "./ui/button";
+
+interface CoverResponse {
+  coverUrl?: string;
+  error?: string;
+}
 
 export default function AdminNowPanel() {
   const t = useTranslations("Admin");
@@ -15,6 +20,7 @@ export default function AdminNowPanel() {
   const [status, setStatus] = useState<"loading" | "idle" | "saving">(
     "loading"
   );
+  const [coverStatus, setCoverStatus] = useState<"idle" | "capturing">("idle");
   const [notice, setNotice] = useState("");
   const [error, setError] = useState("");
 
@@ -69,6 +75,85 @@ export default function AdminNowPanel() {
     }
   };
 
+  const getCoverErrorMessage = (errorCode?: string) => {
+    switch (errorCode) {
+      case "blob-token-missing":
+        return t("blobTokenMissing");
+      case "unauthorized":
+        return t("adminUnauthorized");
+      case "invalid-url":
+      case "invalid-protocol":
+        return t("invalidProjectUrl");
+      case "private-host":
+      case "private-ip":
+        return t("privateProjectUrl");
+      default:
+        return errorCode
+          ? t("coverErrorWithCode", { code: errorCode })
+          : t("coverError");
+    }
+  };
+
+  const handleCaptureCover = async () => {
+    const user = auth.currentUser;
+
+    if (!form.projectLink.trim()) {
+      setError(t("linkRequired"));
+      return;
+    }
+
+    if (!user) {
+      setError(t("adminUnauthorized"));
+      return;
+    }
+
+    setCoverStatus("capturing");
+    setNotice("");
+    setError("");
+
+    try {
+      const token = await user.getIdToken();
+      const response = await fetch("/api/admin/project-cover", {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          projectId: "now-current",
+          name: form.projectName || "now-current-project",
+          url: form.projectLink,
+        }),
+      });
+      const data = (await response.json()) as CoverResponse;
+
+      if (!response.ok || !data.coverUrl) {
+        throw new Error(getCoverErrorMessage(data.error));
+      }
+
+      const payload = {
+        ...form,
+        projectCover: data.coverUrl,
+        updatedAt: new Date().toISOString(),
+      };
+
+      setForm(payload);
+      await setDoc(doc(db, "now", "current"), payload);
+      setNotice(t("nowCoverSuccess"));
+    } catch (captureError) {
+      const message =
+        captureError instanceof Error ? captureError.message : t("coverError");
+
+      setError(
+        message.toLowerCase().includes("missing or insufficient permissions")
+          ? t("firestorePermissionError")
+          : message
+      );
+    } finally {
+      setCoverStatus("idle");
+    }
+  };
+
   return (
     <form
       onSubmit={handleSave}
@@ -98,8 +183,24 @@ export default function AdminNowPanel() {
             </Link>
           </Button>
           <Button
+            type="button"
+            variant="ghost"
+            onClick={() => void handleCaptureCover()}
+            disabled={status !== "idle" || coverStatus !== "idle"}
+            className="h-10 border border-white/10 bg-black px-3 text-xs text-zinc-300 hover:bg-white/10 hover:text-white"
+          >
+            {coverStatus === "capturing" ? (
+              <Loader2 className="animate-spin" size={15} />
+            ) : (
+              <Camera size={15} />
+            )}
+            {coverStatus === "capturing"
+              ? t("generatingCover")
+              : t("generateCover")}
+          </Button>
+          <Button
             type="submit"
-            disabled={status !== "idle"}
+            disabled={status !== "idle" || coverStatus !== "idle"}
             className="h-10 justify-between rounded-md bg-white px-4 text-sm font-bold text-black hover:bg-zinc-200"
           >
             {status === "saving" ? t("saving") : t("save")}
@@ -168,6 +269,29 @@ export default function AdminNowPanel() {
             className="h-11 w-full rounded-md border border-white/10 bg-black px-3 text-white outline-none transition placeholder:text-zinc-700 focus:border-emerald-300/40"
           />
         </label>
+
+        <div className="space-y-2 md:col-span-2">
+          <p className="text-sm text-zinc-300">{t("nowProjectCover")}</p>
+          <div className="aspect-[4/3] overflow-hidden rounded-lg border border-white/10 bg-zinc-950">
+            {form.projectCover ? (
+              <img
+                src={form.projectCover}
+                alt={form.projectName || t("nowProjectCover")}
+                className="h-full w-full object-cover"
+              />
+            ) : (
+              <div className="flex h-full items-center justify-center text-sm text-zinc-600">
+                {t("noImage")}
+              </div>
+            )}
+          </div>
+          <input
+            value={form.projectCover}
+            onChange={(event) => updateField("projectCover", event.target.value)}
+            placeholder={t("nowProjectCoverUrl")}
+            className="h-11 w-full rounded-md border border-white/10 bg-black px-3 text-white outline-none transition placeholder:text-zinc-700 focus:border-emerald-300/40"
+          />
+        </div>
 
         {(
           [
