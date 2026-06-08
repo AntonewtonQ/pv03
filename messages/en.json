@@ -246,7 +246,12 @@
       "subjectPlaceholder": "What is this about?",
       "message": "Message",
       "messagePlaceholder": "Write your message...",
-      "submit": "Send message"
+      "submit": "Send message",
+      "sending": "Sending...",
+      "success": "Message sent. I will reply as soon as possible.",
+      "error": "Could not send the message. Please try again.",
+      "rateLimited": "Too many messages sent. Wait a few minutes and try again.",
+      "notConfigured": "The contact form is not configured on the server yet."
     }
   },
   "Footer": {

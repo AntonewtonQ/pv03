@@ -246,7 +246,12 @@
       "subjectPlaceholder": "Sobre o que quer falar?",
       "message": "Mensagem",
       "messagePlaceholder": "Escreva a sua mensagem...",
-      "submit": "Enviar mensagem"
+      "submit": "Enviar mensagem",
+      "sending": "A enviar...",
+      "success": "Mensagem enviada. Vou responder assim que possível.",
+      "error": "Não foi possível enviar a mensagem. Tente novamente.",
+      "rateLimited": "Muitas mensagens enviadas. Aguarde alguns minutos e tente novamente.",
+      "notConfigured": "O formulário de contacto ainda não está configurado no servidor."
     }
   },
   "Footer": {

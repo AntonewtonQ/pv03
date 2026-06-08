@@ -16,6 +16,7 @@ gestao administrativa e captura automatica de covers para projectos publicados.
 - Captura de cover dos projectos em producao usando Chromium headless.
 - Upload das covers capturadas para Vercel Blob.
 - Regras Firestore com leitura publica e escrita restrita ao admin.
+- Formulario de contacto enviado por API interna usando Resend.
 
 ## Stack
 
@@ -132,6 +133,18 @@ ADMIN_EMAILS=teu-email-admin@dominio.com
 
 `BLOB_READ_WRITE_TOKEN` vem do Vercel Blob. `ADMIN_EMAILS` aceita varios emails
 separados por virgula.
+
+Para o formulario de contacto:
+
+```env
+RESEND_API_KEY=
+CONTACT_TO_EMAIL=antonewtonquima@gmail.com
+CONTACT_FROM_EMAIL="Portfolio <contact@teu-dominio.com>"
+```
+
+Durante testes, `CONTACT_FROM_EMAIL` pode usar `"Portfolio <onboarding@resend.dev>"`,
+mas esse dominio so envia para o email associado a conta Resend. Para producao,
+verifica um dominio na Resend e usa um remetente desse dominio.
 
 Em desenvolvimento local, caso o Chromium automatico nao funcione, podes apontar
 um executavel local:
