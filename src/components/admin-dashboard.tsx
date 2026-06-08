@@ -8,6 +8,7 @@ import {
   doc,
   getDocs,
   updateDoc,
+  writeBatch,
 } from "firebase/firestore";
 import {
   onAuthStateChanged,
@@ -17,6 +18,7 @@ import {
 } from "firebase/auth";
 import {
   Camera,
+  CircleDollarSign,
   FolderKanban,
   ImageIcon,
   Loader2,
@@ -110,6 +112,10 @@ export default function AdminDashboard() {
   const [items, setItems] = useState<ShopItem[]>([]);
   const [projects, setProjects] = useState<ProjectItem[]>([]);
   const [itemForm, setItemForm] = useState<ItemForm>(emptyItemForm);
+  const [globalPrice, setGlobalPrice] = useState("");
+  const [bulkPriceStatus, setBulkPriceStatus] = useState<
+    "idle" | "updating"
+  >("idle");
   const [projectForm, setProjectForm] =
     useState<ProjectForm>(emptyProjectForm);
   const [status, setStatus] = useState<"idle" | "loading" | "saving">("idle");
@@ -240,6 +246,12 @@ export default function AdminDashboard() {
             .sort((a, b) => a.name.localeCompare(b.name));
 
           setItems(nextItems);
+          const uniquePrices = new Set(nextItems.map((item) => item.price));
+          setGlobalPrice(
+            uniquePrices.size === 1 && nextItems[0]
+              ? String(nextItems[0].price)
+              : ""
+          );
         } else {
           const nextProjects = snapshot.docs
             .map((projectDoc) => {
@@ -446,6 +458,71 @@ export default function AdminDashboard() {
       setError(getActionErrorMessage(deleteError, t("deleteError")));
     } finally {
       setStatus("idle");
+    }
+  };
+
+  const handleBulkPriceUpdate = async (
+    event: React.FormEvent<HTMLFormElement>
+  ) => {
+    event.preventDefault();
+    const nextPrice = Number(globalPrice);
+
+    if (
+      !globalPrice.trim() ||
+      !Number.isFinite(nextPrice) ||
+      nextPrice < 0
+    ) {
+      setError(t("bulkPriceInvalid"));
+      return;
+    }
+
+    if (items.length === 0) {
+      setError(t("bulkPriceEmpty"));
+      return;
+    }
+
+    if (
+      !window.confirm(
+        t("bulkPriceConfirm", {
+          count: items.length,
+          price: new Intl.NumberFormat("pt-AO", {
+            style: "currency",
+            currency: "AOA",
+            maximumFractionDigits: 0,
+          }).format(nextPrice),
+        })
+      )
+    ) {
+      return;
+    }
+
+    setBulkPriceStatus("updating");
+    setNotice("");
+    setError("");
+
+    try {
+      const batchSize = 450;
+
+      for (let index = 0; index < items.length; index += batchSize) {
+        const batch = writeBatch(db);
+
+        items.slice(index, index + batchSize).forEach((item) => {
+          batch.update(doc(db, "items", item.id), { price: nextPrice });
+        });
+
+        await batch.commit();
+      }
+
+      setItemForm((currentForm) => ({
+        ...currentForm,
+        price: selectedId ? String(nextPrice) : currentForm.price,
+      }));
+      await loadCollection("items");
+      setNotice(t("bulkPriceSuccess", { count: items.length }));
+    } catch (updateError) {
+      setError(getActionErrorMessage(updateError, t("bulkPriceError")));
+    } finally {
+      setBulkPriceStatus("idle");
     }
   };
 
@@ -708,6 +785,60 @@ export default function AdminDashboard() {
             );
           })}
         </div>
+
+        {activeCollection === "items" ? (
+          <form
+            onSubmit={handleBulkPriceUpdate}
+            className="grid gap-4 border-y border-white/10 py-5 lg:grid-cols-[1fr_auto] lg:items-end"
+          >
+            <div className="flex gap-3">
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md border border-emerald-300/30 bg-emerald-300/10 text-emerald-200">
+                <CircleDollarSign size={18} />
+              </span>
+              <div>
+                <p className="text-sm font-bold text-white">
+                  {t("bulkPriceTitle")}
+                </p>
+                <p className="mt-1 max-w-2xl text-xs leading-5 text-zinc-500">
+                  {t("bulkPriceHint", { count: items.length })}
+                </p>
+              </div>
+            </div>
+
+            <div className="grid gap-2 sm:grid-cols-[180px_auto]">
+              <label className="block">
+                <span className="sr-only">{t("bulkPriceLabel")}</span>
+                <input
+                  type="number"
+                  min="0"
+                  step="1"
+                  value={globalPrice}
+                  onChange={(event) => setGlobalPrice(event.target.value)}
+                  placeholder={t("bulkPricePlaceholder")}
+                  className="h-10 w-full rounded-md border border-white/10 bg-black px-3 text-sm text-white outline-none transition placeholder:text-zinc-700 focus:border-emerald-300/40"
+                />
+              </label>
+              <Button
+                type="submit"
+                disabled={
+                  bulkPriceStatus === "updating" ||
+                  status !== "idle" ||
+                  items.length === 0
+                }
+                className="h-10 justify-between rounded-md bg-emerald-300 px-4 text-sm font-bold text-black hover:bg-emerald-200"
+              >
+                {bulkPriceStatus === "updating"
+                  ? t("bulkPriceUpdating")
+                  : t("bulkPriceAction")}
+                {bulkPriceStatus === "updating" ? (
+                  <Loader2 className="animate-spin" size={15} />
+                ) : (
+                  <Save size={15} />
+                )}
+              </Button>
+            </div>
+          </form>
+        ) : null}
 
         {activeCollection === "now" ? (
           <AdminNowPanel />

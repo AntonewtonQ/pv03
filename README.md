@@ -7,16 +7,18 @@ gestao administrativa e captura automatica de covers para projectos publicados.
 ## Funcionalidades
 
 - Paginas publicas com i18n: home, sobre, projectos, now, loja, contacto e versoes.
-- Loja com produtos vindos do Firestore.
+- Loja com produtos vindos do Firestore, carrinho persistente e checkout por WhatsApp.
 - Normalizacao automatica de imagens antigas da RSV Ink para o dominio actual.
 - Fallback local para imagens de produto indisponiveis.
 - Painel admin protegido por Firebase Auth.
 - CRUD de `items` e `projects` no admin.
+- Actualizacao do preco de todas as t-shirts numa unica operacao.
 - Edicao da pagina `Now` pelo admin usando o documento `now/current`.
 - Captura de cover dos projectos em producao usando Chromium headless.
 - Upload das covers capturadas para Vercel Blob.
 - Pagina individual para cada projecto com URL partilhavel.
 - Cards sociais Open Graph e Twitter dinamicos usando a cover de cada projecto.
+- Estado online automatico dos projectos publicados com tempo de resposta.
 - SEO com metadata, dados estruturados, sitemap e robots.
 - Regras Firestore com leitura publica e escrita restrita ao admin.
 - Formulario de contacto enviado por API interna usando Resend.
@@ -185,6 +187,10 @@ Inicia o servidor local:
 npm run dev
 ```
 
+O servidor de desenvolvimento usa `.next-dev`, separado do build de producao
+em `.next`, evitando conflitos de chunks quando `dev` e `build` sao executados
+ao mesmo tempo.
+
 Abre:
 
 ```txt
@@ -205,6 +211,7 @@ Acede a `/pt/admin` ou `/en/admin`.
 O admin permite:
 
 - criar, editar e apagar produtos;
+- actualizar o preco de todas as t-shirts de uma unica vez;
 - criar, editar e apagar projectos;
 - capturar cover da pagina inicial de um projecto em producao;
 - editar a pagina Now;
@@ -254,6 +261,19 @@ O portfolio tambem disponibiliza:
 Configura `NEXT_PUBLIC_SITE_URL` com o dominio final antes do deploy para que
 canonical URLs, sitemap e links dos cards sociais apontem para o endereco
 correcto.
+
+## Estado dos Projectos
+
+A API publica `/api/projects/status` verifica os links guardados nos projectos
+e apresenta um indicador na listagem e pagina individual:
+
+- `Online`: respondeu com sucesso em menos de 3 segundos;
+- `Instavel`: respondeu lentamente ou retornou um erro HTTP;
+- `Offline`: nao respondeu dentro do limite ou a ligacao falhou;
+- `Sem link`: o projecto ainda nao possui URL publicada.
+
+As verificacoes sao feitas no servidor, rejeitam enderecos locais/privados e
+ficam em cache durante cinco minutos para evitar pedidos excessivos.
 
 ## Deploy
 

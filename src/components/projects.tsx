@@ -5,6 +5,7 @@ import { collection, getDocs } from "firebase/firestore";
 import { Filter } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { db } from "@/lib/firebase";
+import type { ProjectStatusResult } from "@/lib/project-status-types";
 import ProjectCard from "./projectcard";
 import { Button } from "./ui/button";
 
@@ -19,6 +20,10 @@ interface Project {
 
 export default function ProjectsPage() {
   const [projects, setProjects] = useState<Project[]>([]);
+  const [projectStatuses, setProjectStatuses] = useState<
+    Record<string, ProjectStatusResult>
+  >({});
+  const [statusCheckComplete, setStatusCheckComplete] = useState(false);
   const [selectedYear, setSelectedYear] = useState<string | null>(null);
   const [status, setStatus] = useState<"loading" | "ready" | "error">(
     "loading"
@@ -35,8 +40,28 @@ export default function ProjectsPage() {
         }));
         setProjects(projectList);
         setStatus("ready");
+
+        try {
+          const statusResponse = await fetch("/api/projects/status");
+          const statusData = (await statusResponse.json()) as {
+            statuses?: ProjectStatusResult[];
+          };
+          const nextStatuses = Object.fromEntries(
+            (statusData.statuses ?? []).map((projectStatus) => [
+              projectStatus.id,
+              projectStatus,
+            ])
+          );
+
+          setProjectStatuses(nextStatuses);
+        } catch {
+          setProjectStatuses({});
+        } finally {
+          setStatusCheckComplete(true);
+        }
       } catch {
         setStatus("error");
+        setStatusCheckComplete(true);
       }
     };
 
@@ -115,6 +140,8 @@ export default function ProjectsPage() {
                   {...project}
                   viewLabel={t("viewProject")}
                   visitLabel={t("visitProject")}
+                  status={projectStatuses[project.id]}
+                  statusCheckComplete={statusCheckComplete}
                 />
               ))
             ) : (

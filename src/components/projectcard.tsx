@@ -1,6 +1,8 @@
 import { ArrowRight, ExternalLink } from "lucide-react";
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
+import type { ProjectStatusResult } from "@/lib/project-status-types";
+import ProjectStatusBadge from "./project-status-badge";
 
 interface ProjectCardProps {
   id: string;
@@ -11,6 +13,8 @@ interface ProjectCardProps {
   link: string;
   viewLabel: string;
   visitLabel: string;
+  status?: ProjectStatusResult;
+  statusCheckComplete?: boolean;
 }
 
 export default function ProjectCard({
@@ -22,6 +26,8 @@ export default function ProjectCard({
   link,
   viewLabel,
   visitLabel,
+  status,
+  statusCheckComplete,
 }: ProjectCardProps) {
   const hasCover = Boolean(cover?.trim());
 
@@ -50,6 +56,11 @@ export default function ProjectCard({
           <span className="rounded-md border border-emerald-300/30 bg-emerald-300/10 px-3 py-1 text-xs text-emerald-200">
             {year}
           </span>
+          <ProjectStatusBadge
+            hasLink={Boolean(link)}
+            initialStatus={status}
+            checkComplete={statusCheckComplete}
+          />
         </div>
         <div className="space-y-2">
           <h3 className="text-lg font-bold leading-snug text-white">{name}</h3>

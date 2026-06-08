@@ -4,6 +4,7 @@ import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 import PageFrame from "@/components/page-frame";
 import ProjectShareButton from "@/components/project-share-button";
+import ProjectStatusBadge from "@/components/project-status-badge";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
 import { getProject } from "@/lib/projects-server";
@@ -123,10 +124,14 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
             <div className="space-y-6">
               <div className="space-y-4 border-y border-white/10 py-6">
-                <div className="flex items-center gap-3">
+                <div className="flex flex-wrap items-center gap-3">
                   <span className="rounded-md border border-emerald-300/30 bg-emerald-300/10 px-3 py-1 text-xs text-emerald-200">
                     {project.year}
                   </span>
+                  <ProjectStatusBadge
+                    projectId={project.id}
+                    hasLink={Boolean(project.link)}
+                  />
                   <span className="text-xs uppercase text-zinc-500">
                     {t("eyebrow")}
                   </span>

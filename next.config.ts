@@ -2,7 +2,7 @@ import type { NextConfig } from "next";
 import createNextIntlPlugin from 'next-intl/plugin';
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  distDir: process.env.NODE_ENV === "development" ? ".next-dev" : ".next",
   images: {
     remotePatterns: [
       {
