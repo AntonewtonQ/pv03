@@ -84,4 +84,8 @@
     background: rgba(52, 211, 153, 0.25);
     color: white;
   }
+
+  body[data-presentation="true"] [data-presentation-hide] {
+    display: none;
+  }
 }

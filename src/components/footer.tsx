@@ -5,7 +5,7 @@ const Footer = () => {
   const t = useTranslations("Footer");
 
   return (
-    <footer className="border-t border-white/10">
+    <footer data-presentation-hide className="border-t border-white/10">
       <div className="mx-auto flex max-w-6xl flex-col gap-3 px-6 py-8 text-sm text-zinc-500 md:flex-row md:items-center md:justify-between md:px-10">
         <p>{t("copyright")}</p>
         <Link

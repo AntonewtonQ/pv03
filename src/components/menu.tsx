@@ -17,6 +17,7 @@ import { Button } from "./ui/button";
 import LanguageSwitch from "./language-switch";
 import { Link } from "@/i18n/navigation";
 import { navLinks } from "@/constants/navlinks";
+import { PresentationModeButton } from "./presentation-mode";
 
 const Menu = () => {
   const t = useTranslations("Menu");
@@ -71,7 +72,10 @@ const Menu = () => {
               <span>{home("availability")}</span>
             </p>
           </div>
-          <LanguageSwitch />
+          <div data-presentation-hide className="flex items-center gap-2">
+            <PresentationModeButton />
+            <LanguageSwitch />
+          </div>
         </div>
 
         <div className="grid flex-1 items-center gap-10 py-12 lg:grid-cols-[1fr_360px]">

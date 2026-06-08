@@ -257,6 +257,13 @@
   "Footer": {
     "copyright": "Copyright · 2026 - antonewton.dev"
   },
+  "Presentation": {
+    "start": "Start presentation mode",
+    "stop": "Exit presentation mode",
+    "previous": "Previous page",
+    "next": "Next page",
+    "controls": "Presentation controls"
+  },
   "Version": {
     "eyebrow": "Versions",
     "title": "Changelog",

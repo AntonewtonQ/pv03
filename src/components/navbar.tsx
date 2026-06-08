@@ -6,13 +6,17 @@ import { Button } from "./ui/button";
 import LanguageSwitch from "./language-switch";
 import { Link, usePathname } from "@/i18n/navigation";
 import { navLinks } from "@/constants/navlinks";
+import { PresentationModeButton } from "./presentation-mode";
 
 const NavBar = () => {
   const pathname = usePathname();
   const t = useTranslations("Menu");
 
   return (
-    <header className="sticky top-0 z-30 border-b border-white/10 bg-black/85 backdrop-blur-xl">
+    <header
+      data-presentation-hide
+      className="sticky top-0 z-30 border-b border-white/10 bg-black/85 backdrop-blur-xl"
+    >
       <div className="mx-auto flex max-w-6xl flex-col gap-4 px-6 py-4 md:px-10">
         <div className="flex items-center justify-between gap-4">
           <Link
@@ -49,6 +53,7 @@ const NavBar = () => {
                 <Shield size={16} />
               </Link>
             </Button>
+            <PresentationModeButton />
             <LanguageSwitch />
           </div>
         </div>
