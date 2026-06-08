@@ -2,6 +2,7 @@ export const navLinks = [
   { href: "/", labelKey: "homelink" },
   { href: "/about", labelKey: "aboutlink" },
   { href: "/projects", labelKey: "projectslink" },
+  { href: "/now", labelKey: "nowlink" },
   { href: "/shop", labelKey: "shoplink" },
   { href: "/contact", labelKey: "contactlink" },
 ] as const;

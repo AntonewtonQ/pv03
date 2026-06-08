@@ -25,7 +25,7 @@ const ContactList = () => {
       icon: Github,
     },
     {
-      href: "https://www.linkedin.com/in/antonewton-quima-95aaa3238/",
+      href: "https://www.linkedin.com/in/antonewton/",
       label: "LinkedIn",
       value: "Antonewton Quima",
       icon: Linkedin,

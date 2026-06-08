@@ -24,6 +24,7 @@ import {
   LogIn,
   LogOut,
   Plus,
+  Radio,
   RefreshCcw,
   Save,
   ShoppingBag,
@@ -36,9 +37,10 @@ import {
   getProductImageUrl,
   normalizeRsvImageUrl,
 } from "@/lib/image-urls";
+import AdminNowPanel from "./admin-now-panel";
 import { Button } from "./ui/button";
 
-type CollectionKey = "items" | "projects";
+type CollectionKey = "items" | "projects" | "now";
 
 interface ShopItem {
   id: string;
@@ -115,9 +117,18 @@ export default function AdminDashboard() {
   const [notice, setNotice] = useState("");
   const [error, setError] = useState("");
 
-  const activeDocuments = activeCollection === "items" ? items : projects;
+  const activeDocuments =
+    activeCollection === "items"
+      ? items
+      : activeCollection === "projects"
+        ? projects
+        : [];
   const collectionLabel =
-    activeCollection === "items" ? t("shop") : t("projects");
+    activeCollection === "items"
+      ? t("shop")
+      : activeCollection === "projects"
+        ? t("projects")
+        : t("now");
   const itemPreview = getProductImageUrl(itemForm.imageUrl);
   const projectPreview =
     normalizeRsvImageUrl(projectForm.cover) || "/images/cover.png";
@@ -165,8 +176,24 @@ export default function AdminDashboard() {
 
   const totals = useMemo(
     () => [
-      { label: t("shop"), value: items.length, icon: ShoppingBag },
-      { label: t("projects"), value: projects.length, icon: FolderKanban },
+      {
+        key: "items" as const,
+        label: t("shop"),
+        value: String(items.length),
+        icon: ShoppingBag,
+      },
+      {
+        key: "projects" as const,
+        label: t("projects"),
+        value: String(projects.length),
+        icon: FolderKanban,
+      },
+      {
+        key: "now" as const,
+        label: t("now"),
+        value: t("edit"),
+        icon: Radio,
+      },
     ],
     [items.length, projects.length, t]
   );
@@ -181,7 +208,9 @@ export default function AdminDashboard() {
       return;
     }
 
-    setProjectForm(emptyProjectForm);
+    if (collectionKey === "projects") {
+      setProjectForm(emptyProjectForm);
+    }
   }, []);
 
   const loadCollection = useCallback(
@@ -190,6 +219,10 @@ export default function AdminDashboard() {
       setError("");
 
       try {
+        if (collectionKey === "now") {
+          return;
+        }
+
         const snapshot = await getDocs(collection(db, collectionKey));
 
         if (collectionKey === "items") {
@@ -300,6 +333,10 @@ export default function AdminDashboard() {
       return;
     }
 
+    if (activeCollection !== "projects") {
+      return;
+    }
+
     const selectedProject = projects.find((project) => project.id === id);
 
     if (!selectedProject) {
@@ -347,7 +384,7 @@ export default function AdminDashboard() {
           imageUrl: payload.imageUrl,
         });
         await loadCollection("items");
-      } else {
+      } else if (activeCollection === "projects") {
         if (!projectForm.name.trim()) {
           setError(t("nameRequired"));
           return;
@@ -397,6 +434,10 @@ export default function AdminDashboard() {
     setError("");
 
     try {
+      if (activeCollection === "now") {
+        return;
+      }
+
       await deleteDoc(doc(db, activeCollection, selectedId));
       resetForm(activeCollection);
       await loadCollection(activeCollection);
@@ -607,14 +648,21 @@ export default function AdminDashboard() {
           </div>
         </div>
 
-        <div className="grid gap-3 sm:grid-cols-2">
+        <div className="grid gap-3 sm:grid-cols-3">
           {totals.map((total) => {
             const Icon = total.icon;
+            const isActive = activeCollection === total.key;
 
             return (
-              <div
+              <button
                 key={total.label}
-                className="flex items-center justify-between rounded-lg border border-white/10 bg-white/[0.03] p-4"
+                type="button"
+                onClick={() => handleSelectCollection(total.key)}
+                className={`flex items-center justify-between rounded-lg border p-4 text-left transition ${
+                  isActive
+                    ? "border-emerald-300/40 bg-emerald-300/10"
+                    : "border-white/10 bg-white/[0.03] hover:bg-white/[0.06]"
+                }`}
               >
                 <div>
                   <p className="text-sm text-zinc-500">{total.label}</p>
@@ -623,15 +671,20 @@ export default function AdminDashboard() {
                 <span className="flex h-10 w-10 items-center justify-center rounded-md border border-emerald-300/30 bg-emerald-300/10 text-emerald-200">
                   <Icon size={18} />
                 </span>
-              </div>
+              </button>
             );
           })}
         </div>
 
         <div className="flex flex-wrap gap-2">
-          {(["items", "projects"] as const).map((collectionKey) => {
+          {(["items", "projects", "now"] as const).map((collectionKey) => {
             const isActive = activeCollection === collectionKey;
-            const Icon = collectionKey === "items" ? ShoppingBag : FolderKanban;
+            const Icon =
+              collectionKey === "items"
+                ? ShoppingBag
+                : collectionKey === "projects"
+                  ? FolderKanban
+                  : Radio;
 
             return (
               <Button
@@ -646,12 +699,19 @@ export default function AdminDashboard() {
                 }`}
               >
                 <Icon size={15} />
-                {collectionKey === "items" ? t("shop") : t("projects")}
+                {collectionKey === "items"
+                  ? t("shop")
+                  : collectionKey === "projects"
+                    ? t("projects")
+                    : t("now")}
               </Button>
             );
           })}
         </div>
 
+        {activeCollection === "now" ? (
+          <AdminNowPanel />
+        ) : (
         <div className="grid gap-5 lg:grid-cols-[330px_1fr]">
           <aside className="rounded-lg border border-white/10 bg-white/[0.03]">
             <div className="flex items-center justify-between border-b border-white/10 p-4">
@@ -968,6 +1028,7 @@ export default function AdminDashboard() {
             ) : null}
           </form>
         </div>
+        )}
       </div>
     </section>
   );
