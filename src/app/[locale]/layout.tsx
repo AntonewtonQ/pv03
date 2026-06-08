@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import { PresentationModeProvider } from "@/components/presentation-mode";
 import { SITE_URL } from "@/lib/site";
 import "../globals.css";
@@ -79,6 +80,7 @@ export default async function LocaleLayout({
         <NextIntlClientProvider>
           <PresentationModeProvider>{children}</PresentationModeProvider>
         </NextIntlClientProvider>
+        <Analytics />
       </body>
     </html>
   );

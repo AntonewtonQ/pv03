@@ -20,6 +20,7 @@ gestao administrativa e captura automatica de covers para projectos publicados.
 - Cards sociais Open Graph e Twitter dinamicos usando a cover de cada projecto.
 - Estado online automatico dos projectos publicados com tempo de resposta.
 - SEO com metadata, dados estruturados, sitemap e robots.
+- Vercel Web Analytics para visitantes, paginas vistas, origens e dispositivos.
 - Regras Firestore com leitura publica e escrita restrita ao admin.
 - Formulario de contacto enviado por API interna usando Resend.
 
@@ -36,6 +37,7 @@ gestao administrativa e captura automatica de covers para projectos publicados.
 - Puppeteer Core
 - @sparticuz/chromium
 - Sharp
+- Vercel Web Analytics
 - Lucide React
 
 ## Estrutura Principal
@@ -285,6 +287,22 @@ Antes de publicar:
 - cria/conecta o Vercel Blob Store;
 - publica as regras Firestore;
 - confirma que o email admin esta em `ADMIN_EMAILS`.
+- activa Web Analytics no separador Analytics do projecto na Vercel.
+
+## Estatisticas de Acesso
+
+O portfolio inclui o componente oficial `@vercel/analytics`, carregado no
+layout global para acompanhar todas as paginas e navegacoes.
+
+Depois do deploy, activa Web Analytics no painel da Vercel:
+
+```txt
+Projecto > Analytics > Enable
+```
+
+Os dados ficam disponiveis no mesmo separador e incluem visitantes, paginas
+mais vistas, origens, paises, dispositivos, navegadores e taxa de rejeicao.
+O Vercel Web Analytics utiliza dados anonimizados e nao depende de cookies.
 
 ## Scripts
 
