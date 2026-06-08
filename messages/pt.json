@@ -121,7 +121,16 @@
     "loading": "A carregar projectos...",
     "error": "Não foi possível carregar os projectos agora.",
     "noprojects": "Projectos não encontrados.",
-    "viewProject": "Ver projecto"
+    "viewProject": "Ver detalhes",
+    "visitProject": "Abrir projecto publicado"
+  },
+  "ProjectDetail": {
+    "eyebrow": "Projecto",
+    "back": "Voltar aos projectos",
+    "visit": "Abrir projecto publicado",
+    "share": "Partilhar projecto",
+    "copied": "Link copiado",
+    "shareHint": "Ao partilhar esta página no WhatsApp, LinkedIn ou noutra rede, será usado um card próprio com a imagem e os detalhes deste projecto."
   },
   "Shop": {
     "eyebrow": "Loja",
@@ -255,7 +264,7 @@
     }
   },
   "Footer": {
-    "copyright": "Copyright · 2026 - antonewton.dev"
+    "copyright": "Copyright · 2026 - antonewton.xyz"
   },
   "Presentation": {
     "start": "Iniciar modo de apresentação",

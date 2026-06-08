@@ -4,6 +4,7 @@ import { routing } from "@/i18n/routing";
 import { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { PresentationModeProvider } from "@/components/presentation-mode";
+import { SITE_URL } from "@/lib/site";
 import "../globals.css";
 
 const geistSans = Geist({
@@ -17,9 +18,41 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Antonewton Quima",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "Antonewton Quima | Odoo Developer",
+    template: "%s | Antonewton Quima",
+  },
   description:
     "Portfolio v4.0 de Antonewton Quima, desenvolvedor de software em Luanda.",
+  authors: [{ name: "Antonewton Quima", url: SITE_URL }],
+  creator: "Antonewton Quima",
+  keywords: [
+    "Antonewton Quima",
+    "Odoo Developer",
+    "Software Developer",
+    "Next.js",
+    "Python",
+    "Luanda",
+    "Angola",
+  ],
+  openGraph: {
+    type: "website",
+    title: "Antonewton Quima | Odoo Developer",
+    description:
+      "Portfolio de Antonewton Quima: software, ERP, automação e produtos digitais.",
+    siteName: "Antonewton Quima",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Antonewton Quima | Odoo Developer",
+    description:
+      "Software, ERP, automação e produtos digitais por Antonewton Quima.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
   icons: {
     icon: "/favicon.ico",
   },

@@ -1,22 +1,27 @@
-import { ExternalLink } from "lucide-react";
+import { ArrowRight, ExternalLink } from "lucide-react";
 import Image from "next/image";
+import { Link } from "@/i18n/navigation";
 
 interface ProjectCardProps {
+  id: string;
   name: string;
   description: string;
   year: string;
   cover: string;
   link: string;
   viewLabel: string;
+  visitLabel: string;
 }
 
 export default function ProjectCard({
+  id,
   name,
   description,
   year,
   cover,
   link,
   viewLabel,
+  visitLabel,
 }: ProjectCardProps) {
   const hasCover = Boolean(cover?.trim());
 
@@ -50,18 +55,27 @@ export default function ProjectCard({
           <h3 className="text-lg font-bold leading-snug text-white">{name}</h3>
           <p className="text-sm leading-6 text-zinc-400">{description}</p>
         </div>
-        <a
-          href={link || "#"}
-          target="_blank"
-          rel="noreferrer"
-          aria-disabled={!link}
-          className={`mt-auto inline-flex h-10 items-center justify-between rounded-md border border-white/10 bg-black px-3 text-sm font-medium text-white transition hover:bg-white hover:text-black ${
-            link ? "" : "pointer-events-none opacity-50"
-          }`}
-        >
-          {viewLabel}
-          <ExternalLink size={16} />
-        </a>
+        <div className="mt-auto flex gap-2">
+          <Link
+            href={`/projects/${id}`}
+            className="inline-flex h-10 flex-1 items-center justify-between rounded-md border border-white/10 bg-black px-3 text-sm font-medium text-white transition hover:bg-white hover:text-black"
+          >
+            {viewLabel}
+            <ArrowRight size={16} />
+          </Link>
+          {link ? (
+            <a
+              href={link}
+              target="_blank"
+              rel="noreferrer"
+              title={visitLabel}
+              aria-label={visitLabel}
+              className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-md border border-white/10 bg-black text-white transition hover:bg-white hover:text-black"
+            >
+              <ExternalLink size={16} />
+            </a>
+          ) : null}
+        </div>
       </div>
     </article>
   );

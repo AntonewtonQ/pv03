@@ -9,6 +9,7 @@ import ProjectCard from "./projectcard";
 import { Button } from "./ui/button";
 
 interface Project {
+  id: string;
   name: string;
   description: string;
   year: string;
@@ -28,9 +29,10 @@ export default function ProjectsPage() {
     const fetchProjects = async () => {
       try {
         const querySnapshot = await getDocs(collection(db, "projects"));
-        const projectList = querySnapshot.docs.map(
-          (doc) => doc.data() as Project
-        );
+        const projectList = querySnapshot.docs.map((projectDoc) => ({
+          id: projectDoc.id,
+          ...(projectDoc.data() as Omit<Project, "id">),
+        }));
         setProjects(projectList);
         setStatus("ready");
       } catch {
@@ -109,9 +111,10 @@ export default function ProjectsPage() {
             {filteredProjects.length > 0 ? (
               filteredProjects.map((project) => (
                 <ProjectCard
-                  key={`${project.name}-${project.year}`}
+                  key={project.id}
                   {...project}
                   viewLabel={t("viewProject")}
+                  visitLabel={t("visitProject")}
                 />
               ))
             ) : (

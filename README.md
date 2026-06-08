@@ -15,6 +15,9 @@ gestao administrativa e captura automatica de covers para projectos publicados.
 - Edicao da pagina `Now` pelo admin usando o documento `now/current`.
 - Captura de cover dos projectos em producao usando Chromium headless.
 - Upload das covers capturadas para Vercel Blob.
+- Pagina individual para cada projecto com URL partilhavel.
+- Cards sociais Open Graph e Twitter dinamicos usando a cover de cada projecto.
+- SEO com metadata, dados estruturados, sitemap e robots.
 - Regras Firestore com leitura publica e escrita restrita ao admin.
 - Formulario de contacto enviado por API interna usando Resend.
 
@@ -30,6 +33,7 @@ gestao administrativa e captura automatica de covers para projectos publicados.
 - Vercel Blob
 - Puppeteer Core
 - @sparticuz/chromium
+- Sharp
 - Lucide React
 
 ## Estrutura Principal
@@ -50,6 +54,7 @@ firestore.rules          Regras sugeridas para o Firestore
 /pt
 /pt/about
 /pt/projects
+/pt/projects/[id]
 /pt/now
 /pt/shop
 /pt/contact
@@ -115,6 +120,7 @@ pagina publica.
 Cria um ficheiro `.env.local` com as variaveis publicas do Firebase:
 
 ```env
+NEXT_PUBLIC_SITE_URL=https://antonewton.xyz
 NEXT_PUBLIC_FIREBASE_API_KEY=
 NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=
 NEXT_PUBLIC_FIREBASE_PROJECT_ID=
@@ -223,6 +229,31 @@ A API usada por esse fluxo esta em:
 ```txt
 src/app/api/admin/project-cover/route.ts
 ```
+
+## SEO e Cards Sociais
+
+Cada documento da colecao `projects` recebe uma pagina publica em:
+
+```txt
+/pt/projects/[id]
+/en/projects/[id]
+```
+
+Ao partilhar essa pagina no WhatsApp, LinkedIn ou noutra rede, o Next.js gera
+um card `1200x630` exclusivo com a cover, nome, descricao e ano do projecto.
+A cover capturada pelo admin e guardada no campo `cover` e reutilizada
+automaticamente no card social.
+
+O portfolio tambem disponibiliza:
+
+```txt
+/sitemap.xml
+/robots.txt
+```
+
+Configura `NEXT_PUBLIC_SITE_URL` com o dominio final antes do deploy para que
+canonical URLs, sitemap e links dos cards sociais apontem para o endereco
+correcto.
 
 ## Deploy
 

@@ -121,7 +121,16 @@
     "loading": "Loading projects...",
     "error": "Could not load projects right now.",
     "noprojects": "Projects not found.",
-    "viewProject": "View project"
+    "viewProject": "View details",
+    "visitProject": "Open published project"
+  },
+  "ProjectDetail": {
+    "eyebrow": "Project",
+    "back": "Back to projects",
+    "visit": "Open published project",
+    "share": "Share project",
+    "copied": "Link copied",
+    "shareHint": "When sharing this page on WhatsApp, LinkedIn, or another network, a dedicated card with this project's image and details will be used."
   },
   "Shop": {
     "eyebrow": "Shop",
@@ -255,7 +264,7 @@
     }
   },
   "Footer": {
-    "copyright": "Copyright · 2026 - antonewton.dev"
+    "copyright": "Copyright · 2026 - antonewton.xyz"
   },
   "Presentation": {
     "start": "Start presentation mode",
