@@ -72,7 +72,7 @@ export default function ProjectStatusBadge({
     ? "unavailable"
     : status?.status || (finished ? "unknown" : "checking");
   const styles = {
-    online: "border-emerald-300/30 bg-emerald-300/10 text-emerald-200",
+    online: "border-orange-300/30 bg-orange-300/10 text-orange-200",
     degraded: "border-amber-300/30 bg-amber-300/10 text-amber-100",
     offline: "border-red-300/30 bg-red-300/10 text-red-100",
     unavailable: "border-white/10 bg-white/[0.03] text-zinc-500",

@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, MessageCircle } from "lucide-react";
+import { ArrowUpRight, Github, Linkedin, Mail, MessageCircle } from "lucide-react";
 import { useTranslations } from "next-intl";
 import SectionHeading from "./section-heading";
 
@@ -41,7 +41,7 @@ const ContactList = () => {
           subtitle={t("subtitle")}
         />
 
-        <div className="grid gap-3 border-y border-white/10 py-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid border-y border-white/[0.08] sm:grid-cols-2 lg:grid-cols-4">
           {channels.map((channel) => {
             const Icon = channel.icon;
 
@@ -51,13 +51,19 @@ const ContactList = () => {
                 href={channel.href}
                 target={channel.href.startsWith("http") ? "_blank" : undefined}
                 rel={channel.href.startsWith("http") ? "noreferrer" : undefined}
-                className="min-h-32 rounded-md border border-white/10 bg-white/[0.03] p-4 transition hover:border-white/25 hover:bg-white/[0.06]"
+                className="group relative min-h-36 border-b border-white/[0.08] py-6 pr-5 transition hover:bg-white/[0.018] sm:px-5 sm:first:border-r lg:border-b-0 lg:border-r lg:first:pl-0 lg:last:border-r-0 lg:last:pr-0"
               >
-                <Icon size={20} className="text-emerald-300" />
-                <p className="mt-5 text-sm font-semibold text-white">
+                <div className="flex items-center justify-between">
+                  <Icon size={19} className="text-orange-400" />
+                  <ArrowUpRight
+                    size={15}
+                    className="text-zinc-700 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-orange-400"
+                  />
+                </div>
+                <p className="mt-6 text-sm font-semibold text-white">
                   {channel.label}
                 </p>
-                <p className="mt-2 text-xs leading-5 text-zinc-400">
+                <p className="font-technical mt-2 break-all text-[11px] leading-5 text-zinc-500">
                   {channel.value}
                 </p>
               </a>

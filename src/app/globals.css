@@ -4,54 +4,54 @@
 
 @layer base {
   :root {
-    --background: 0 0% 2%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 5%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 5%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 151 64% 54%;
-    --primary-foreground: 0 0% 2%;
-    --secondary: 0 0% 9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 12%;
-    --muted-foreground: 0 0% 64%;
-    --accent: 38 92% 58%;
-    --accent-foreground: 0 0% 2%;
+    --background: 30 14% 3%;
+    --foreground: 36 20% 96%;
+    --card: 30 12% 5%;
+    --card-foreground: 36 20% 96%;
+    --popover: 30 12% 5%;
+    --popover-foreground: 36 20% 96%;
+    --primary: 24 95% 55%;
+    --primary-foreground: 24 40% 5%;
+    --secondary: 30 8% 10%;
+    --secondary-foreground: 36 20% 96%;
+    --muted: 30 7% 13%;
+    --muted-foreground: 30 6% 64%;
+    --accent: 24 32% 15%;
+    --accent-foreground: 26 100% 88%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 16%;
-    --input: 0 0% 14%;
-    --ring: 151 64% 54%;
-    --chart-1: 151 64% 54%;
+    --border: 30 7% 17%;
+    --input: 30 7% 15%;
+    --ring: 24 95% 55%;
+    --chart-1: 24 95% 55%;
     --chart-2: 38 92% 58%;
     --chart-3: 199 89% 48%;
     --chart-4: 339 82% 66%;
     --chart-5: 0 0% 98%;
-    --radius: 0.5rem;
+    --radius: 0.375rem;
   }
   .dark {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 240 10% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 240 5.9% 10%;
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
-    --accent: 240 3.7% 15.9%;
-    --accent-foreground: 0 0% 98%;
+    --background: 30 14% 3%;
+    --foreground: 36 20% 96%;
+    --card: 30 12% 5%;
+    --card-foreground: 36 20% 96%;
+    --popover: 30 12% 5%;
+    --popover-foreground: 36 20% 96%;
+    --primary: 24 95% 55%;
+    --primary-foreground: 24 40% 5%;
+    --secondary: 30 8% 10%;
+    --secondary-foreground: 36 20% 96%;
+    --muted: 30 7% 13%;
+    --muted-foreground: 30 6% 64%;
+    --accent: 24 32% 15%;
+    --accent-foreground: 26 100% 88%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 240 4.9% 83.9%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
+    --border: 30 7% 17%;
+    --input: 30 7% 15%;
+    --ring: 24 95% 55%;
+    --chart-1: 24 95% 55%;
+    --chart-2: 38 92% 58%;
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
@@ -60,7 +60,7 @@
 
 @layer base {
   html {
-    background: #050505;
+    background: #090806;
     color-scheme: dark;
     scroll-behavior: smooth;
   }
@@ -72,20 +72,41 @@
   body {
     @apply bg-background text-foreground;
     min-height: 100vh;
-    background-color: #050505;
+    background-color: #090806;
     background-image:
-      linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
-    background-size: 44px 44px;
-    font-family: var(--font-geist-mono), "Courier New", Courier, monospace;
+      radial-gradient(circle at 82% -8%, rgba(249, 115, 22, 0.09), transparent 28rem),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.018), transparent 18rem);
+    font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+    text-rendering: optimizeLegibility;
   }
 
   ::selection {
-    background: rgba(52, 211, 153, 0.25);
+    background: rgba(249, 115, 22, 0.32);
     color: white;
+  }
+
+  :focus-visible {
+    outline: 2px solid rgba(249, 115, 22, 0.75);
+    outline-offset: 3px;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
   }
 
   body[data-presentation="true"] [data-presentation-hide] {
     display: none;
+  }
+}
+
+@layer utilities {
+  .font-technical {
+    font-family: var(--font-geist-mono), "Courier New", Courier, monospace;
   }
 }

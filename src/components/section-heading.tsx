@@ -16,22 +16,23 @@ const SectionHeading = ({
   titleClassName,
 }: SectionHeadingProps) => {
   return (
-    <div className={cn("space-y-3", className)}>
+    <div className={cn("space-y-4", className)}>
       {eyebrow ? (
-        <p className="text-xs font-semibold uppercase text-emerald-300">
-          {eyebrow}
+        <p className="font-technical flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.2em] text-orange-400">
+          <span className="h-px w-6 bg-orange-400" aria-hidden="true" />
+          <span>{eyebrow}</span>
         </p>
       ) : null}
       <h1
         className={cn(
-          "max-w-3xl text-3xl font-bold text-white md:text-4xl",
+          "max-w-4xl text-4xl font-semibold leading-[1.05] tracking-[-0.04em] text-white md:text-6xl",
           titleClassName
         )}
       >
         {title}
       </h1>
       {subtitle ? (
-        <p className="max-w-3xl text-sm leading-7 text-zinc-400 md:text-base">
+        <p className="max-w-2xl text-base leading-7 text-zinc-400 md:text-lg md:leading-8">
           {subtitle}
         </p>
       ) : null}

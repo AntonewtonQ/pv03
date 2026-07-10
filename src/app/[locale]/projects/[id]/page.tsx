@@ -113,8 +113,8 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             </Link>
           </Button>
 
-          <div className="grid gap-8 lg:grid-cols-[1fr_380px] lg:items-start">
-            <div className="overflow-hidden rounded-lg border border-white/10 bg-zinc-950">
+          <div className="grid gap-10 lg:grid-cols-[1fr_380px] lg:items-start">
+            <div className="overflow-hidden border border-white/[0.08] bg-zinc-950">
               <img
                 src={cover}
                 alt={project.name}
@@ -123,20 +123,20 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             </div>
 
             <div className="space-y-6">
-              <div className="space-y-4 border-y border-white/10 py-6">
+              <div className="space-y-5 border-y border-white/[0.08] py-6">
                 <div className="flex flex-wrap items-center gap-3">
-                  <span className="rounded-md border border-emerald-300/30 bg-emerald-300/10 px-3 py-1 text-xs text-emerald-200">
+                  <span className="font-technical text-[11px] uppercase tracking-[0.16em] text-orange-400">
                     {project.year}
                   </span>
                   <ProjectStatusBadge
                     projectId={project.id}
                     hasLink={Boolean(project.link)}
                   />
-                  <span className="text-xs uppercase text-zinc-500">
+                  <span className="font-technical text-[10px] uppercase tracking-[0.14em] text-zinc-600">
                     {t("eyebrow")}
                   </span>
                 </div>
-                <h1 className="text-3xl font-black leading-tight text-white md:text-4xl">
+                <h1 className="text-4xl font-semibold leading-tight tracking-[-0.04em] text-white md:text-5xl">
                   {project.name}
                 </h1>
                 <p className="text-sm leading-7 text-zinc-400">
@@ -148,7 +148,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                 {project.link ? (
                   <Button
                     asChild
-                    className="h-11 justify-between rounded-md bg-white px-4 text-sm font-bold text-black hover:bg-zinc-200"
+                    className="h-12 justify-between rounded-sm bg-orange-500 px-5 text-sm font-semibold text-black shadow-none hover:bg-orange-400"
                   >
                     <a href={project.link} target="_blank" rel="noreferrer">
                       {t("visit")}

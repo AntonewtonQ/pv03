@@ -30,7 +30,7 @@ export default function OpenGraphImage() {
             justifyContent: "space-between",
           }}
         >
-          <div style={{ color: "#6ee7b7", display: "flex", fontSize: 22 }}>
+          <div style={{ color: "#fb923c", display: "flex", fontSize: 22 }}>
             antonewton.xyz / v4.0
           </div>
           <div style={{ color: "#a1a1aa", display: "flex", fontSize: 20 }}>
@@ -73,7 +73,7 @@ export default function OpenGraphImage() {
           }}
         >
           <span>Odoo · Web · Automation</span>
-          <span style={{ color: "#6ee7b7" }}>antonewton.xyz</span>
+          <span style={{ color: "#fb923c" }}>antonewton.xyz</span>
         </div>
       </div>
     ),

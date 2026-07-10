@@ -161,7 +161,7 @@ export default function AdminNowPanel() {
     >
       <div className="flex flex-col gap-4 border-b border-white/10 p-4 md:flex-row md:items-center md:justify-between">
         <div className="flex items-center gap-3">
-          <span className="flex h-10 w-10 items-center justify-center rounded-md border border-emerald-300/30 bg-emerald-300/10 text-emerald-200">
+          <span className="flex h-10 w-10 items-center justify-center rounded-md border border-orange-300/30 bg-orange-300/10 text-orange-200">
             <Radio size={18} />
           </span>
           <div>
@@ -219,7 +219,7 @@ export default function AdminNowPanel() {
           <input
             value={form.headline}
             onChange={(event) => updateField("headline", event.target.value)}
-            className="h-11 w-full rounded-md border border-white/10 bg-black px-3 text-white outline-none transition placeholder:text-zinc-700 focus:border-emerald-300/40"
+            className="h-11 w-full rounded-md border border-white/10 bg-black px-3 text-white outline-none transition placeholder:text-zinc-700 focus:border-orange-300/40"
           />
         </label>
 
@@ -228,7 +228,7 @@ export default function AdminNowPanel() {
           <textarea
             value={form.summary}
             onChange={(event) => updateField("summary", event.target.value)}
-            className="min-h-24 w-full resize-y rounded-md border border-white/10 bg-black p-3 text-white outline-none transition placeholder:text-zinc-700 focus:border-emerald-300/40"
+            className="min-h-24 w-full resize-y rounded-md border border-white/10 bg-black p-3 text-white outline-none transition placeholder:text-zinc-700 focus:border-orange-300/40"
           />
         </label>
 
@@ -237,7 +237,7 @@ export default function AdminNowPanel() {
           <input
             value={form.availability}
             onChange={(event) => updateField("availability", event.target.value)}
-            className="h-11 w-full rounded-md border border-white/10 bg-black px-3 text-white outline-none transition placeholder:text-zinc-700 focus:border-emerald-300/40"
+            className="h-11 w-full rounded-md border border-white/10 bg-black px-3 text-white outline-none transition placeholder:text-zinc-700 focus:border-orange-300/40"
           />
         </label>
 
@@ -246,7 +246,7 @@ export default function AdminNowPanel() {
           <input
             value={form.location}
             onChange={(event) => updateField("location", event.target.value)}
-            className="h-11 w-full rounded-md border border-white/10 bg-black px-3 text-white outline-none transition placeholder:text-zinc-700 focus:border-emerald-300/40"
+            className="h-11 w-full rounded-md border border-white/10 bg-black px-3 text-white outline-none transition placeholder:text-zinc-700 focus:border-orange-300/40"
           />
         </label>
 
@@ -255,7 +255,7 @@ export default function AdminNowPanel() {
           <input
             value={form.projectName}
             onChange={(event) => updateField("projectName", event.target.value)}
-            className="h-11 w-full rounded-md border border-white/10 bg-black px-3 text-white outline-none transition placeholder:text-zinc-700 focus:border-emerald-300/40"
+            className="h-11 w-full rounded-md border border-white/10 bg-black px-3 text-white outline-none transition placeholder:text-zinc-700 focus:border-orange-300/40"
           />
         </label>
 
@@ -266,7 +266,7 @@ export default function AdminNowPanel() {
             value={form.projectLink}
             onChange={(event) => updateField("projectLink", event.target.value)}
             placeholder="https://"
-            className="h-11 w-full rounded-md border border-white/10 bg-black px-3 text-white outline-none transition placeholder:text-zinc-700 focus:border-emerald-300/40"
+            className="h-11 w-full rounded-md border border-white/10 bg-black px-3 text-white outline-none transition placeholder:text-zinc-700 focus:border-orange-300/40"
           />
         </label>
 
@@ -289,7 +289,7 @@ export default function AdminNowPanel() {
             value={form.projectCover}
             onChange={(event) => updateField("projectCover", event.target.value)}
             placeholder={t("nowProjectCoverUrl")}
-            className="h-11 w-full rounded-md border border-white/10 bg-black px-3 text-white outline-none transition placeholder:text-zinc-700 focus:border-emerald-300/40"
+            className="h-11 w-full rounded-md border border-white/10 bg-black px-3 text-white outline-none transition placeholder:text-zinc-700 focus:border-orange-300/40"
           />
         </div>
 
@@ -306,7 +306,7 @@ export default function AdminNowPanel() {
               value={form[field]}
               onChange={(event) => updateField(field, event.target.value)}
               placeholder={t("onePerLine")}
-              className="min-h-40 w-full resize-y rounded-md border border-white/10 bg-black p-3 text-white outline-none transition placeholder:text-zinc-700 focus:border-emerald-300/40"
+              className="min-h-40 w-full resize-y rounded-md border border-white/10 bg-black p-3 text-white outline-none transition placeholder:text-zinc-700 focus:border-orange-300/40"
             />
           </label>
         ))}
@@ -315,7 +315,7 @@ export default function AdminNowPanel() {
       {notice || error ? (
         <div className="border-t border-white/10 p-4">
           {notice ? (
-            <p className="rounded-md border border-emerald-300/30 bg-emerald-300/10 p-3 text-sm text-emerald-100">
+            <p className="rounded-md border border-orange-300/30 bg-orange-300/10 p-3 text-sm text-orange-100">
               {notice}
             </p>
           ) : null}

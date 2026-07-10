@@ -81,9 +81,9 @@ export default function ProjectsPage() {
   return (
     <section className="px-6 py-8 md:px-10 md:py-10">
       <div className="mx-auto max-w-6xl space-y-8">
-        <div className="flex flex-col gap-3 border-y border-white/10 py-5 md:flex-row md:items-center md:justify-between">
-          <p className="flex items-center gap-2 text-sm text-zinc-400">
-            <Filter size={16} className="text-emerald-300" />
+        <div className="flex flex-col gap-4 border-y border-white/[0.08] py-5 md:flex-row md:items-center md:justify-between">
+          <p className="font-technical flex items-center gap-2 text-[11px] uppercase tracking-[0.14em] text-zinc-500">
+            <Filter size={15} className="text-orange-400" />
             {t("filterLabel")}
           </p>
           <div className="flex flex-wrap gap-2">
@@ -94,8 +94,8 @@ export default function ProjectsPage() {
               onClick={() => setSelectedYear(null)}
               className={`h-9 border px-3 text-xs ${
                 selectedYear === null
-                  ? "border-emerald-300/40 bg-emerald-300/10 text-emerald-200"
-                  : "border-white/10 bg-white/[0.03] text-zinc-400 hover:bg-white/10 hover:text-white"
+                  ? "border-orange-400/50 bg-orange-400/10 text-orange-200"
+                  : "border-white/10 bg-transparent text-zinc-500 hover:border-white/20 hover:bg-white/[0.04] hover:text-white"
               }`}
             >
               {t("all")}
@@ -109,8 +109,8 @@ export default function ProjectsPage() {
                 onClick={() => setSelectedYear(year)}
                 className={`h-9 border px-3 text-xs ${
                   selectedYear === year
-                    ? "border-emerald-300/40 bg-emerald-300/10 text-emerald-200"
-                    : "border-white/10 bg-white/[0.03] text-zinc-400 hover:bg-white/10 hover:text-white"
+                    ? "border-orange-400/50 bg-orange-400/10 text-orange-200"
+                    : "border-white/10 bg-transparent text-zinc-500 hover:border-white/20 hover:bg-white/[0.04] hover:text-white"
                 }`}
               >
                 {year}
@@ -132,7 +132,7 @@ export default function ProjectsPage() {
         ) : null}
 
         {status === "ready" ? (
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
             {filteredProjects.length > 0 ? (
               filteredProjects.map((project) => (
                 <ProjectCard

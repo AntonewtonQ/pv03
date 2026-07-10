@@ -72,7 +72,7 @@ export default function ContactForm() {
       <div className="mx-auto max-w-6xl">
         <form
           onSubmit={handleSubmit}
-          className="space-y-5 border-y border-white/10 py-8"
+          className="space-y-5 border-b border-white/[0.08] pb-12 pt-8"
         >
           <input
             type="text"
@@ -99,7 +99,7 @@ export default function ContactForm() {
                 placeholder={t("namePlaceholder")}
                 minLength={2}
                 maxLength={100}
-                className="h-11 w-full rounded-md border border-white/10 bg-white/[0.03] px-3 text-sm text-white outline-none transition placeholder:text-zinc-600 focus:border-emerald-300/40 focus:bg-white/[0.05]"
+                className="h-12 w-full rounded-sm border border-white/10 bg-[#0d0c09] px-4 text-sm text-white outline-none transition placeholder:text-zinc-600 focus:border-orange-400/60 focus:bg-[#100e0b]"
                 required
               />
             </div>
@@ -115,7 +115,7 @@ export default function ContactForm() {
                 onChange={handleChange}
                 placeholder={t("emailPlaceholder")}
                 maxLength={160}
-                className="h-11 w-full rounded-md border border-white/10 bg-white/[0.03] px-3 text-sm text-white outline-none transition placeholder:text-zinc-600 focus:border-emerald-300/40 focus:bg-white/[0.05]"
+                className="h-12 w-full rounded-sm border border-white/10 bg-[#0d0c09] px-4 text-sm text-white outline-none transition placeholder:text-zinc-600 focus:border-orange-400/60 focus:bg-[#100e0b]"
                 required
               />
             </div>
@@ -134,7 +134,7 @@ export default function ContactForm() {
               placeholder={t("subjectPlaceholder")}
               minLength={3}
               maxLength={160}
-              className="h-11 w-full rounded-md border border-white/10 bg-white/[0.03] px-3 text-sm text-white outline-none transition placeholder:text-zinc-600 focus:border-emerald-300/40 focus:bg-white/[0.05]"
+              className="h-12 w-full rounded-sm border border-white/10 bg-[#0d0c09] px-4 text-sm text-white outline-none transition placeholder:text-zinc-600 focus:border-orange-400/60 focus:bg-[#100e0b]"
               required
             />
           </div>
@@ -151,7 +151,7 @@ export default function ContactForm() {
               placeholder={t("messagePlaceholder")}
               minLength={10}
               maxLength={5000}
-              className="min-h-40 w-full resize-y rounded-md border border-white/10 bg-white/[0.03] px-3 py-3 text-sm text-white outline-none transition placeholder:text-zinc-600 focus:border-emerald-300/40 focus:bg-white/[0.05]"
+              className="min-h-44 w-full resize-y rounded-sm border border-white/10 bg-[#0d0c09] px-4 py-3 text-sm text-white outline-none transition placeholder:text-zinc-600 focus:border-orange-400/60 focus:bg-[#100e0b]"
               required
             />
           </div>
@@ -159,7 +159,7 @@ export default function ContactForm() {
           <button
             type="submit"
             disabled={status === "sending"}
-            className="inline-flex h-11 items-center justify-between gap-3 rounded-md bg-white px-4 text-sm font-bold text-black transition hover:bg-zinc-200 disabled:pointer-events-none disabled:opacity-60"
+            className="inline-flex h-12 items-center justify-between gap-3 rounded-sm bg-orange-500 px-5 text-sm font-semibold text-black transition hover:bg-orange-400 disabled:pointer-events-none disabled:opacity-60"
           >
             <Send size={18} />
             {status === "sending" ? t("sending") : t("submit")}
@@ -168,7 +168,7 @@ export default function ContactForm() {
           {status === "success" ? (
             <p
               role="status"
-              className="rounded-md border border-emerald-300/30 bg-emerald-300/10 p-3 text-sm text-emerald-100"
+              className="rounded-md border border-orange-300/30 bg-orange-300/10 p-3 text-sm text-orange-100"
             >
               {t("success")}
             </p>

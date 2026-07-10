@@ -1,7 +1,7 @@
 "use client";
 
 import {
-  ArrowRight,
+  ArrowUpRight,
   Building2,
   Facebook,
   Github,
@@ -59,16 +59,16 @@ const Menu = () => {
   ];
 
   return (
-    <main className="min-h-screen bg-black text-white">
-      <section className="mx-auto flex min-h-screen max-w-6xl flex-col px-6 py-6 md:px-10">
-        <div className="flex flex-col gap-4 border-b border-white/10 pb-5 text-sm text-zinc-400 md:flex-row md:items-center md:justify-between">
-          <div className="flex flex-wrap items-center gap-4">
-            <p className="flex items-center gap-2">
-              <Building2 size={16} />
+    <main className="min-h-screen overflow-hidden text-white">
+      <section className="mx-auto flex min-h-screen max-w-6xl flex-col px-6 md:px-10">
+        <div className="flex flex-col gap-4 border-b border-white/[0.08] py-5 text-sm text-zinc-500 sm:flex-row sm:items-center sm:justify-between">
+          <div className="font-technical flex flex-wrap items-center gap-x-6 gap-y-3 text-xs">
+            <p className="flex items-center gap-2.5">
+              <Building2 size={15} />
               <span>{t("address")}</span>
             </p>
-            <p className="flex items-center gap-2">
-              <Sparkles size={16} className="text-emerald-300" />
+            <p className="flex items-center gap-2.5 text-zinc-300">
+              <Sparkles size={15} className="text-orange-400" />
               <span>{home("availability")}</span>
             </p>
           </div>
@@ -78,39 +78,39 @@ const Menu = () => {
           </div>
         </div>
 
-        <div className="grid flex-1 items-center gap-10 py-12 lg:grid-cols-[1fr_360px]">
-          <div className="space-y-8">
-            <div className="space-y-5">
-              <p className="text-xs font-semibold uppercase text-emerald-300">
-                {home("eyebrow")}
-              </p>
-              <div className="space-y-3">
-                <h1 className="max-w-3xl text-4xl font-bold leading-tight text-white md:text-6xl">
-                  Antonewton Quima
-                </h1>
-                <p className="text-base text-zinc-400 md:text-lg">
-                  {t("role")}
-                </p>
-              </div>
-              <p className="max-w-2xl text-sm leading-7 text-zinc-300 md:text-base">
-                {home("description")}
-              </p>
+        <div className="grid flex-1 items-center gap-14 border-b border-white/[0.08] py-14 lg:grid-cols-[minmax(0,1fr)_330px] lg:gap-20 lg:py-20">
+          <div>
+            <div className="font-technical flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.2em] text-orange-400">
+              <span className="h-px w-7 bg-orange-400" aria-hidden="true" />
+              {home("eyebrow")}
             </div>
 
-            <div className="flex flex-col gap-3 sm:flex-row">
+            <h1 className="mt-7 max-w-4xl text-[clamp(3.5rem,10vw,7.5rem)] font-semibold leading-[0.82] tracking-[-0.07em] text-white">
+              <span className="block">Antonewton</span>
+              <span className="block text-zinc-300">Quima</span>
+            </h1>
+
+            <p className="font-technical mt-8 text-xs uppercase leading-6 tracking-[0.12em] text-zinc-500 md:text-sm">
+              {t("role")}
+            </p>
+            <p className="mt-6 max-w-xl text-base leading-7 text-zinc-300 md:text-lg md:leading-8">
+              {home("description")}
+            </p>
+
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Button
                 asChild
-                className="h-11 justify-between rounded-md bg-white px-4 text-sm font-bold text-black hover:bg-zinc-200 sm:w-44"
+                className="h-12 justify-between rounded-sm bg-orange-500 px-5 text-sm font-semibold text-black shadow-none hover:bg-orange-400 sm:min-w-44"
               >
                 <Link href="/projects">
                   {home("primaryAction")}
-                  <ArrowRight />
+                  <ArrowUpRight />
                 </Link>
               </Button>
               <Button
                 asChild
                 variant="outline"
-                className="h-11 justify-between rounded-md border-white/15 bg-black px-4 text-sm text-white hover:bg-white/10 hover:text-white sm:w-44"
+                className="h-12 justify-between rounded-sm border-white/15 bg-transparent px-5 text-sm text-white shadow-none hover:border-white/30 hover:bg-white/[0.05] hover:text-white sm:min-w-44"
               >
                 <Link href="/contact">
                   {home("secondaryAction")}
@@ -119,14 +119,16 @@ const Menu = () => {
               </Button>
             </div>
 
-            <div className="grid max-w-2xl grid-cols-1 gap-3 sm:grid-cols-3">
-              {stats.map((stat) => (
+            <div className="mt-12 grid max-w-2xl grid-cols-3 border-y border-white/[0.08]">
+              {stats.map((stat, index) => (
                 <div
                   key={stat.label}
-                  className="min-h-24 rounded-md border border-white/10 bg-white/[0.03] p-4"
+                  className={`py-5 ${index > 0 ? "border-l border-white/[0.08] pl-4 sm:pl-6" : "pr-4 sm:pr-6"}`}
                 >
-                  <p className="text-2xl font-bold text-white">{stat.value}</p>
-                  <p className="mt-2 text-xs leading-5 text-zinc-400">
+                  <p className="font-technical text-xl font-semibold text-white sm:text-2xl">
+                    {stat.value}
+                  </p>
+                  <p className="mt-2 max-w-32 text-[11px] leading-5 text-zinc-500 sm:text-xs">
                     {stat.label}
                   </p>
                 </div>
@@ -134,64 +136,71 @@ const Menu = () => {
             </div>
           </div>
 
-          <aside className="space-y-5">
-            <div className="relative mx-auto aspect-[4/5] w-full max-w-[340px] overflow-hidden rounded-lg border border-white/10 bg-zinc-950">
-              <Image
-                src="/my-avatar.png"
-                alt="Antonewton Quima"
-                fill
-                priority
-                className="object-cover"
+          <aside className="mx-auto w-full max-w-[330px] lg:ml-auto">
+            <div className="relative">
+              <span
+                className="absolute -right-3 -top-3 h-20 w-20 border-r border-t border-orange-400/70"
+                aria-hidden="true"
               />
+              <div className="relative aspect-[4/5] overflow-hidden border border-white/10 bg-[#0d0c09]">
+                <span className="font-technical absolute left-4 top-4 z-10 text-[10px] uppercase tracking-[0.18em] text-orange-400">
+                  AQ / 04
+                </span>
+                <Image
+                  src="/my-avatar.png"
+                  alt="Antonewton Quima"
+                  fill
+                  priority
+                  sizes="330px"
+                  className="scale-[0.88] object-contain"
+                />
+              </div>
             </div>
-            <div className="space-y-3 border-y border-white/10 py-5">
-              <p className="flex items-center gap-2 text-sm text-zinc-300">
-                <MapPin size={16} className="text-amber-300" />
+
+            <div className="mt-7 border-l border-orange-400 pl-4">
+              <p className="flex items-start gap-2.5 text-sm leading-6 text-zinc-300">
+                <MapPin size={16} className="mt-1 shrink-0 text-orange-400" />
                 {home("base")}
               </p>
-              <div className="flex flex-wrap gap-2">
-                {focusAreas.map((area) => (
-                  <span
-                    key={area}
-                    className="rounded-md border border-white/10 bg-white/[0.03] px-3 py-2 text-xs text-zinc-300"
-                  >
-                    {area}
-                  </span>
-                ))}
-              </div>
+            </div>
+
+            <div className="font-technical mt-6 flex flex-wrap gap-x-4 gap-y-2 text-[10px] uppercase tracking-[0.12em] text-zinc-500">
+              {focusAreas.map((area) => (
+                <span key={area}>{area}</span>
+              ))}
             </div>
           </aside>
         </div>
 
-        <div className="grid gap-8 border-t border-white/10 py-6 lg:grid-cols-[1fr_1fr]">
-          <div>
-            <h2 className="mb-4 text-xs font-semibold uppercase text-zinc-500">
+        <div className="grid border-b border-white/[0.08] lg:grid-cols-2">
+          <section className="py-8 lg:border-r lg:border-white/[0.08] lg:pr-10">
+            <h2 className="font-technical text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-600">
               {t("navigation")}
             </h2>
-            <div className="grid gap-2 sm:grid-cols-2">
+            <div className="mt-4 grid sm:grid-cols-2 sm:gap-x-8">
               {navLinks
                 .filter((link) => link.href !== "/")
                 .map((link) => (
-                  <Button
+                  <Link
                     key={link.href}
-                    asChild
-                    variant="ghost"
-                    className="h-12 justify-between rounded-md border border-white/10 bg-white/[0.03] px-4 text-sm text-zinc-300 hover:bg-white/10 hover:text-white"
+                    href={link.href}
+                    className="group flex items-center justify-between border-t border-white/[0.08] py-3.5 text-sm text-zinc-300 transition hover:border-orange-400/50 hover:text-white"
                   >
-                    <Link href={link.href}>
-                      {t(link.labelKey)}
-                      <ArrowRight />
-                    </Link>
-                  </Button>
+                    {t(link.labelKey)}
+                    <ArrowUpRight
+                      size={15}
+                      className="text-zinc-600 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-orange-400"
+                    />
+                  </Link>
                 ))}
             </div>
-          </div>
+          </section>
 
-          <div>
-            <h2 className="mb-4 text-xs font-semibold uppercase text-zinc-500">
+          <section className="border-t border-white/[0.08] py-8 lg:border-t-0 lg:pl-10">
+            <h2 className="font-technical text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-600">
               {t("social")}
             </h2>
-            <div className="grid gap-2 sm:grid-cols-2">
+            <div className="mt-4 grid sm:grid-cols-2 sm:gap-x-8">
               {socialItems.map((item) => {
                 const Icon = item.icon;
 
@@ -201,31 +210,34 @@ const Menu = () => {
                     href={item.href}
                     target="_blank"
                     rel="noreferrer"
-                    className="flex h-12 items-center justify-between rounded-md border border-white/10 bg-white/[0.03] px-4 text-sm font-medium text-white transition hover:border-white/25 hover:bg-white/10"
+                    className="group flex items-center justify-between border-t border-white/[0.08] py-3.5 text-sm text-zinc-300 transition hover:border-orange-400/50 hover:text-white"
                   >
-                    <span className="flex items-center gap-2">
-                      <Icon size={18} />
+                    <span className="flex items-center gap-2.5">
+                      <Icon size={16} className="text-zinc-600 group-hover:text-orange-400" />
                       {item.label}
                     </span>
-                    <ArrowRight size={16} />
+                    <ArrowUpRight
+                      size={15}
+                      className="text-zinc-600 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-orange-400"
+                    />
                   </a>
                 );
               })}
             </div>
-          </div>
+          </section>
         </div>
 
-        <div className="flex justify-end border-t border-white/10 py-4">
-          <Button
-            asChild
-            variant="ghost"
-            className="h-9 border border-emerald-300/30 bg-emerald-300/10 text-xs text-emerald-200 hover:bg-emerald-300/15 hover:text-white"
+        <div className="flex items-center justify-between py-5 text-[11px] text-zinc-600">
+          <span className="font-technical uppercase tracking-[0.16em]">
+            © 2026
+          </span>
+          <Link
+            href="/versions"
+            className="font-technical flex items-center gap-2 uppercase tracking-[0.16em] transition hover:text-orange-300"
           >
-            <Link href="/versions">
-              <span className="h-2 w-2 rounded-full bg-emerald-300" />
-              v4.0
-            </Link>
-          </Button>
+            <span className="h-1.5 w-1.5 rounded-full bg-orange-400" />
+            v4.0
+          </Link>
         </div>
       </section>
     </main>

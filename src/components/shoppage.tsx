@@ -239,7 +239,7 @@ const Loja = () => {
     <>
       <section className="px-6 py-8 md:px-10 md:py-10">
         <div className="mx-auto max-w-6xl space-y-8">
-          <div className="grid border-y border-white/10 sm:grid-cols-3">
+          <div className="grid border-y border-white/[0.08] sm:grid-cols-3">
             {[
               { icon: MessageCircle, title: t("directOrder"), text: t("directOrderText") },
               { icon: CheckCircle2, title: t("confirmation"), text: t("confirmationText") },
@@ -250,9 +250,9 @@ const Loja = () => {
               return (
                 <div
                   key={benefit.title}
-                  className="flex gap-3 border-b border-white/10 py-4 last:border-b-0 sm:border-b-0 sm:border-r sm:px-4 sm:first:pl-0 sm:last:border-r-0 sm:last:pr-0"
+                  className="flex gap-3 border-b border-white/[0.08] py-5 last:border-b-0 sm:border-b-0 sm:border-r sm:px-5 sm:first:pl-0 sm:last:border-r-0 sm:last:pr-0"
                 >
-                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md border border-white/10 bg-white/[0.03] text-emerald-300">
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center border border-orange-400/35 text-orange-400">
                     <Icon size={16} />
                   </span>
                   <div>
@@ -266,7 +266,7 @@ const Loja = () => {
             })}
           </div>
 
-          <div className="grid gap-3 border-y border-white/10 py-5 md:grid-cols-[1fr_210px_auto]">
+          <div className="grid gap-3 border-b border-white/[0.08] pb-5 md:grid-cols-[1fr_210px_auto]">
             <label className="relative block">
               <Search
                 size={16}
@@ -277,7 +277,7 @@ const Loja = () => {
                 placeholder={t("searchPlaceholder")}
                 value={searchTerm}
                 onChange={(event) => setSearchTerm(event.target.value)}
-                className="h-11 w-full rounded-md border border-white/10 bg-white/[0.03] pl-10 pr-10 text-sm text-white outline-none transition placeholder:text-zinc-600 focus:border-emerald-300/40 focus:bg-white/[0.05]"
+                className="h-11 w-full rounded-sm border border-white/10 bg-[#0d0c09] pl-10 pr-10 text-sm text-white outline-none transition placeholder:text-zinc-600 focus:border-orange-400/60"
               />
               {searchTerm ? (
                 <button
@@ -298,7 +298,7 @@ const Loja = () => {
                 setSortOption(event.target.value as SortOption)
               }
               aria-label={t("sortLabel")}
-              className="h-11 rounded-md border border-white/10 bg-zinc-950 px-3 text-sm text-zinc-300 outline-none transition focus:border-emerald-300/40"
+              className="h-11 rounded-sm border border-white/10 bg-[#0d0c09] px-3 text-sm text-zinc-300 outline-none transition focus:border-orange-400/60"
             >
               <option value="name-asc">{t("sortNameAsc")}</option>
               <option value="name-desc">{t("sortNameDesc")}</option>
@@ -310,13 +310,13 @@ const Loja = () => {
               type="button"
               onClick={() => setCartOpen(true)}
               variant="ghost"
-              className="h-11 justify-between rounded-md border border-emerald-300/30 bg-emerald-300/10 px-4 text-sm text-emerald-100 hover:bg-emerald-300/20 hover:text-white md:min-w-44"
+              className="h-11 justify-between rounded-sm border border-orange-400/40 bg-orange-400/10 px-4 text-sm text-orange-200 hover:bg-orange-400/15 hover:text-orange-100 md:min-w-44"
             >
               <span className="flex items-center gap-2">
                 <ShoppingBag />
                 {t("cart")}
               </span>
-              <span className="flex h-6 min-w-6 items-center justify-center rounded-md bg-emerald-200 px-1.5 text-xs font-black text-black">
+              <span className="flex h-6 min-w-6 items-center justify-center rounded-sm bg-orange-400 px-1.5 text-xs font-bold text-black">
                 {cartCount}
               </span>
             </Button>
@@ -327,7 +327,7 @@ const Loja = () => {
               {Array.from({ length: 8 }, (_, index) => (
                 <div
                   key={index}
-                  className="min-h-[390px] animate-pulse overflow-hidden rounded-lg border border-white/10 bg-white/[0.03]"
+                  className="min-h-[390px] animate-pulse overflow-hidden rounded-sm border border-white/10 bg-[#0d0c09]"
                 >
                   <div className="aspect-[4/5] bg-white/[0.05]" />
                   <div className="space-y-3 p-4">
@@ -404,7 +404,7 @@ const Loja = () => {
             role="dialog"
             aria-modal="true"
             aria-label={t("cart")}
-            className="absolute right-0 top-0 flex h-full w-full max-w-md flex-col border-l border-white/10 bg-black shadow-2xl"
+            className="absolute right-0 top-0 flex h-full w-full max-w-md flex-col border-l border-white/10 bg-[#090806] shadow-2xl"
           >
             <div className="flex items-center justify-between border-b border-white/10 p-5">
               <div>
@@ -461,7 +461,7 @@ const Loja = () => {
                         <p className="truncate text-sm font-bold text-white">
                           {item.name}
                         </p>
-                        <p className="mt-1 text-xs text-emerald-200">
+                        <p className="font-technical mt-1 text-xs text-orange-300">
                           {formatPrice(item.price * item.quantity)}
                         </p>
                         <div className="mt-3 flex items-center gap-1">
@@ -536,12 +536,12 @@ const Loja = () => {
                       {formatPrice(cartTotal)}
                     </p>
                   </div>
-                  <PackageCheck className="text-emerald-300" />
+                  <PackageCheck className="text-orange-400" />
                 </div>
                 <Button
                   type="button"
                   onClick={handleCheckout}
-                  className="h-12 w-full justify-between rounded-md bg-emerald-300 px-4 text-sm font-black text-black hover:bg-emerald-200"
+                  className="h-12 w-full justify-between rounded-sm bg-orange-500 px-4 text-sm font-bold text-black shadow-none hover:bg-orange-400"
                 >
                   {t("checkout")}
                   <ChevronRight />
@@ -560,7 +560,7 @@ const Loja = () => {
           data-presentation-hide
           type="button"
           onClick={() => setCartOpen(true)}
-          className="fixed bottom-4 right-4 z-40 h-12 justify-between gap-5 rounded-md border border-emerald-200/30 bg-emerald-300 px-4 text-sm font-black text-black shadow-2xl hover:bg-emerald-200"
+          className="fixed bottom-4 right-4 z-40 h-12 justify-between gap-5 rounded-sm border border-orange-400/40 bg-orange-500 px-4 text-sm font-bold text-black shadow-2xl hover:bg-orange-400"
         >
           <span className="flex items-center gap-2">
             <ShoppingBag />

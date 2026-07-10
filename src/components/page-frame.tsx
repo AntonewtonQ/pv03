@@ -5,7 +5,7 @@ import NavBar from "./navbar";
 const PageFrame = ({ children }: { children: React.ReactNode }) => {
   return (
     <Layout>
-      <div className="min-h-screen bg-black text-white">
+      <div className="min-h-screen bg-transparent text-white">
         <NavBar />
         <main>{children}</main>
         <Footer />

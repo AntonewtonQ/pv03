@@ -93,7 +93,7 @@ export default function NowPage() {
         <div className="mx-auto max-w-6xl space-y-8">
           {status === "loading" ? (
             <div className="flex items-center gap-3 border-y border-white/10 py-6 text-sm text-zinc-400">
-              <Loader2 className="animate-spin text-emerald-300" size={17} />
+              <Loader2 className="animate-spin text-orange-400" size={17} />
               {t("loading")}
             </div>
           ) : null}
@@ -112,9 +112,9 @@ export default function NowPage() {
 
           {status === "ready" && hasContent ? (
             <>
-              <div className="grid gap-3 border-y border-white/10 py-5 sm:grid-cols-3">
-                <div className="flex items-center gap-3">
-                  <Radio size={17} className="text-emerald-300" />
+              <div className="grid border-y border-white/[0.08] sm:grid-cols-3">
+                <div className="flex items-center gap-3 border-b border-white/[0.08] py-5 sm:border-b-0 sm:border-r sm:pr-5">
+                  <Radio size={17} className="text-orange-400" />
                   <div>
                     <p className="text-xs text-zinc-500">{t("availability")}</p>
                     <p className="mt-1 text-sm font-bold text-white">
@@ -122,8 +122,8 @@ export default function NowPage() {
                     </p>
                   </div>
                 </div>
-                <div className="flex items-center gap-3">
-                  <MapPin size={17} className="text-emerald-300" />
+                <div className="flex items-center gap-3 border-b border-white/[0.08] py-5 sm:border-b-0 sm:border-r sm:px-5">
+                  <MapPin size={17} className="text-orange-400" />
                   <div>
                     <p className="text-xs text-zinc-500">{t("location")}</p>
                     <p className="mt-1 text-sm font-bold text-white">
@@ -131,8 +131,8 @@ export default function NowPage() {
                     </p>
                   </div>
                 </div>
-                <div className="flex items-center gap-3">
-                  <CalendarDays size={17} className="text-emerald-300" />
+                <div className="flex items-center gap-3 py-5 sm:pl-5">
+                  <CalendarDays size={17} className="text-orange-400" />
                   <div>
                     <p className="text-xs text-zinc-500">{t("updated")}</p>
                     <p className="mt-1 text-sm font-bold text-white">
@@ -146,17 +146,17 @@ export default function NowPage() {
                 </div>
               </div>
 
-              <div className="grid gap-4 md:grid-cols-3">
+              <div className="grid gap-x-7 gap-y-8 md:grid-cols-3">
                 {sections.map((section) => {
                   const Icon = section.icon;
 
                   return (
                     <article
                       key={section.title}
-                      className="rounded-lg border border-white/10 bg-white/[0.03] p-5"
+                      className="border-t border-white/15 pt-5 transition hover:border-orange-400/50"
                     >
-                      <div className="flex items-center gap-3 border-b border-white/10 pb-4">
-                        <span className="flex h-9 w-9 items-center justify-center rounded-md border border-emerald-300/30 bg-emerald-300/10 text-emerald-200">
+                      <div className="flex items-center gap-3 border-b border-white/[0.08] pb-4">
+                        <span className="flex h-9 w-9 items-center justify-center border border-orange-400/35 text-orange-400">
                           <Icon size={17} />
                         </span>
                         <h2 className="text-base font-bold text-white">
@@ -170,7 +170,7 @@ export default function NowPage() {
                               key={line}
                               className="flex gap-3 text-sm leading-6 text-zinc-400"
                             >
-                              <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-300" />
+                              <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-orange-400" />
                               {line}
                             </li>
                           ))}
@@ -193,7 +193,7 @@ export default function NowPage() {
                         href={content.projectLink}
                         target="_blank"
                         rel="noreferrer"
-                        className="group block aspect-[4/3] overflow-hidden rounded-lg border border-white/10 bg-zinc-950"
+                        className="group block aspect-[4/3] overflow-hidden border border-white/10 bg-zinc-950"
                       >
                         <img
                           src={content.projectCover}
@@ -202,7 +202,7 @@ export default function NowPage() {
                         />
                       </a>
                     ) : (
-                      <div className="aspect-[4/3] overflow-hidden rounded-lg border border-white/10 bg-zinc-950">
+                      <div className="aspect-[4/3] overflow-hidden border border-white/10 bg-zinc-950">
                         <img
                           src={content.projectCover}
                           alt={content.projectName || t("currentProjectFallback")}
@@ -224,7 +224,7 @@ export default function NowPage() {
                     {content.projectLink ? (
                       <Button
                         asChild
-                        className="h-10 justify-between rounded-md bg-white px-4 text-sm font-bold text-black hover:bg-zinc-200"
+                        className="h-11 justify-between rounded-sm bg-orange-500 px-4 text-sm font-semibold text-black shadow-none hover:bg-orange-400"
                       >
                         <a
                           href={content.projectLink}

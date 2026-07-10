@@ -599,7 +599,7 @@ export default function AdminDashboard() {
     return (
       <section className="px-6 py-10 md:px-10">
         <div className="mx-auto flex max-w-6xl items-center gap-3 rounded-md border border-white/10 bg-white/[0.03] p-6 text-sm text-zinc-400">
-          <Loader2 className="animate-spin text-emerald-300" size={18} />
+          <Loader2 className="animate-spin text-orange-300" size={18} />
           {t("checking")}
         </div>
       </section>
@@ -611,7 +611,7 @@ export default function AdminDashboard() {
       <section className="px-6 py-10 md:px-10 md:py-14">
         <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[1fr_420px] lg:items-start">
           <div className="space-y-4 border-y border-white/10 py-8">
-            <p className="text-xs font-bold uppercase tracking-[0.35em] text-emerald-200">
+            <p className="text-xs font-bold uppercase tracking-[0.35em] text-orange-200">
               {t("eyebrow")}
             </p>
             <h1 className="max-w-2xl text-4xl font-black leading-tight text-white md:text-6xl">
@@ -627,7 +627,7 @@ export default function AdminDashboard() {
             className="space-y-5 rounded-lg border border-white/10 bg-white/[0.03] p-5"
           >
             <div className="flex items-center gap-3">
-              <span className="flex h-10 w-10 items-center justify-center rounded-md border border-emerald-300/30 bg-emerald-300/10 text-emerald-200">
+              <span className="flex h-10 w-10 items-center justify-center rounded-md border border-orange-300/30 bg-orange-300/10 text-orange-200">
                 <Lock size={18} />
               </span>
               <div>
@@ -644,7 +644,7 @@ export default function AdminDashboard() {
                 type="email"
                 value={email}
                 onChange={(event) => setEmail(event.target.value)}
-                className="h-11 w-full rounded-md border border-white/10 bg-black px-3 text-white outline-none transition placeholder:text-zinc-700 focus:border-emerald-300/40"
+                className="h-11 w-full rounded-md border border-white/10 bg-black px-3 text-white outline-none transition placeholder:text-zinc-700 focus:border-orange-300/40"
                 placeholder="admin@email.com"
                 autoComplete="email"
                 required
@@ -657,7 +657,7 @@ export default function AdminDashboard() {
                 type="password"
                 value={password}
                 onChange={(event) => setPassword(event.target.value)}
-                className="h-11 w-full rounded-md border border-white/10 bg-black px-3 text-white outline-none transition placeholder:text-zinc-700 focus:border-emerald-300/40"
+                className="h-11 w-full rounded-md border border-white/10 bg-black px-3 text-white outline-none transition placeholder:text-zinc-700 focus:border-orange-300/40"
                 placeholder="********"
                 autoComplete="current-password"
                 required
@@ -693,7 +693,7 @@ export default function AdminDashboard() {
       <div className="mx-auto max-w-6xl space-y-6">
         <div className="grid gap-4 border-y border-white/10 py-5 lg:grid-cols-[1fr_auto] lg:items-center">
           <div>
-            <p className="text-xs font-bold uppercase tracking-[0.28em] text-emerald-200">
+            <p className="text-xs font-bold uppercase tracking-[0.28em] text-orange-200">
               {t("eyebrow")}
             </p>
             <h1 className="mt-2 text-3xl font-black text-white">
@@ -737,7 +737,7 @@ export default function AdminDashboard() {
                 onClick={() => handleSelectCollection(total.key)}
                 className={`flex items-center justify-between rounded-lg border p-4 text-left transition ${
                   isActive
-                    ? "border-emerald-300/40 bg-emerald-300/10"
+                    ? "border-orange-300/40 bg-orange-300/10"
                     : "border-white/10 bg-white/[0.03] hover:bg-white/[0.06]"
                 }`}
               >
@@ -745,7 +745,7 @@ export default function AdminDashboard() {
                   <p className="text-sm text-zinc-500">{total.label}</p>
                   <p className="text-3xl font-black text-white">{total.value}</p>
                 </div>
-                <span className="flex h-10 w-10 items-center justify-center rounded-md border border-emerald-300/30 bg-emerald-300/10 text-emerald-200">
+                <span className="flex h-10 w-10 items-center justify-center rounded-md border border-orange-300/30 bg-orange-300/10 text-orange-200">
                   <Icon size={18} />
                 </span>
               </button>
@@ -771,7 +771,7 @@ export default function AdminDashboard() {
                 onClick={() => handleSelectCollection(collectionKey)}
                 className={`h-10 border px-3 text-xs ${
                   isActive
-                    ? "border-emerald-300/40 bg-emerald-300/10 text-emerald-200"
+                    ? "border-orange-300/40 bg-orange-300/10 text-orange-200"
                     : "border-white/10 bg-white/[0.03] text-zinc-400 hover:bg-white/10 hover:text-white"
                 }`}
               >
@@ -792,7 +792,7 @@ export default function AdminDashboard() {
             className="grid gap-4 border-y border-white/10 py-5 lg:grid-cols-[1fr_auto] lg:items-end"
           >
             <div className="flex gap-3">
-              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md border border-emerald-300/30 bg-emerald-300/10 text-emerald-200">
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md border border-orange-300/30 bg-orange-300/10 text-orange-200">
                 <CircleDollarSign size={18} />
               </span>
               <div>
@@ -815,7 +815,7 @@ export default function AdminDashboard() {
                   value={globalPrice}
                   onChange={(event) => setGlobalPrice(event.target.value)}
                   placeholder={t("bulkPricePlaceholder")}
-                  className="h-10 w-full rounded-md border border-white/10 bg-black px-3 text-sm text-white outline-none transition placeholder:text-zinc-700 focus:border-emerald-300/40"
+                  className="h-10 w-full rounded-md border border-white/10 bg-black px-3 text-sm text-white outline-none transition placeholder:text-zinc-700 focus:border-orange-300/40"
                 />
               </label>
               <Button
@@ -825,7 +825,7 @@ export default function AdminDashboard() {
                   status !== "idle" ||
                   items.length === 0
                 }
-                className="h-10 justify-between rounded-md bg-emerald-300 px-4 text-sm font-bold text-black hover:bg-emerald-200"
+                className="h-10 justify-between rounded-md bg-orange-300 px-4 text-sm font-bold text-black hover:bg-orange-200"
               >
                 {bulkPriceStatus === "updating"
                   ? t("bulkPriceUpdating")
@@ -866,7 +866,7 @@ export default function AdminDashboard() {
             <div className="max-h-[640px] overflow-y-auto p-2">
               {status === "loading" ? (
                 <div className="flex items-center gap-2 p-4 text-sm text-zinc-500">
-                  <Loader2 className="animate-spin text-emerald-300" size={16} />
+                  <Loader2 className="animate-spin text-orange-300" size={16} />
                   {t("loading")}
                 </div>
               ) : null}
@@ -890,7 +890,7 @@ export default function AdminDashboard() {
                     onClick={() => handleSelectDocument(documentItem.id)}
                     className={`flex w-full gap-3 rounded-md border p-2 text-left transition ${
                       isSelected
-                        ? "border-emerald-300/40 bg-emerald-300/10"
+                        ? "border-orange-300/40 bg-orange-300/10"
                         : "border-transparent hover:border-white/10 hover:bg-white/[0.04]"
                     }`}
                   >
@@ -1009,7 +1009,7 @@ export default function AdminDashboard() {
                   />
                 </div>
                 <div className="flex items-center gap-2 rounded-md border border-white/10 bg-black p-3 text-xs text-zinc-500">
-                  <ImageIcon size={15} className="shrink-0 text-emerald-300" />
+                  <ImageIcon size={15} className="shrink-0 text-orange-300" />
                   <span className="truncate">
                     {activeCollection === "items"
                       ? normalizeRsvImageUrl(itemForm.imageUrl) || t("noImage")
@@ -1030,7 +1030,7 @@ export default function AdminDashboard() {
                           name: event.target.value,
                         }))
                       }
-                      className="h-11 w-full rounded-md border border-white/10 bg-black px-3 text-white outline-none transition placeholder:text-zinc-700 focus:border-emerald-300/40"
+                      className="h-11 w-full rounded-md border border-white/10 bg-black px-3 text-white outline-none transition placeholder:text-zinc-700 focus:border-orange-300/40"
                       required
                     />
                   </label>
@@ -1047,7 +1047,7 @@ export default function AdminDashboard() {
                           price: event.target.value,
                         }))
                       }
-                      className="h-11 w-full rounded-md border border-white/10 bg-black px-3 text-white outline-none transition placeholder:text-zinc-700 focus:border-emerald-300/40"
+                      className="h-11 w-full rounded-md border border-white/10 bg-black px-3 text-white outline-none transition placeholder:text-zinc-700 focus:border-orange-300/40"
                       required
                     />
                   </label>
@@ -1062,7 +1062,7 @@ export default function AdminDashboard() {
                           imageUrl: event.target.value,
                         }))
                       }
-                      className="h-11 w-full rounded-md border border-white/10 bg-black px-3 text-white outline-none transition placeholder:text-zinc-700 focus:border-emerald-300/40"
+                      className="h-11 w-full rounded-md border border-white/10 bg-black px-3 text-white outline-none transition placeholder:text-zinc-700 focus:border-orange-300/40"
                     />
                   </label>
                 </div>
@@ -1078,7 +1078,7 @@ export default function AdminDashboard() {
                           name: event.target.value,
                         }))
                       }
-                      className="h-11 w-full rounded-md border border-white/10 bg-black px-3 text-white outline-none transition placeholder:text-zinc-700 focus:border-emerald-300/40"
+                      className="h-11 w-full rounded-md border border-white/10 bg-black px-3 text-white outline-none transition placeholder:text-zinc-700 focus:border-orange-300/40"
                       required
                     />
                   </label>
@@ -1093,7 +1093,7 @@ export default function AdminDashboard() {
                           year: event.target.value,
                         }))
                       }
-                      className="h-11 w-full rounded-md border border-white/10 bg-black px-3 text-white outline-none transition placeholder:text-zinc-700 focus:border-emerald-300/40"
+                      className="h-11 w-full rounded-md border border-white/10 bg-black px-3 text-white outline-none transition placeholder:text-zinc-700 focus:border-orange-300/40"
                       required
                     />
                   </label>
@@ -1108,7 +1108,7 @@ export default function AdminDashboard() {
                           link: event.target.value,
                         }))
                       }
-                      className="h-11 w-full rounded-md border border-white/10 bg-black px-3 text-white outline-none transition placeholder:text-zinc-700 focus:border-emerald-300/40"
+                      className="h-11 w-full rounded-md border border-white/10 bg-black px-3 text-white outline-none transition placeholder:text-zinc-700 focus:border-orange-300/40"
                     />
                   </label>
 
@@ -1122,7 +1122,7 @@ export default function AdminDashboard() {
                           cover: event.target.value,
                         }))
                       }
-                      className="h-11 w-full rounded-md border border-white/10 bg-black px-3 text-white outline-none transition placeholder:text-zinc-700 focus:border-emerald-300/40"
+                      className="h-11 w-full rounded-md border border-white/10 bg-black px-3 text-white outline-none transition placeholder:text-zinc-700 focus:border-orange-300/40"
                     />
                   </label>
 
@@ -1136,7 +1136,7 @@ export default function AdminDashboard() {
                           description: event.target.value,
                         }))
                       }
-                      className="min-h-32 w-full resize-y rounded-md border border-white/10 bg-black p-3 text-white outline-none transition placeholder:text-zinc-700 focus:border-emerald-300/40"
+                      className="min-h-32 w-full resize-y rounded-md border border-white/10 bg-black p-3 text-white outline-none transition placeholder:text-zinc-700 focus:border-orange-300/40"
                     />
                   </label>
                 </div>
@@ -1146,7 +1146,7 @@ export default function AdminDashboard() {
             {notice || error ? (
               <div className="border-t border-white/10 p-4">
                 {notice ? (
-                  <p className="rounded-md border border-emerald-300/30 bg-emerald-300/10 p-3 text-sm text-emerald-100">
+                  <p className="rounded-md border border-orange-300/30 bg-orange-300/10 p-3 text-sm text-orange-100">
                     {notice}
                   </p>
                 ) : null}

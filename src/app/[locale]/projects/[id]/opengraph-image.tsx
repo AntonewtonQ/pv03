@@ -74,7 +74,7 @@ export default async function OpenGraphImage({
         >
           <div
             style={{
-              color: "#6ee7b7",
+              color: "#fb923c",
               display: "flex",
               fontSize: 20,
               textTransform: "uppercase",
@@ -114,7 +114,7 @@ export default async function OpenGraphImage({
             }}
           >
             <span>{project?.year || "antonewton.xyz"}</span>
-            <span style={{ color: "#6ee7b7" }}>antonewton.xyz</span>
+            <span style={{ color: "#fb923c" }}>antonewton.xyz</span>
           </div>
         </div>
 
@@ -143,7 +143,7 @@ export default async function OpenGraphImage({
                 alignItems: "center",
                 border: "1px solid rgba(255,255,255,0.16)",
                 borderRadius: 8,
-                color: "#6ee7b7",
+                color: "#fb923c",
                 display: "flex",
                 fontSize: 60,
                 fontWeight: 800,

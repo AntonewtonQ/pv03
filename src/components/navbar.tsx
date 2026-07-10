@@ -1,6 +1,6 @@
 "use client";
 
-import { ChevronLeft, Shield } from "lucide-react";
+import { Shield } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Button } from "./ui/button";
 import LanguageSwitch from "./language-switch";
@@ -15,37 +15,46 @@ const NavBar = () => {
   return (
     <header
       data-presentation-hide
-      className="sticky top-0 z-30 border-b border-white/10 bg-black/85 backdrop-blur-xl"
+      className="sticky top-0 z-30 border-b border-white/[0.08] bg-[#090806]/90 backdrop-blur-xl"
     >
-      <div className="mx-auto flex max-w-6xl flex-col gap-4 px-6 py-4 md:px-10">
-        <div className="flex items-center justify-between gap-4">
+      <div className="mx-auto max-w-6xl px-6 md:px-10">
+        <div className="flex h-16 items-center justify-between gap-4">
           <Link
             href="/"
-            className="flex min-h-10 items-center gap-3 text-sm font-bold text-white"
+            className="group flex min-h-10 items-center gap-3 text-sm font-semibold text-white"
           >
-            <span className="flex h-9 w-9 items-center justify-center rounded-md border border-white/10 bg-white/[0.04]">
+            <span className="font-technical flex h-8 w-8 items-center justify-center border border-orange-400/50 bg-orange-500 text-xs font-bold text-black transition group-hover:bg-orange-400">
               aq
             </span>
-            <span className="hidden sm:inline">antonewtonquima</span>
+            <span className="hidden tracking-[-0.02em] sm:inline">antonewton quima</span>
           </Link>
+
+          <nav className="hidden h-full items-stretch lg:flex">
+            {navLinks.map((link) => {
+              const isActive = pathname === link.href;
+
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`font-technical relative flex items-center px-3 text-[11px] uppercase tracking-[0.12em] transition ${
+                    isActive
+                      ? "text-orange-300 after:absolute after:inset-x-3 after:bottom-0 after:h-px after:bg-orange-400"
+                      : "text-zinc-500 hover:text-white"
+                  }`}
+                >
+                  {t(link.labelKey)}
+                </Link>
+              );
+            })}
+          </nav>
 
           <div className="flex items-center gap-2">
             <Button
               asChild
               variant="ghost"
-              size="sm"
-              className="h-9 border border-white/10 bg-white/[0.03] px-3 text-xs text-zinc-300 hover:bg-white/10 hover:text-white"
-            >
-              <Link href="/">
-                <ChevronLeft />
-                {t("back")}
-              </Link>
-            </Button>
-            <Button
-              asChild
-              variant="ghost"
               size="icon"
-              className="h-9 w-9 border border-white/10 bg-white/[0.03] text-zinc-300 hover:bg-white/10 hover:text-white"
+              className="h-9 w-9 border border-white/10 bg-transparent text-zinc-400 hover:border-white/20 hover:bg-white/[0.05] hover:text-white"
               title={t("admin")}
               aria-label={t("admin")}
             >
@@ -58,24 +67,22 @@ const NavBar = () => {
           </div>
         </div>
 
-        <nav className="flex gap-2 overflow-x-auto pb-1">
+        <nav className="-mx-1 flex overflow-x-auto border-t border-white/[0.06] lg:hidden">
           {navLinks.map((link) => {
             const isActive = pathname === link.href;
 
             return (
-              <Button
+              <Link
                 key={link.href}
-                asChild
-                variant="ghost"
-                size="sm"
-                className={`h-9 shrink-0 border px-3 text-xs ${
+                href={link.href}
+                className={`font-technical relative shrink-0 px-3 py-3 text-[10px] uppercase tracking-[0.12em] transition ${
                   isActive
-                    ? "border-emerald-300/40 bg-emerald-300/10 text-emerald-200"
-                    : "border-white/10 bg-white/[0.03] text-zinc-400 hover:bg-white/10 hover:text-white"
+                    ? "text-orange-300 after:absolute after:inset-x-3 after:bottom-0 after:h-px after:bg-orange-400"
+                    : "text-zinc-500 hover:text-white"
                 }`}
               >
-                <Link href={link.href}>{t(link.labelKey)}</Link>
-              </Button>
+                {t(link.labelKey)}
+              </Link>
             );
           })}
         </nav>
