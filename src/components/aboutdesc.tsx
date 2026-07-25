@@ -35,6 +35,8 @@ const AboutDesc = () => {
     "TypeScript",
     "Tailwind CSS",
     "React",
+    "React Native",
+    "Expo",
     "Zabbix",
     "Grafana",
   ];
