@@ -1,156 +1,91 @@
 "use client";
-
-import { useEffect, useMemo, useState } from "react";
-import { collection, getDocs } from "firebase/firestore";
-import { Filter } from "lucide-react";
-import { useTranslations } from "next-intl";
-import { db } from "@/lib/firebase";
-import type { ProjectStatusResult } from "@/lib/project-status-types";
+import { useState, useTransition } from "react";
+import { useRouter } from "next/navigation";
+import { useLocale, useTranslations } from "next-intl";
+import type { PortfolioProject } from "@/lib/projects-server";
+import { getProjectStory } from "@/lib/project-stories";
 import ProjectCard from "./projectcard";
-import { Button } from "./ui/button";
 
-interface Project {
-  id: string;
-  name: string;
-  description: string;
-  year: string;
-  cover: string;
-  link: string;
-}
-
-export default function ProjectsPage() {
-  const [projects, setProjects] = useState<Project[]>([]);
-  const [projectStatuses, setProjectStatuses] = useState<
-    Record<string, ProjectStatusResult>
-  >({});
-  const [statusCheckComplete, setStatusCheckComplete] = useState(false);
+export default function ProjectsPage({
+  projects,
+  error,
+}: {
+  projects: PortfolioProject[];
+  error: boolean;
+}) {
   const [selectedYear, setSelectedYear] = useState<string | null>(null);
-  const [status, setStatus] = useState<"loading" | "ready" | "error">(
-    "loading"
-  );
+  const [pending, startTransition] = useTransition();
+  const router = useRouter();
+  const locale = useLocale();
   const t = useTranslations("Projects");
-
-  useEffect(() => {
-    const fetchProjects = async () => {
-      try {
-        const querySnapshot = await getDocs(collection(db, "projects"));
-        const projectList = querySnapshot.docs.map((projectDoc) => ({
-          id: projectDoc.id,
-          ...(projectDoc.data() as Omit<Project, "id">),
-        }));
-        setProjects(projectList);
-        setStatus("ready");
-
-        try {
-          const statusResponse = await fetch("/api/projects/status");
-          const statusData = (await statusResponse.json()) as {
-            statuses?: ProjectStatusResult[];
-          };
-          const nextStatuses = Object.fromEntries(
-            (statusData.statuses ?? []).map((projectStatus) => [
-              projectStatus.id,
-              projectStatus,
-            ])
-          );
-
-          setProjectStatuses(nextStatuses);
-        } catch {
-          setProjectStatuses({});
-        } finally {
-          setStatusCheckComplete(true);
-        }
-      } catch {
-        setStatus("error");
-        setStatusCheckComplete(true);
-      }
-    };
-
-    fetchProjects();
-  }, []);
-
-  const years = useMemo(() => {
-    return Array.from(new Set(projects.map((project) => project.year))).sort(
-      (a, b) => b.localeCompare(a)
-    );
-  }, [projects]);
-
-  const filteredProjects = selectedYear
-    ? projects.filter((project) => project.year === selectedYear)
+  const years = Array.from(
+    new Set(projects.map((p) => p.year).filter(Boolean)),
+  ).sort((a, b) => b.localeCompare(a));
+  const filtered = selectedYear
+    ? projects.filter((p) => p.year === selectedYear)
     : projects;
-
   return (
-    <section className="px-6 py-8 md:px-10 md:py-10">
+    <section className="px-6 py-8 md:px-10 md:py-10" aria-busy={pending}>
       <div className="mx-auto max-w-6xl space-y-8">
-        <div className="flex flex-col gap-4 border-y border-white/[0.08] py-5 md:flex-row md:items-center md:justify-between">
-          <p className="font-technical flex items-center gap-2 text-[11px] uppercase tracking-[0.14em] text-zinc-500">
-            <Filter size={15} className="text-orange-400" />
-            {t("filterLabel")}
-          </p>
-          <div className="flex flex-wrap gap-2">
-            <Button
+        {projects.length > 0 && (
+          <div
+            className="flex flex-wrap items-center justify-between gap-4 border-y border-white/10 py-5"
+            role="group"
+            aria-label={t("filterLabel")}
+          >
+            <p className="text-sm text-zinc-400">{t("filterLabel")}</p>
+            <div className="flex flex-wrap gap-2">
+              {[null, ...years].map((year) => (
+                <button
+                  key={year || "all"}
+                  type="button"
+                  aria-pressed={selectedYear === year}
+                  onClick={() => setSelectedYear(year)}
+                  className={`min-h-11 border px-4 text-sm ${selectedYear === year ? "border-orange-400/50 bg-orange-400/10 text-orange-200" : "border-white/15 text-zinc-300 hover:border-white/40"}`}
+                >
+                  {year || t("all")}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+        {error ? (
+          <div
+            role="status"
+            className="border border-amber-300/30 p-8 text-amber-100"
+          >
+            <p>{t("error")}</p>
+            <button
               type="button"
-              variant="ghost"
-              size="sm"
-              onClick={() => setSelectedYear(null)}
-              className={`h-9 border px-3 text-xs ${
-                selectedYear === null
-                  ? "border-orange-400/50 bg-orange-400/10 text-orange-200"
-                  : "border-white/10 bg-transparent text-zinc-500 hover:border-white/20 hover:bg-white/[0.04] hover:text-white"
-              }`}
+              disabled={pending}
+              onClick={() => startTransition(() => router.refresh())}
+              className="text-link mt-4 disabled:opacity-60"
             >
-              {t("all")}
-            </Button>
-            {years.map((year) => (
-              <Button
-                key={year}
-                type="button"
-                variant="ghost"
-                size="sm"
-                onClick={() => setSelectedYear(year)}
-                className={`h-9 border px-3 text-xs ${
-                  selectedYear === year
-                    ? "border-orange-400/50 bg-orange-400/10 text-orange-200"
-                    : "border-white/10 bg-transparent text-zinc-500 hover:border-white/20 hover:bg-white/[0.04] hover:text-white"
-                }`}
-              >
-                {year}
-              </Button>
-            ))}
+              {pending ? t("loading") : t("retry")}
+            </button>
           </div>
-        </div>
-
-        {status === "loading" ? (
-          <div className="rounded-md border border-white/10 bg-white/[0.03] p-8 text-center text-sm text-zinc-400">
-            {t("loading")}
-          </div>
-        ) : null}
-
-        {status === "error" ? (
-          <div className="rounded-md border border-amber-300/30 bg-amber-300/10 p-8 text-center text-sm text-amber-100">
-            {t("error")}
-          </div>
-        ) : null}
-
-        {status === "ready" ? (
-          <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
-            {filteredProjects.length > 0 ? (
-              filteredProjects.map((project) => (
+        ) : (
+          <div className="grid gap-x-7 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+            {filtered.length ? (
+              filtered.map((project) => (
                 <ProjectCard
                   key={project.id}
                   {...project}
+                  description={
+                    getProjectStory(project.id, locale)?.summary ||
+                    project.description
+                  }
                   viewLabel={t("viewProject")}
                   visitLabel={t("visitProject")}
-                  status={projectStatuses[project.id]}
-                  statusCheckComplete={statusCheckComplete}
                 />
               ))
             ) : (
-              <div className="col-span-full rounded-md border border-white/10 bg-white/[0.03] p-8 text-center text-sm text-zinc-400">
+              <p role="status" className="col-span-full py-8 text-zinc-400">
                 {t("noprojects")}
-              </div>
+              </p>
             )}
           </div>
-        ) : null}
+        )}
       </div>
     </section>
   );

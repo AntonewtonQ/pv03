@@ -7,7 +7,9 @@ const PageFrame = ({ children }: { children: React.ReactNode }) => {
     <Layout>
       <div className="min-h-screen bg-transparent text-white">
         <NavBar />
-        <main>{children}</main>
+        <main id="main-content" tabIndex={-1}>
+          {children}
+        </main>
         <Footer />
       </div>
     </Layout>

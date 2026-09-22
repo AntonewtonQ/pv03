@@ -1,13 +1,18 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Antonewton Quima - Odoo Developer";
+export const alt = "Antonewton Quima - Web & Odoo";
 export const size = {
   width: 1200,
   height: 630,
 };
 export const contentType = "image/png";
 
-export default function OpenGraphImage() {
+export default async function OpenGraphImage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
   return new ImageResponse(
     (
       <div
@@ -31,7 +36,7 @@ export default function OpenGraphImage() {
           }}
         >
           <div style={{ color: "#fb923c", display: "flex", fontSize: 22 }}>
-            antonewton.xyz / v4.0
+            antonewton.xyz
           </div>
           <div style={{ color: "#a1a1aa", display: "flex", fontSize: 20 }}>
             Luanda, Angola
@@ -58,7 +63,9 @@ export default function OpenGraphImage() {
               marginTop: 26,
             }}
           >
-            Odoo Developer / Software Developer
+            {locale === "pt"
+              ? "Websites · Aplicações web · Odoo"
+              : "Websites · Web apps · Odoo"}
           </div>
         </div>
 
@@ -72,11 +79,15 @@ export default function OpenGraphImage() {
             paddingTop: 28,
           }}
         >
-          <span>Odoo · Web · Automation</span>
+          <span>
+            {locale === "pt"
+              ? "Luanda → Trabalho remoto internacional"
+              : "Luanda → Working remotely across borders"}
+          </span>
           <span style={{ color: "#fb923c" }}>antonewton.xyz</span>
         </div>
       </div>
     ),
-    size
+    size,
   );
 }

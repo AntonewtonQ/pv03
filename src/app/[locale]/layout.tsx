@@ -26,13 +26,13 @@ export async function generateMetadata({
   const { locale } = await params;
   const description =
     locale === "pt"
-      ? "Portfólio de Antonewton Quima: Odoo, desenvolvimento web, automação e produtos digitais."
-      : "Antonewton Quima's portfolio: Odoo, web development, automation, and digital products.";
+      ? "Websites, aplicações web, sistemas de gestão e Odoo. Antonewton Quima, em Luanda, trabalha remotamente com negócios e agências."
+      : "Business websites, web apps, management systems and Odoo. Antonewton Quima works remotely from Luanda with businesses and agencies.";
 
   return {
     metadataBase: new URL(SITE_URL),
     title: {
-      default: "Antonewton Quima | Odoo Developer",
+      default: "Antonewton Quima | Web & Odoo",
       template: "%s | Antonewton Quima",
     },
     description,
@@ -49,13 +49,13 @@ export async function generateMetadata({
     ],
     openGraph: {
       type: "website",
-      title: "Antonewton Quima | Odoo Developer",
+      title: "Antonewton Quima | Web & Odoo",
       description,
       siteName: "Antonewton Quima",
     },
     twitter: {
       card: "summary_large_image",
-      title: "Antonewton Quima | Odoo Developer",
+      title: "Antonewton Quima | Web & Odoo",
       description,
     },
     robots: {

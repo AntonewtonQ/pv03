@@ -1,5 +1,6 @@
 import { ImageResponse } from "next/og";
 import sharp from "sharp";
+import { getProjectStory } from "@/lib/project-stories";
 import { getProject } from "@/lib/projects-server";
 
 export const alt = "Project by Antonewton Quima";
@@ -17,6 +18,7 @@ const getSocialCover = async (coverUrl?: string) => {
   try {
     const response = await fetch(coverUrl, {
       next: { revalidate: 300 },
+      signal: AbortSignal.timeout(8000),
     });
 
     if (!response.ok) {
@@ -42,9 +44,17 @@ export default async function OpenGraphImage({
 }) {
   const { id, locale } = await params;
   const project = await getProject(id);
+  const story = getProjectStory(id, locale);
   const cover = await getSocialCover(project?.cover);
-  const label = locale === "pt" ? "Projecto" : "Project";
-  const fallbackName = locale === "pt" ? "Projecto do portfólio" : "Portfolio project";
+  const label = story
+    ? locale === "pt"
+      ? "Projeto pessoal"
+      : "Personal project"
+    : locale === "pt"
+      ? "Projeto"
+      : "Project";
+  const fallbackName =
+    locale === "pt" ? "Projeto do portfólio" : "Portfolio project";
   const fallbackDescription =
     locale === "pt"
       ? "Produto digital e experiência web."
@@ -101,7 +111,7 @@ export default async function OpenGraphImage({
                 lineHeight: 1.4,
               }}
             >
-              {project?.description || fallbackDescription}
+              {story?.summary || project?.description || fallbackDescription}
             </div>
           </div>
 
@@ -158,6 +168,6 @@ export default async function OpenGraphImage({
         </div>
       </div>
     ),
-    size
+    size,
   );
 }

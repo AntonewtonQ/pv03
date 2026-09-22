@@ -1,0 +1,94 @@
+[
+  {
+    "path": "/pt/now",
+    "status": 200,
+    "type": "text/html; charset=utf-8",
+    "bytes": 45743
+  },
+  {
+    "path": "/en/now",
+    "status": 200,
+    "type": "text/html; charset=utf-8",
+    "bytes": 44498
+  },
+  {
+    "path": "/pt/shop",
+    "status": 200,
+    "type": "text/html; charset=utf-8",
+    "bytes": 53602
+  },
+  {
+    "path": "/en/shop",
+    "status": 200,
+    "type": "text/html; charset=utf-8",
+    "bytes": 52280
+  },
+  {
+    "path": "/pt/versions",
+    "status": 200,
+    "type": "text/html; charset=utf-8",
+    "bytes": 51260
+  },
+  {
+    "path": "/en/versions",
+    "status": 200,
+    "type": "text/html; charset=utf-8",
+    "bytes": 49921
+  },
+  {
+    "path": "/pt/setup",
+    "status": 200,
+    "type": "text/html; charset=utf-8",
+    "bytes": 44779
+  },
+  {
+    "path": "/pt/admin",
+    "status": 200,
+    "type": "text/html; charset=utf-8",
+    "bytes": 45510,
+    "noindex": true
+  },
+  {
+    "path": "/sitemap.xml",
+    "status": 200,
+    "type": "application/xml",
+    "bytes": 5631,
+    "hasAlternates": true
+  },
+  {
+    "path": "/robots.txt",
+    "status": 200,
+    "type": "text/plain",
+    "bytes": 124
+  },
+  {
+    "path": "/pt/opengraph-image",
+    "status": 200,
+    "type": "image/png",
+    "bytes": 33986
+  },
+  {
+    "path": "/en/twitter-image",
+    "status": 200,
+    "type": "image/png",
+    "bytes": 33903
+  },
+  {
+    "path": "/pt/projects/6PwfsjsFda7ov256pJJf/opengraph-image",
+    "status": 200,
+    "type": "image/png",
+    "bytes": 263747
+  },
+  {
+    "path": "/en/projects/sGKd9KxTO96YWXrrd0Pe/twitter-image",
+    "status": 200,
+    "type": "image/png",
+    "bytes": 290566
+  },
+  {
+    "path": "/pt/projects/does-not-exist",
+    "status": 404,
+    "type": "text/html; charset=utf-8",
+    "bytes": 32779
+  }
+]

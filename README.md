@@ -18,7 +18,7 @@ gestao administrativa e captura automatica de covers para projectos publicados.
 - Upload das covers capturadas para Vercel Blob.
 - Pagina individual para cada projecto com URL partilhavel.
 - Cards sociais Open Graph e Twitter dinamicos usando a cover de cada projecto.
-- Estado online automatico dos projectos publicados com tempo de resposta.
+- API de diagnostico do estado online dos projectos publicados.
 - SEO com metadata, dados estruturados, sitemap e robots.
 - Vercel Web Analytics para visitantes, paginas vistas, origens e dispositivos.
 - Regras Firestore com leitura publica e escrita restrita ao admin.
@@ -266,8 +266,9 @@ correcto.
 
 ## Estado dos Projectos
 
-A API publica `/api/projects/status` verifica os links guardados nos projectos
-e apresenta um indicador na listagem e pagina individual:
+A API publica `/api/projects/status` continua disponivel para diagnostico dos links
+guardados nos projectos. Os indicadores tecnicos foram retirados das paginas
+comerciais. A API devolve os estados:
 
 - `Online`: respondeu com sucesso em menos de 3 segundos;
 - `Instavel`: respondeu lentamente ou retornou um erro HTTP;
@@ -310,9 +311,41 @@ O Vercel Web Analytics utiliza dados anonimizados e nao depende de cookies.
 npm run dev      # desenvolvimento
 npm run build    # build de producao
 npm run start    # servidor de producao
-npm run lint     # lint configurado pelo Next
+npm run lint     # requer configuracao ESLint
 ```
 
 ## Autor
 
 Antonewton Quima
+
+## Revisão comercial e pré-visualização
+
+A homepage apresenta os três serviços, projetos pessoais selecionados, colaboração
+com agências, processo e contacto em PT/EN. As listagens de projetos recebem dados
+do servidor; os textos editoriais confirmados ficam em
+`src/lib/project-stories.ts`, associados aos IDs do Firestore. Não são fixtures nem
+novos registos na base de dados.
+
+O formulário requer as três variáveis de contacto. Sem configuração completa,
+a página apresenta email. Aceitação pela Resend aparece como entrega ainda não
+confirmada; a confirmação exige o evento `delivered` do fornecedor.
+
+Ver [relatório de revisão](docs/portfolio-review.md) para alterações, fontes,
+limitações, testes e pré-visualização. Testes isolados, sem envio real de email:
+
+```bash
+node scripts/check-contact.cjs
+node scripts/check-projects.cjs
+npx tsc --noEmit
+npm run build
+npm run start -- --hostname 0.0.0.0 --port 3001
+```
+
+Com o servidor ativo, `REVIEW_URL=http://localhost:3001 node scripts/review-browser.mjs`
+verifica os percursos e gera capturas em `artifacts/review/`. Para incluir axe,
+fornecer `AXE_PATH` apontando para uma cópia local de `axe.min.js`; a auditoria não
+adiciona essa dependência à aplicação. O script intercepta os pedidos do formulário
+com respostas simuladas e só aceita um servidor local como destino.
+
+O comando legado `npm run lint` precisa de configuração ESLint; a presença desse
+script não significa que exista uma auditoria lint configurada.

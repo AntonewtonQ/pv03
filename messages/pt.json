@@ -4,7 +4,7 @@
     "role": "Odoo Developer / Estudante de Engenharia Informática",
     "homelink": "Início",
     "aboutlink": "Sobre",
-    "projectslink": "Projectos",
+    "projectslink": "Projetos",
     "nowlink": "Agora",
     "contactlink": "Contacto",
     "shoplink": "Loja",
@@ -12,17 +12,21 @@
     "navigation": "Navegação",
     "back": "Início",
     "admin": "Administração",
-    "switchLanguage": "Mudar idioma para {language}"
+    "switchLanguage": "Mudar idioma para {language}",
+    "serviceslink": "Serviços",
+    "skip": "Saltar para o conteúdo",
+    "footerNavigation": "Outras páginas",
+    "versionslink": "Versões"
   },
   "Home": {
-    "eyebrow": "Portfólio v4.0",
-    "availability": "Aberto a projectos e colaboração",
-    "description": "Trabalho com Odoo e desenvolvimento web. Construo soluções para automatizar processos, organizar operações e transformar ideias em produtos digitais.",
-    "primaryAction": "Ver projectos",
-    "secondaryAction": "Falar comigo",
+    "eyebrow": "Antonewton Quima · Desenvolvimento web e Odoo",
+    "availability": "Aberto a projetos e colaboração",
+    "description": "Desenvolvo websites para apresentar o seu negócio e receber pedidos, aplicações para organizar o trabalho e soluções Odoo para simplificar processos. Para pequenos negócios, empresas e agências.",
+    "primaryAction": "Pedir orçamento",
+    "secondaryAction": "Ver trabalhos",
     "base": "Estou em Luanda, na fase final de Engenharia Informática no ISPTEC, e trabalho com Python, Odoo e tecnologias web.",
     "stats": {
-      "projects": "projectos publicados",
+      "projects": "projetos publicados",
       "schools": "frentes de trabalho",
       "version": "versão actual do portfólio"
     },
@@ -30,16 +34,33 @@
       "frontend": "Front-end",
       "products": "Produtos digitais",
       "learning": "Aprendizagem contínua"
-    }
+    },
+    "title": "O seu negócio,",
+    "titleAccent": "melhor na web.",
+    "location": "Luanda, Angola · Trabalho remoto internacional",
+    "note": "Do primeiro website aos processos do dia a dia.",
+    "selectedTitle": "Ideias transformadas em experiências.",
+    "selectedEyebrow": "Trabalhos selecionados",
+    "selectedIntro": "Três projetos pessoais, da conceção ao desenvolvimento. Explore as demonstrações e o que foi construído em cada um.",
+    "allProjects": "Explorar todos os projetos",
+    "aboutTitle": "Tecnologia com atenção ao seu contexto.",
+    "aboutText": "Sou Antonewton Quima, desenvolvedor web e Odoo em Luanda. O meu percurso inclui personalização de módulos, automações, integrações REST e desenvolvimento de interfaces em colaboração com equipas de produto.",
+    "aboutLink": "Conhecer o meu percurso",
+    "agencyTitle": "Uma extensão da sua equipa.",
+    "agencyText": "A sua agência precisa de apoio no desenvolvimento? Podemos colaborar em websites, interfaces web ou módulos Odoo, com um âmbito e responsabilidades definidos em conjunto.",
+    "agencyAction": "Discutir uma colaboração",
+    "contactTitle": "O que quer construir ou melhorar?",
+    "contactText": "Conte-me sobre o seu negócio, o que precisa de resolver e o resultado que procura. A partir daí, definimos o próximo passo.",
+    "emailLabel": "Prefere email?"
   },
   "About": {
     "eyebrow": "Perfil",
     "title": "Sobre mim",
-    "subtitle": "Sou Odoo Developer e estudante finalista de Engenharia Informática. Trabalho com ERP, automação e produtos digitais.",
+    "subtitle": "Desenvolvo websites, aplicações web e soluções Odoo. Trabalho remotamente a partir de Luanda, com experiência em ERP, automação e colaboração com equipas de produto.",
     "introduction": {
       "title": "Introdução",
       "subtitle": "Desenvolvo software para resolver problemas reais e melhorar processos.",
-      "description": "Estou na fase final de Engenharia Informática no ISPTEC. Ao longo do percurso, trabalhei em software e participei em projectos ligados à educação, empregabilidade e mobilidade urbana.",
+      "description": "Estou na fase final de Engenharia Informática no ISPTEC. Ao longo do percurso, trabalhei em software e participei em projetos ligados à educação, empregabilidade e mobilidade urbana.",
       "description2": "Hoje desenvolvo e personalizo soluções Odoo com Python, XML, QWeb, JavaScript, PostgreSQL e REST APIs. Também construo produtos web com Next.js, TypeScript e Tailwind CSS."
     },
     "curiosity": {
@@ -111,29 +132,41 @@
         "title": "Licenciatura em Engenharia Informática",
         "company": "Instituto Superior Politécnico de Tecnologias e Ciências (ISPTEC)",
         "date": "2021 - Presente",
-        "description": "Estou na fase final do curso, com foco em projecto final, redes de computadores, programação e aplicações web. Sou bolseiro do INAGBE."
+        "description": "Estou na fase final do curso, com foco em projeto final, redes de computadores, programação e aplicações web. Sou bolseiro do INAGBE."
       }
     }
   },
   "Projects": {
     "eyebrow": "Trabalho",
-    "title": "Projectos",
-    "subtitle": "Uma selecção de projectos, interfaces e produtos que desenvolvi ou ajudei a construir.",
+    "title": "Projetos",
+    "subtitle": "Projetos pessoais e experiências de desenvolvimento. Cada página explica o contexto, a minha participação e o que pode explorar.",
     "filterLabel": "Filtrar por ano",
     "all": "Todos",
-    "loading": "A carregar projectos...",
-    "error": "Não foi possível carregar os projectos.",
-    "noprojects": "Nenhum projecto encontrado.",
+    "loading": "A carregar projetos...",
+    "error": "Não foi possível carregar os projetos.",
+    "noprojects": "Nenhum projeto encontrado.",
     "viewProject": "Ver detalhes",
-    "visitProject": "Abrir projecto"
+    "visitProject": "Abrir projeto",
+    "retry": "Tentar novamente",
+    "contactAction": "Falar sobre um projeto semelhante"
   },
   "ProjectDetail": {
-    "eyebrow": "Projecto",
-    "back": "Voltar aos projectos",
-    "visit": "Abrir projecto",
-    "share": "Partilhar projecto",
+    "eyebrow": "Projeto",
+    "back": "Voltar aos projetos",
+    "visit": "Explorar demonstração",
+    "share": "Partilhar projeto",
     "copied": "Link copiado",
-    "shareHint": "Este link inclui uma imagem e os detalhes do projecto quando é partilhado."
+    "shareHint": "Este link inclui uma imagem e os detalhes do projeto quando é partilhado.",
+    "personal": "Projeto pessoal",
+    "roleLabel": "A minha participação",
+    "role": "Conceção e desenvolvimento integral",
+    "context": "Contexto e objetivo",
+    "solution": "Solução",
+    "features": "Funcionalidades apresentadas",
+    "contact": "Tem uma ideia semelhante?",
+    "contactAction": "Vamos conversar",
+    "demoNote": "Demonstração de um projeto pessoal; não representa uma entrega para um cliente.",
+    "noCover": "Imagem do projeto ainda não disponível"
   },
   "ProjectStatus": {
     "online": "Online",
@@ -200,9 +233,9 @@
     "focus": "Foco actual",
     "building": "A construir",
     "learning": "A aprender",
-    "currentProject": "Projecto actual",
-    "currentProjectFallback": "Projecto em desenvolvimento",
-    "accessProject": "Abrir projecto",
+    "currentProject": "Projeto actual",
+    "currentProjectFallback": "Projeto em desenvolvimento",
+    "accessProject": "Abrir projeto",
     "loading": "A carregar...",
     "error": "Não foi possível carregar esta página.",
     "empty": "Ainda não publiquei nenhuma actualização.",
@@ -211,7 +244,7 @@
   "Admin": {
     "eyebrow": "Admin",
     "title": "Gerir o portfólio",
-    "subtitle": "Actualize a loja, os projectos e a página Agora num único lugar.",
+    "subtitle": "Actualize a loja, os projetos e a página Agora num único lugar.",
     "dashboardTitle": "Gestão do portfólio",
     "loginTitle": "Acesso administrativo",
     "loginSubtitle": "Entre com a conta configurada no Firebase Auth.",
@@ -223,7 +256,7 @@
     "refresh": "Actualizar",
     "checking": "A verificar sessão...",
     "shop": "Loja",
-    "projects": "Projectos",
+    "projects": "Projetos",
     "now": "Agora",
     "edit": "Editar",
     "documentsCount": "{count, plural, =0 {Nenhum registo} =1 {1 registo} other {# registos}}",
@@ -263,12 +296,12 @@
     "loadError": "Não foi possível carregar os registos.",
     "saveSuccess": "Alterações guardadas.",
     "saveError": "Não foi possível guardar as alterações.",
-    "coverSuccess": "Capa capturada e guardada no projecto.",
+    "coverSuccess": "Capa capturada e guardada no projeto.",
     "coverError": "Não foi possível capturar a capa.",
     "coverErrorWithCode": "Não foi possível capturar a capa: {code}.",
     "blobTokenMissing": "Configure BLOB_READ_WRITE_TOKEN na Vercel antes de capturar capas.",
     "adminUnauthorized": "A sessão não tem autorização para capturar capas.",
-    "invalidProjectUrl": "O link do projecto não é uma URL pública válida.",
+    "invalidProjectUrl": "O link do projeto não é uma URL pública válida.",
     "privateProjectUrl": "Use uma URL pública; links locais ou privados não podem ser capturados.",
     "firestorePermissionError": "O Firestore bloqueou esta acção. Actualize as regras para permitir que o email administrativo escreva em items, projects e now. Se estava a capturar uma capa, a imagem pode ter sido enviada para o Blob, mas não ficou guardada.",
     "nowEditor": "Editar página Agora",
@@ -278,10 +311,10 @@
     "nowSummary": "Resumo",
     "nowAvailability": "Disponibilidade",
     "nowLocation": "Localização",
-    "nowProjectName": "Nome do projecto actual",
-    "nowProjectLink": "Link de acesso do projecto",
-    "nowProjectCover": "Capa do projecto actual",
-    "nowProjectCoverUrl": "URL da capa do projecto",
+    "nowProjectName": "Nome do projeto actual",
+    "nowProjectLink": "Link de acesso do projeto",
+    "nowProjectCover": "Capa do projeto actual",
+    "nowProjectCoverUrl": "URL da capa do projeto",
     "nowCoverSuccess": "Capa guardada na página Agora.",
     "nowFocus": "Foco actual",
     "nowBuilding": "A construir",
@@ -291,33 +324,41 @@
     "deleteSuccess": "Registo apagado.",
     "deleteError": "Não foi possível apagar o registo.",
     "nameRequired": "O nome é obrigatório.",
-    "linkRequired": "Adicione o link do projecto antes de capturar a capa.",
+    "linkRequired": "Adicione o link do projeto antes de capturar a capa.",
     "deleteConfirm": "Apagar \"{name}\"?"
   },
   "Contact": {
     "eyebrow": "Contacto",
-    "title": "Vamos conversar",
-    "subtitle": "Para projectos, oportunidades ou uma conversa sobre tecnologia, envie uma mensagem ou use um dos contactos abaixo.",
+    "title": "Vamos falar do seu projeto.",
+    "subtitle": "Precisa de um website, de organizar processos ou de apoio técnico para a sua agência? Conte-me o que tem em mente. Trabalho a partir de Luanda, remotamente para diferentes países.",
     "channels": {
       "email": "Email",
       "whatsapp": "WhatsApp"
     },
     "form": {
       "name": "Nome",
-      "namePlaceholder": "O seu nome",
+      "namePlaceholder": "Como se chama?",
       "email": "Email",
-      "emailPlaceholder": "seu@email.com",
+      "emailPlaceholder": "O seu email de contacto",
       "subject": "Assunto",
       "subjectPlaceholder": "Assunto da mensagem",
-      "message": "Mensagem",
-      "messagePlaceholder": "Escreva a sua mensagem",
-      "submit": "Enviar mensagem",
-      "sending": "A enviar...",
-      "success": "Mensagem enviada. Responderei assim que possível.",
-      "error": "Não foi possível enviar a mensagem. Tente novamente.",
-      "rateLimited": "Muitas mensagens enviadas. Aguarde alguns minutos e tente novamente.",
-      "notConfigured": "O formulário de contacto ainda não está configurado no servidor."
-    }
+      "message": "Sobre o projeto",
+      "messagePlaceholder": "O que faz o seu negócio? O que pretende construir ou melhorar? Pode incluir links e uma data pretendida, se existir.",
+      "submit": "Enviar pedido",
+      "sending": "A submeter pedido…",
+      "success": "O serviço de email confirmou a entrega da mensagem ao servidor de destino.",
+      "error": "Não foi possível submeter o pedido. Os seus dados foram mantidos; tente novamente ou use o email abaixo.",
+      "rateLimited": "Foram feitas várias tentativas. Aguarde alguns minutos ou contacte-me por email.",
+      "notConfigured": "Use o contacto por email abaixo para enviar o seu pedido.",
+      "budget": "Orçamento previsto (opcional)",
+      "budgetPlaceholder": "Ainda não sei",
+      "budgetHint": "Se já tiver uma referência, indique o valor e a moeda.",
+      "accepted": "A entrega ainda não foi confirmada. O serviço de email aceitou o pedido para processamento.",
+      "requiredHint": "Nome, email e descrição do projeto são obrigatórios.",
+      "unknown": "Não foi possível confirmar o estado do pedido. Os seus dados foram mantidos. Para evitar um envio duplicado, pode contactar-me por email e mencionar esta tentativa."
+    },
+    "emailFallback": "Pode enviar o seu pedido diretamente por email. Inclua o seu nome, o que precisa e, se já souber, o âmbito ou orçamento previsto.",
+    "privacy": "Os dados deste formulário são usados para responder ao seu pedido e enviados através do serviço de email Resend. Não inclua palavras-passe ou informação confidencial."
   },
   "Footer": {
     "copyright": "Copyright · 2026 - antonewton.xyz"
@@ -337,7 +378,7 @@
       "four": {
         "title": "Versão 4.0",
         "date": "26 de Maio de 2026",
-        "description": "Reestruturei o portfólio com uma nova página inicial, navegação responsiva, páginas consistentes, gestão administrativa, loja melhorada e novas funcionalidades para os projectos."
+        "description": "Reestruturei o portfólio com uma nova página inicial, navegação responsiva, páginas consistentes, gestão administrativa, loja melhorada e novas funcionalidades para os projetos."
       },
       "three": {
         "title": "Versão 3.0",
@@ -350,5 +391,63 @@
     "eyebrow": "Ambiente",
     "title": "Ferramentas de trabalho",
     "description": "As ferramentas, tecnologias e configurações que uso no dia-a-dia."
+  },
+  "Services": {
+    "eyebrow": "Serviços",
+    "title": "Do que o seu negócio precisa?",
+    "description": "Um ponto de partida claro, com a solução ajustada ao seu objetivo.",
+    "webTitle": "Websites para negócios",
+    "webText": "Dê aos seus clientes um lugar onde conhecer os seus serviços e iniciar uma conversa.",
+    "webItems": [
+      "Apresentação do negócio e dos serviços",
+      "Páginas de campanha e catálogos",
+      "Formulários e canais para receber pedidos"
+    ],
+    "appsTitle": "Aplicações web e sistemas de gestão",
+    "appsText": "Organize a informação e facilite as tarefas que hoje dependem de ficheiros dispersos ou processos manuais.",
+    "appsItems": [
+      "Áreas de gestão e consulta de informação",
+      "Fluxos de trabalho e permissões de acesso",
+      "Automações e ligação entre serviços"
+    ],
+    "odooTitle": "Desenvolvimento e integrações Odoo",
+    "odooText": "Adapte o Odoo à forma como a sua empresa trabalha, com funcionalidades ligadas aos seus processos.",
+    "odooItems": [
+      "Criação e personalização de módulos",
+      "Relatórios, vistas e automações",
+      "Integrações com APIs e outros sistemas"
+    ]
+  },
+  "Process": {
+    "eyebrow": "Como trabalho",
+    "title": "Clareza em cada etapa.",
+    "steps": [
+      {
+        "title": "Conversa inicial",
+        "text": "Entendemos o seu negócio, as necessidades e o que já existe."
+      },
+      {
+        "title": "Âmbito e proposta",
+        "text": "Definimos funcionalidades, responsabilidades, investimento e etapas."
+      },
+      {
+        "title": "Desenvolvimento",
+        "text": "Construo a solução e partilho o progresso para recolher o seu feedback."
+      },
+      {
+        "title": "Revisão e entrega",
+        "text": "Revemos o resultado e combinamos a entrega e as orientações de utilização."
+      }
+    ]
+  },
+  "SEO": {
+    "homeTitle": "Websites, aplicações web e Odoo",
+    "homeDescription": "Websites para negócios, aplicações web, sistemas de gestão e desenvolvimento Odoo. Antonewton Quima, em Luanda, para clientes e agências em diferentes países.",
+    "projectsTitle": "Projetos de desenvolvimento web",
+    "projectsDescription": "Explore os projetos pessoais de Antonewton Quima: Resto, Jogastop e Natura Lovers. Contexto, funcionalidades, participação e demonstrações públicas.",
+    "aboutTitle": "Sobre mim e o meu percurso",
+    "aboutDescription": "Conheça o percurso de Antonewton Quima em desenvolvimento web, Odoo e automação, a sua experiência profissional e formação.",
+    "contactTitle": "Pedir orçamento ou discutir um projeto",
+    "contactDescription": "Converse com Antonewton Quima sobre websites, aplicações, sistemas de gestão, Odoo ou colaboração freelance com agências."
   }
 }

@@ -1,0 +1,252 @@
+{
+  "pages": [
+    {
+      "path": "/pt",
+      "title": "Websites, aplicações web e Odoo | Antonewton Quima",
+      "h1": 1,
+      "description": "Websites para negócios, aplicações web, sistemas de gestão e desenvolvimento Odoo. Antonewton Quima, em Luanda, para clientes e agências em diferentes países.",
+      "canonical": "https://antonewton.xyz/pt",
+      "lang": "pt",
+      "og": "https://antonewton.xyz/pt/opengraph-image",
+      "alternates": 3,
+      "widthsWithoutOverflow": [
+        320,
+        390,
+        768,
+        1440
+      ],
+      "violations": []
+    },
+    {
+      "path": "/pt/projects",
+      "title": "Projetos de desenvolvimento web | Antonewton Quima",
+      "h1": 1,
+      "description": "Explore os projetos pessoais de Antonewton Quima: Resto, Jogastop e Natura Lovers. Contexto, funcionalidades, participação e demonstrações públicas.",
+      "canonical": "https://antonewton.xyz/pt/projects",
+      "lang": "pt",
+      "og": "https://antonewton.xyz/pt/opengraph-image",
+      "alternates": 3,
+      "widthsWithoutOverflow": [
+        320,
+        390,
+        768,
+        1440
+      ],
+      "violations": []
+    },
+    {
+      "path": "/pt/about",
+      "title": "Sobre mim e o meu percurso | Antonewton Quima",
+      "h1": 1,
+      "description": "Conheça o percurso de Antonewton Quima em desenvolvimento web, Odoo e automação, a sua experiência profissional e formação.",
+      "canonical": "https://antonewton.xyz/pt/about",
+      "lang": "pt",
+      "og": "https://antonewton.xyz/pt/opengraph-image",
+      "alternates": 3,
+      "widthsWithoutOverflow": [
+        320,
+        390,
+        768,
+        1440
+      ],
+      "violations": []
+    },
+    {
+      "path": "/pt/contact",
+      "title": "Pedir orçamento ou discutir um projeto | Antonewton Quima",
+      "h1": 1,
+      "description": "Converse com Antonewton Quima sobre websites, aplicações, sistemas de gestão, Odoo ou colaboração freelance com agências.",
+      "canonical": "https://antonewton.xyz/pt/contact",
+      "lang": "pt",
+      "og": "https://antonewton.xyz/pt/opengraph-image",
+      "alternates": 3,
+      "widthsWithoutOverflow": [
+        320,
+        390,
+        768,
+        1440
+      ],
+      "violations": []
+    },
+    {
+      "path": "/pt/projects/6PwfsjsFda7ov256pJJf",
+      "title": "Resto - Modern Dining | Antonewton Quima",
+      "h1": 1,
+      "description": "Um website de restauração que reúne menu, ambiente e uma interface para pedidos de reserva.",
+      "canonical": "https://antonewton.xyz/pt/projects/6PwfsjsFda7ov256pJJf",
+      "lang": "pt",
+      "og": "https://antonewton.xyz/pt/projects/6PwfsjsFda7ov256pJJf/opengraph-image",
+      "alternates": 2,
+      "widthsWithoutOverflow": [
+        320,
+        390,
+        768,
+        1440
+      ],
+      "violations": []
+    },
+    {
+      "path": "/pt/projects/sGKd9KxTO96YWXrrd0Pe",
+      "title": "Jogastop | Antonewton Quima",
+      "h1": 1,
+      "description": "O clássico jogo Stop numa aplicação web, com salas, categorias e pontuação.",
+      "canonical": "https://antonewton.xyz/pt/projects/sGKd9KxTO96YWXrrd0Pe",
+      "lang": "pt",
+      "og": "https://antonewton.xyz/pt/projects/sGKd9KxTO96YWXrrd0Pe/opengraph-image",
+      "alternates": 2,
+      "widthsWithoutOverflow": [
+        320,
+        390,
+        768,
+        1440
+      ],
+      "violations": []
+    },
+    {
+      "path": "/pt/projects/vpbZOSmseBEewKmmmOAG",
+      "title": "Natura Lovers | Antonewton Quima",
+      "h1": 1,
+      "description": "Uma página de apresentação de cosméticos naturais, com características, história e perguntas frequentes.",
+      "canonical": "https://antonewton.xyz/pt/projects/vpbZOSmseBEewKmmmOAG",
+      "lang": "pt",
+      "og": "https://antonewton.xyz/pt/projects/vpbZOSmseBEewKmmmOAG/opengraph-image",
+      "alternates": 2,
+      "widthsWithoutOverflow": [
+        320,
+        390,
+        768,
+        1440
+      ],
+      "violations": []
+    },
+    {
+      "path": "/en",
+      "title": "Websites, web apps & Odoo development | Antonewton Quima",
+      "h1": 1,
+      "description": "Business websites, web apps, management systems and Odoo development. Antonewton Quima, based in Luanda, working remotely with businesses and agencies across borders.",
+      "canonical": "https://antonewton.xyz/en",
+      "lang": "en",
+      "og": "https://antonewton.xyz/en/opengraph-image",
+      "alternates": 3,
+      "widthsWithoutOverflow": [
+        320,
+        390,
+        768,
+        1440
+      ],
+      "violations": []
+    },
+    {
+      "path": "/en/projects",
+      "title": "Web development projects | Antonewton Quima",
+      "h1": 1,
+      "description": "Explore personal projects by Antonewton Quima: Resto, Jogastop and Natura Lovers. Context, features, contributions and public demos.",
+      "canonical": "https://antonewton.xyz/en/projects",
+      "lang": "en",
+      "og": "https://antonewton.xyz/en/opengraph-image",
+      "alternates": 3,
+      "widthsWithoutOverflow": [
+        320,
+        390,
+        768,
+        1440
+      ],
+      "violations": []
+    },
+    {
+      "path": "/en/about",
+      "title": "About me and my background | Antonewton Quima",
+      "h1": 1,
+      "description": "Meet Antonewton Quima: web and Odoo developer. Explore his work in automation, professional experience and education.",
+      "canonical": "https://antonewton.xyz/en/about",
+      "lang": "en",
+      "og": "https://antonewton.xyz/en/opengraph-image",
+      "alternates": 3,
+      "widthsWithoutOverflow": [
+        320,
+        390,
+        768,
+        1440
+      ],
+      "violations": []
+    },
+    {
+      "path": "/en/contact",
+      "title": "Request a quote or discuss a project | Antonewton Quima",
+      "h1": 1,
+      "description": "Talk to Antonewton Quima about websites, web apps, management systems, Odoo development or freelance collaboration with agencies.",
+      "canonical": "https://antonewton.xyz/en/contact",
+      "lang": "en",
+      "og": "https://antonewton.xyz/en/opengraph-image",
+      "alternates": 3,
+      "widthsWithoutOverflow": [
+        320,
+        390,
+        768,
+        1440
+      ],
+      "violations": []
+    },
+    {
+      "path": "/en/projects/6PwfsjsFda7ov256pJJf",
+      "title": "Resto - Modern Dining | Antonewton Quima",
+      "h1": 1,
+      "description": "A restaurant website bringing together the menu, atmosphere and a booking enquiry interface.",
+      "canonical": "https://antonewton.xyz/en/projects/6PwfsjsFda7ov256pJJf",
+      "lang": "en",
+      "og": "https://antonewton.xyz/en/projects/6PwfsjsFda7ov256pJJf/opengraph-image",
+      "alternates": 2,
+      "widthsWithoutOverflow": [
+        320,
+        390,
+        768,
+        1440
+      ],
+      "violations": []
+    },
+    {
+      "path": "/en/projects/sGKd9KxTO96YWXrrd0Pe",
+      "title": "Jogastop | Antonewton Quima",
+      "h1": 1,
+      "description": "The classic Stop word game as a web app, with rooms, categories and scoring.",
+      "canonical": "https://antonewton.xyz/en/projects/sGKd9KxTO96YWXrrd0Pe",
+      "lang": "en",
+      "og": "https://antonewton.xyz/en/projects/sGKd9KxTO96YWXrrd0Pe/opengraph-image",
+      "alternates": 2,
+      "widthsWithoutOverflow": [
+        320,
+        390,
+        768,
+        1440
+      ],
+      "violations": []
+    },
+    {
+      "path": "/en/projects/vpbZOSmseBEewKmmmOAG",
+      "title": "Natura Lovers | Antonewton Quima",
+      "h1": 1,
+      "description": "A natural cosmetics landing page with product characteristics, brand story and frequently asked questions.",
+      "canonical": "https://antonewton.xyz/en/projects/vpbZOSmseBEewKmmmOAG",
+      "lang": "en",
+      "og": "https://antonewton.xyz/en/projects/vpbZOSmseBEewKmmmOAG/opengraph-image",
+      "alternates": 2,
+      "widthsWithoutOverflow": [
+        320,
+        390,
+        768,
+        1440
+      ],
+      "violations": []
+    }
+  ],
+  "interactions": [
+    "Projects visible with JavaScript disabled",
+    "Keyboard skip link focuses main content",
+    "Secondary CTA opens selected projects",
+    "Year filters select and reset",
+    "Language switch preserves project route and changes content",
+    "Required fields block requests; failure preserves data; accepted is not presented as delivered",
+    "Delivered state requires explicit delivered response (simulated)"
+  ],
+  "consoleErrors": []
+}

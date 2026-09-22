@@ -12,14 +12,18 @@
     "navigation": "Navigation",
     "back": "Home",
     "admin": "Admin",
-    "switchLanguage": "Switch language to {language}"
+    "switchLanguage": "Switch language to {language}",
+    "serviceslink": "Services",
+    "skip": "Skip to content",
+    "footerNavigation": "Other pages",
+    "versionslink": "Versions"
   },
   "Home": {
-    "eyebrow": "Portfolio v4.0",
+    "eyebrow": "Antonewton Quima · Web & Odoo development",
     "availability": "Open to projects and collaboration",
-    "description": "I work with Odoo and web development. I build solutions that automate processes, organise operations, and turn ideas into digital products.",
-    "primaryAction": "View projects",
-    "secondaryAction": "Talk to me",
+    "description": "I build websites that introduce your business and bring in enquiries, web apps that organise your work, and Odoo solutions that simplify processes. For small businesses, companies and agencies.",
+    "primaryAction": "Request a quote",
+    "secondaryAction": "View my work",
     "base": "I am based in Luanda, completing my Computer Engineering degree at ISPTEC, and working with Python, Odoo, and web technologies.",
     "stats": {
       "projects": "published projects",
@@ -30,12 +34,29 @@
       "frontend": "Front-end",
       "products": "Digital products",
       "learning": "Continuous learning"
-    }
+    },
+    "title": "Your business,",
+    "titleAccent": "better on the web.",
+    "location": "Luanda, Angola · Working remotely across borders",
+    "note": "From your first website to your everyday operations.",
+    "selectedTitle": "Ideas turned into experiences.",
+    "selectedEyebrow": "Selected work",
+    "selectedIntro": "Three personal projects, from concept to development. Explore the demos and what went into each one.",
+    "allProjects": "Explore all projects",
+    "aboutTitle": "Technology shaped around your needs.",
+    "aboutText": "I’m Antonewton Quima, a web and Odoo developer based in Luanda. My experience includes custom modules, automation, REST integrations and building interfaces alongside product teams.",
+    "aboutLink": "Explore my background",
+    "agencyTitle": "An extension of your team.",
+    "agencyText": "Does your agency need development support? We can collaborate on websites, web interfaces or Odoo modules, with scope and responsibilities agreed together.",
+    "agencyAction": "Discuss a collaboration",
+    "contactTitle": "What would you like to build or improve?",
+    "contactText": "Tell me about your business, the problem you want to solve and the outcome you have in mind. We’ll work out the next step together.",
+    "emailLabel": "Prefer email?"
   },
   "About": {
     "eyebrow": "Profile",
     "title": "About me",
-    "subtitle": "I am an Odoo Developer and final-year Computer Engineering student working with ERP, automation, and digital products.",
+    "subtitle": "I build websites, web applications and Odoo solutions. Based in Luanda, I work remotely with experience in ERP, automation and collaboration with product teams.",
     "introduction": {
       "title": "Introduction",
       "subtitle": "I build software to solve real problems and improve processes.",
@@ -118,22 +139,34 @@
   "Projects": {
     "eyebrow": "Work",
     "title": "Projects",
-    "subtitle": "A selection of projects, interfaces, and products I built or helped create.",
+    "subtitle": "Personal projects and development explorations. Each page explains the context, my contribution and what you can explore.",
     "filterLabel": "Filter by year",
     "all": "All",
     "loading": "Loading projects...",
     "error": "Could not load the projects.",
     "noprojects": "No projects found.",
     "viewProject": "View details",
-    "visitProject": "Open project"
+    "visitProject": "Open project",
+    "retry": "Try again",
+    "contactAction": "Discuss a similar project"
   },
   "ProjectDetail": {
     "eyebrow": "Project",
     "back": "Back to projects",
-    "visit": "Open project",
+    "visit": "Explore demo",
     "share": "Share project",
     "copied": "Link copied",
-    "shareHint": "This link includes the project image and details when shared."
+    "shareHint": "This link includes the project image and details when shared.",
+    "personal": "Personal project",
+    "roleLabel": "My contribution",
+    "role": "Full concept and development",
+    "context": "Context & goal",
+    "solution": "Solution",
+    "features": "Features showcased",
+    "contact": "Have a similar idea?",
+    "contactAction": "Let’s talk",
+    "demoNote": "A personal project demo; this is not a client delivery.",
+    "noCover": "Project image not yet available"
   },
   "ProjectStatus": {
     "online": "Online",
@@ -296,8 +329,8 @@
   },
   "Contact": {
     "eyebrow": "Contact",
-    "title": "Let's talk",
-    "subtitle": "For projects, opportunities, or a conversation about technology, send a message or use one of the contacts below.",
+    "title": "Let’s talk about your project.",
+    "subtitle": "Need a website, better business processes or technical support for your agency? Tell me what you have in mind. I work remotely from Luanda with clients across borders.",
     "channels": {
       "email": "Email",
       "whatsapp": "WhatsApp"
@@ -306,18 +339,26 @@
       "name": "Name",
       "namePlaceholder": "Your name",
       "email": "Email",
-      "emailPlaceholder": "your@email.com",
+      "emailPlaceholder": "Your contact email",
       "subject": "Subject",
       "subjectPlaceholder": "Message subject",
-      "message": "Message",
-      "messagePlaceholder": "Write your message",
-      "submit": "Send message",
-      "sending": "Sending...",
-      "success": "Message sent. I will reply as soon as possible.",
-      "error": "Could not send the message. Please try again.",
-      "rateLimited": "Too many messages sent. Wait a few minutes and try again.",
-      "notConfigured": "The contact form is not configured on the server yet."
-    }
+      "message": "About your project",
+      "messagePlaceholder": "What does your business do? What would you like to build or improve? You can include links and a preferred date, if you have one.",
+      "submit": "Send enquiry",
+      "sending": "Submitting enquiry…",
+      "success": "The email service confirmed delivery to the destination mail server.",
+      "error": "Your enquiry could not be submitted. Your details have been kept; try again or use the email below.",
+      "rateLimited": "There have been several attempts. Wait a few minutes or contact me by email.",
+      "notConfigured": "Please use the email contact below to send your enquiry.",
+      "budget": "Estimated budget (optional)",
+      "budgetPlaceholder": "Not sure yet",
+      "budgetHint": "If you have a figure in mind, include the amount and currency.",
+      "accepted": "Delivery has not yet been confirmed. The email service accepted your enquiry for processing.",
+      "requiredHint": "Name, email and project description are required.",
+      "unknown": "The status of your enquiry could not be confirmed. Your details have been kept. To avoid a duplicate submission, you can email me and mention this attempt."
+    },
+    "emailFallback": "You can send your enquiry directly by email. Include your name, what you need and, if you know it, your intended scope or budget.",
+    "privacy": "The details in this form are used to respond to your enquiry and sent through the Resend email service. Please do not include passwords or confidential information."
   },
   "Footer": {
     "copyright": "Copyright · 2026 - antonewton.xyz"
@@ -350,5 +391,63 @@
     "eyebrow": "Environment",
     "title": "Work tools",
     "description": "The tools, technologies, and configurations I use every day."
+  },
+  "Services": {
+    "eyebrow": "Services",
+    "title": "What does your business need?",
+    "description": "A clear starting point, with a solution built around your goal.",
+    "webTitle": "Business websites",
+    "webText": "Give customers a place to discover your services and start a conversation.",
+    "webItems": [
+      "Business and service websites",
+      "Campaign pages and catalogues",
+      "Forms and contact channels for enquiries"
+    ],
+    "appsTitle": "Web apps & management systems",
+    "appsText": "Organise your information and simplify tasks that currently rely on scattered files or manual processes.",
+    "appsItems": [
+      "Dashboards and information management",
+      "Workflows and access permissions",
+      "Automation and connections between services"
+    ],
+    "odooTitle": "Odoo development & integrations",
+    "odooText": "Make Odoo fit the way your company works, with features tailored to your processes.",
+    "odooItems": [
+      "Custom modules and enhancements",
+      "Reports, views and automation",
+      "Integrations with APIs and other systems"
+    ]
+  },
+  "Process": {
+    "eyebrow": "Working together",
+    "title": "Clarity at every step.",
+    "steps": [
+      {
+        "title": "Initial conversation",
+        "text": "We discuss your business, your needs and what you already have."
+      },
+      {
+        "title": "Scope & proposal",
+        "text": "We agree on features, responsibilities, budget and milestones."
+      },
+      {
+        "title": "Development",
+        "text": "I build the solution and share progress to gather your feedback."
+      },
+      {
+        "title": "Review & handover",
+        "text": "We review the result and agree on delivery and guidance for using it."
+      }
+    ]
+  },
+  "SEO": {
+    "homeTitle": "Websites, web apps & Odoo development",
+    "homeDescription": "Business websites, web apps, management systems and Odoo development. Antonewton Quima, based in Luanda, working remotely with businesses and agencies across borders.",
+    "projectsTitle": "Web development projects",
+    "projectsDescription": "Explore personal projects by Antonewton Quima: Resto, Jogastop and Natura Lovers. Context, features, contributions and public demos.",
+    "aboutTitle": "About me and my background",
+    "aboutDescription": "Meet Antonewton Quima: web and Odoo developer. Explore his work in automation, professional experience and education.",
+    "contactTitle": "Request a quote or discuss a project",
+    "contactDescription": "Talk to Antonewton Quima about websites, web apps, management systems, Odoo development or freelance collaboration with agencies."
   }
 }

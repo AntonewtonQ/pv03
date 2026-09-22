@@ -74,7 +74,11 @@
     min-height: 100vh;
     background-color: #090806;
     background-image:
-      radial-gradient(circle at 82% -8%, rgba(249, 115, 22, 0.09), transparent 28rem),
+      radial-gradient(
+        circle at 82% -8%,
+        rgba(249, 115, 22, 0.09),
+        transparent 28rem
+      ),
       linear-gradient(180deg, rgba(255, 255, 255, 0.018), transparent 18rem);
     font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
     text-rendering: optimizeLegibility;
@@ -108,5 +112,37 @@
 @layer utilities {
   .font-technical {
     font-family: var(--font-geist-mono), "Courier New", Courier, monospace;
+  }
+}
+
+@layer components {
+  .eyebrow {
+    @apply font-technical text-xs font-medium uppercase tracking-[0.14em] text-orange-400;
+  }
+  .section-title {
+    @apply max-w-2xl text-3xl font-medium leading-tight tracking-[-0.04em] md:text-4xl;
+  }
+  .primary-cta {
+    @apply inline-flex min-h-12 items-center justify-between gap-6 rounded-sm bg-orange-400 px-5 py-3 text-sm font-semibold text-black transition-colors hover:bg-orange-300;
+  }
+  .secondary-cta {
+    @apply inline-flex min-h-12 items-center justify-between gap-6 rounded-sm border border-white/25 px-5 py-3 text-sm font-medium text-white transition-colors hover:border-orange-300 hover:text-orange-300;
+  }
+  .text-link {
+    @apply inline-flex min-h-11 items-center gap-3 font-medium text-orange-300 underline decoration-orange-300/30 underline-offset-4 hover:text-orange-200;
+  }
+  .skip-link {
+    @apply sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-3 focus:z-50 focus:bg-orange-300 focus:px-5 focus:py-3 focus:text-black;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
   }
 }
